@@ -139,7 +139,7 @@
 
 .footer-line {
   width: 186px;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   border: solid 2px #3e4247;
 }
 
@@ -177,7 +177,6 @@
 .footer-all {
   margin-top: 1rem;
   margin-bottom: 0;
-
 }
 
 .footer-description {
@@ -191,5 +190,4 @@
   margin-left: .5rem;
   width: 8.8px;
   height: 8px;
-  object-fit: contain;
 }
