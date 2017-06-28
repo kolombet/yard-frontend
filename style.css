@@ -1,5 +1,5 @@
 /** COMMON **/
-.body {
+body {
   font-size: 16px;
   font-family: FiraSans, sans-serif;
   background: #ececec url(img/background.png) repeat;
@@ -128,13 +128,10 @@
 
 /** FOOTER **/
 .footer {
+  padding-top: 2rem;
   background-color: #111111;
   display: flex;
   align-items: center;
-}
-
-.footer-wrapper {
-  margin-top: 2rem;
 }
 
 .footer-line {
