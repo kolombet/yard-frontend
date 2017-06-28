@@ -2,7 +2,7 @@
 body {
   font-size: 16px;
   font-family: FiraSans, sans-serif;
-  background: #ececec url(img/background.png) repeat;
+  background: #ececec url('img/background.png') repeat;
 }
 
 /** HEADER **/
@@ -137,7 +137,7 @@ body {
 .footer-line {
   width: 186px;
   margin: 0 0 1rem 0;
-  border: solid 2px #3e4247;
+  border: solid 1px #3e4247;
 }
 
 .footer-title {
