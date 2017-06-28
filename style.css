@@ -98,9 +98,8 @@
 }
 
 .card-location {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 16px;
   text-transform: uppercase;
   color: #646971;
@@ -120,9 +119,8 @@
 
 .card-description {
   font-size: 16px;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin: 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
   text-align: left;
   line-height: 1.5;
   color: #3e4247;
