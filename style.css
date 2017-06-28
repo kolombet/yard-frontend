@@ -1,14 +1,8 @@
 /** COMMON **/
-:root {
+.body {
   font-size: 16px;
   font-family: FiraSans, sans-serif;
   background: #ececec url(img/background.png) repeat;
-}
-
-.column-wrapper {
-  width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /** HEADER **/
@@ -21,18 +15,18 @@
   justify-content: space-between;
 }
 
-.compass-logo {
+.header-logo {
   width: 179px;
   height: 24px;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
-.navigation {
+.header-navigation {
   display: block;
 }
 
-.navigation-link {
+.header-link {
   display: inline-block;
   padding: 1.5rem .5rem;
   font-size: 16px;
@@ -55,14 +49,6 @@
 }
 
 /** CONTACT **/
-.contact-link {
-  display: block;
-  width: 12rem;
-  height: 2.5rem;
-  border-radius: 2px;
-  background-color: #000000;
-}
-
 .contact-title {
   margin-top: 4rem;
   margin-bottom: .5rem;
