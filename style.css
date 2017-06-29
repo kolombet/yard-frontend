@@ -1,7 +1,7 @@
 /** COMMON **/
 .body {
   font-size: 16px;
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   background: #ececec url('img/background.png') repeat;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
@@ -33,22 +33,17 @@
 
 .header-navigation {
   display: block;
+  padding-top: 1.5rem;
 }
 
 .header-link {
   display: inline-block;
-
-  /*padding: 1.5rem .5rem;*/
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   padding-left: 1.75rem;
   font-size: 16px;
   line-height: 1.0;
   color: #3e4247;
   text-decoration: none;
-}
-
-.header-link:last-child {
-  /*padding-right: 0rem;*/
 }
 
 .header-link:hover {
@@ -69,17 +64,26 @@
 }
 
 /** CONTACT **/
+.contact-container {
+  width: 804px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .contact-title {
-  margin-top: 4rem;
+  margin-top: 0;
   margin-bottom: .5rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 24px;
   font-weight: bold;
+  line-height: 1.55;
   color: #3e4247;
 }
 
 .contact-description {
   margin-top: .5rem;
   margin-bottom: 1rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
@@ -87,67 +91,74 @@
 }
 
 .contact-button {
-  margin-bottom: 4rem;
   padding: .75rem 2rem;
-  font-size: 16px;
-  line-height: 1.0;
-  color: #ffffff;
-  text-align: center;
   background-color: #000000;
   border: none;
   border-radius: 2px;
   cursor: pointer;
 }
 
+.contact-button-label {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.0;
+  color: #ffffff;
+  text-align: center;
+}
+
 /** CARD **/
 .card-info {
   padding-left: 2rem;
   padding-right: 5.375rem;
+  border-bottom: solid 2px #646971;
 }
 
 .card-link {
-  margin-bottom: 3rem;
   display: flex;
+  margin-bottom: 3rem;
   background-color: #ffffff;
-  border-bottom: solid 2px #646971;
   cursor: pointer;
 }
 
 .card-link:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.3);
 }
 
 .card-location {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: #646971;
   font-family: Monaco, Menlo, Consolas, monospace;
+  font-size: 16px;
+  color: #646971;
+  text-transform: uppercase;
   text-align: left;
 }
 
 .card-address {
   margin: 0;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 40px;
   font-weight: bold;
   text-align: left;
   line-height: 1.4;
   color: #000000;
-
 }
 
 .card-description {
-  font-size: 16px;
   margin-top: .5rem;
   margin-bottom: .5rem;
-  text-align: left;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
   line-height: 1.5;
+  text-align: left;
   color: #3e4247;
 }
 
 /** FOOTER **/
 .footer {
+  margin-top: 6rem;
+  padding-top: 2rem;
   background-color: #111111;
   display: flex;
   align-items: center;
@@ -158,24 +169,34 @@
 }
 
 .footer-line {
+  margin-top: 0;
   width: 186px;
   margin-bottom: 1rem;
-  border: solid 2px #3e4247;
+  border: solid 1px #3e4247;
+  box-sizing: content-box;
+}
+
+.footer-arrow {
+  padding-left: 8px;
 }
 
 .footer-title {
   margin-top: 0;
   margin-bottom: .5rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: bold;
+  line-height: 1.4rem;
   color: #646971;
 }
 
 .footer-text {
   margin-top: .5rem;
   margin-bottom: .5rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
+  line-height: 1.4rem;
   color: #a9afb6;
 }
 
@@ -183,8 +204,10 @@
   display: block;
   margin-top: .5rem;
   margin-bottom: .5rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
+  line-height: 1.4rem;
   color: #ffffff;
   text-decoration: none;
 }
@@ -200,8 +223,11 @@
 }
 
 .footer-description {
-  margin-top: 6rem;
+  margin-top: 5.938rem;
+  margin-bottom: 1.938rem;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 11px;
   font-weight: 300;
+  line-height: 1.125rem;
   color: #a9afb6;
 }
