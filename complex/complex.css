@@ -168,7 +168,7 @@
 .char-dt {
   grid-column-start: 1;
   margin-bottom: 11px;
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #a9afb6;
@@ -177,7 +177,7 @@
 .char-dd {
   margin-left: 32px;
   grid-column-start: 2;
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
@@ -208,7 +208,7 @@
 
 .description-text {
   margin: 0;
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 25px;
   color: #3e4247;
@@ -235,7 +235,7 @@
 .infrastructure-item {
   margin-top: 0;
   margin-bottom: 8px;
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #3e4247;
@@ -262,6 +262,8 @@
 }
 
 .offer-title {
+  margin-top: 0;
+  margin-bottom: 24px;
   font-family: Philosopher, sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -270,36 +272,110 @@
 }
 
 .offer-area {
-  font-family: FiraSans, sans-serif;
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #a9afb6;
 }
 
 .offer-area-value {
-  font-family: FiraSans, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #3e4247;
 }
 
 .offer-price {
-  font-family: FiraSans, sans-serif;
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #a9afb6;
 }
 
 .offer-price-value {
-  font-family: FiraSans, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 33px;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #3e4247;
 }
 
 .offer-block {
+  padding: 24px 2rem;
+  margin-bottom: 63px;
   background-color: #ffffff;
 }
+
+.offer-button {
+  padding: .75rem 2rem;
+  background-color: #000000;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.offer-button-label {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.0;
+  color: #ffffff;
+  text-align: center;
+}
+
+/** GUIDE **/
+.guide {
+  background-color: #3e4247;
+}
+
+.guide-photo {
+  width: 583px;
+  height: 560px;
+  margin-top: 65px;
+}
+
+.guide-summary {
+  margin-top: 181px;
+  margin-bottom: 48px;
+  font-family: Philosopher, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 27px;
+  color: #a9afb6;
+}
+
+.guide-title {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  font-family: Philosopher, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+.guide-link {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #00779a;
+}
+
+.guide-map {
+  width: 583px;
+  height: 306px;
+}
+
+
+
+
+
+
 
 /** FOOTER **/
 .footer {
