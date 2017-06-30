@@ -132,18 +132,16 @@
 }
 
 .info-main-title {
-  margin-top: 1.5rem;
-  margin-bottom: 0.625rem;
+  margin-top: 1.375rem;
+  margin-bottom: 1.5rem;
   font-family: Philosopher, sans-serif;
   font-size: 24px;
   font-weight: 700;
-  line-height: 27px;
+  line-height: 30px;
   color: #3e4247;
 }
 
 .info-main-description {
-  margin-top: 0.625rem;
-  margin-bottom: 1.5rem;
   font-family: FiraSans, sans-serif;
   font-size: 14px;
   font-weight: 300;
