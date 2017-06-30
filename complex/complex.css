@@ -8,8 +8,6 @@
 }
 
 .line-short {
-  margin-left: 1rem;
-  margin-right: 1rem;
   border-bottom: solid 1px #e0e0e1;
 }
 
@@ -21,8 +19,6 @@
 
 .header-wrapper {
   display: flex;
-  margin-left: .5rem;
-  margin-right: .5rem;
   justify-content: space-between;
 }
 
@@ -56,8 +52,6 @@
 .building {
   display: flex;
   justify-content: space-between;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .building-title {
@@ -122,8 +116,6 @@
 /** INFO MAIN **/
 .info-main {
   display: flex;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .info-main-block {
@@ -150,11 +142,6 @@
 }
 
 /** characteristics **/
-.characteristics-wrapper {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .characteristics-title {
   margin-top: 2rem;
   margin-bottom: 1.125rem;
@@ -193,7 +180,8 @@
 
 /** DESCRIPTION **/
 .description-wrapper {
-  margin: 2.438rem 1rem 1.5rem;
+  margin-top: 2.438rem;
+  margin-bottom: 1.5rem;
 }
 
 .description-title {
@@ -215,8 +203,6 @@
 
 /** INFRASTRUCTURE **/
 .infrastructure-wrapper {
-  margin-left: 1rem;
-  margin-right: 1rem;
   margin-bottom: 3.5rem;
 }
 
@@ -242,11 +228,6 @@
 /** OFFER **/
 .offer {
   background-color: #f4f5f9;
-}
-
-.offer-wrapper {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .offer-main-title {
@@ -324,11 +305,6 @@
 }
 
 /** GUIDE **/
-.guide-wrapper {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .guide {
   padding-bottom: 9.563rem;
   margin-bottom: 13.69rem;
@@ -423,8 +399,6 @@
 
 .footer-wrapper {
   margin-top: 2rem;
-  margin-left: .5rem;
-  margin-right: .5rem;
 }
 
 .footer-line {
