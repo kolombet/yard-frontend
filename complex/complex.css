@@ -60,8 +60,8 @@
 }
 
 .building-title {
-  margin-top: 25px;
-  margin-bottom: 8px;
+  margin-top: 1.563rem;
+  margin-bottom: .5rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 32px;
   font-weight: bold;
@@ -70,8 +70,8 @@
 }
 
 .building-location {
-  margin-top: 8px;
-  margin-bottom: 16px;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -80,7 +80,7 @@
 }
 
 .building-favorite-button {
-  padding: 8px 16px;
+  padding: .5rem 1rem;
   margin-top: 24px;
   align-self: flex-start;
   border-radius: 2px;
@@ -132,13 +132,13 @@
 }
 
 .info-main-block {
-  padding-right: 48px;
+  padding-right: 3rem;
   padding-left: 0;
 }
 
 .info-main-title {
-  margin-top: 24px;
-  margin-bottom: 10px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.625rem;
   font-family: Philosopher, sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -147,8 +147,8 @@
 }
 
 .info-main-description {
-  margin-top: 10px;
-  margin-bottom: 24px;
+  margin-top: 0.625rem;
+  margin-bottom: 1.5rem;
   font-family: FiraSans, sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -163,8 +163,8 @@
 }
 
 .characteristics-title {
-  margin-top: 32px;
-  margin-bottom: 18px;
+  margin-top: 2rem;
+  margin-bottom: 1.125rem;
   font-family: Philosopher, sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -172,36 +172,35 @@
   color: #3e4247;
 }
 
-.characteristics-dl {
+.characteristics-list {
   margin-top: 0;
   margin-bottom: 0;
   display: grid;
   grid-template-columns: max-content auto;
 }
 
-.characteristics-dt {
+.characteristics-key {
   grid-column-start: 1;
-  margin-bottom: 11px;
+  margin-bottom:  0.6875rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #a9afb6;
 }
 
-.characteristics-dd {
-  margin-left: 32px;
+.characteristics-value {
+  margin-left: 2rem;
   grid-column-start: 2;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 25px;
   color: #3e4247;
-
 }
 
 /** DESCRIPTION **/
 .description-wrapper {
-  margin: 39px 1rem 24px;
+  margin: 2.438rem 1rem 1.5rem;
 }
 
 .description-title {
@@ -225,7 +224,7 @@
 .infrastructure-wrapper {
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-bottom: 56px;
+  margin-bottom: 3.5rem;
 }
 
 .infrastructure-title {
@@ -240,7 +239,7 @@
 
 .infrastructure-item {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: .5rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -258,8 +257,8 @@
 }
 
 .offer-main-title {
-  margin-top: 64px;
-  margin-bottom: 24px;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
   font-family: Philosopher, sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -269,7 +268,7 @@
 
 .offer-title {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   font-family: Philosopher, sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -278,7 +277,7 @@
 }
 
 .offer-area {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -286,8 +285,8 @@
 }
 
 .offer-area-value {
-  margin-top: 10px;
-  margin-bottom: 25px;
+  margin-top: 0.625rem;
+  margin-bottom: 1.563rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -295,7 +294,7 @@
 }
 
 .offer-price {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -303,8 +302,8 @@
 }
 
 .offer-price-value {
-  margin-top: 10px;
-  margin-bottom: 33px;
+  margin-top: 0.625rem;
+  margin-bottom: 2.063rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -312,8 +311,8 @@
 }
 
 .offer-block {
-  padding: 24px 2rem;
-  margin-bottom: 64px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 4rem;
   background-color: #ffffff;
 }
 
@@ -341,26 +340,26 @@
 }
 
 .guide {
-  padding-bottom: 153px;
-  margin-bottom: 219px;
+  padding-bottom: 9.563rem;
+  margin-bottom: 13.69rem;
   background-color: #3e4247;
   color: white;
 }
 
 .guide-info {
-  margin-top: 180px;
-  margin-bottom: 180px;
+  margin-top: 11.25rem;
+  margin-bottom: 11.25rem;
 }
 
 .guide-photo {
   width: 583px;
   height: 560px;
-  margin-top: 62px;
-  margin-bottom: 63px;
+  margin-top: 3.875rem;
+  margin-bottom: 3.938rem;
 }
 
 .guide-summary {
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
   font-family: Philosopher, sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -369,8 +368,8 @@
 }
 
 .guide-title {
-  margin-top: 48px;
-  margin-bottom: 48px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   font-family: Philosopher, sans-serif;
   font-size: 48px;
   font-weight: bold;
@@ -379,7 +378,7 @@
 }
 
 .guide-link {
-  margin-bottom: 181px;
+  margin-bottom: 11.31rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 25px;
@@ -402,7 +401,7 @@
 
 .guide-navigation-title {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: .5rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
@@ -411,8 +410,8 @@
 }
 
 .guide-navigation-details {
-  margin-top: 8px;
-  margin-bottom: 0px;
+  margin-top: .5rem;
+  margin-bottom: 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -420,13 +419,13 @@
 }
 
 .guide-navigation-block {
-  padding: 24px;
+  padding: 1.5rem;
   border-bottom: solid 2px #e0e0e1;
 }
 
 /** FOOTER **/
 .footer {
-  margin-top: 65px;
+  margin-top: 4.063rem;
   background-color: #111111;
   display: flex;
   align-items: center;
@@ -447,7 +446,7 @@
 }
 
 .footer-arrow {
-  padding-left: 8px;
+  padding-left: .5rem;
 }
 
 .footer-title {
