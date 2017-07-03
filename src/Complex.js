@@ -10,7 +10,6 @@ import BuildingInfoInfrastructure from './BuildingInfostructure';
 import Offers from './Offers';
 import Guide from './Guide';
 import BuildingInfoCharacteristics from "./BuildingInfoCharacteristics";
-import LineShort from "./LineShort";
 
 class Complex extends Component {
   render() {
