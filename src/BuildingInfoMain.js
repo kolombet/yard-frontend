@@ -12,8 +12,7 @@ class BuildingInfoTitle extends Component {
           <BuildingInfoMainItem title="Группа «ПСН»" description="застройщик"/>
         </div>
 
-        <div className="line-short"/>
-        {/*<LineShort/>*/}
+        <LineShort/>
       </section>
     );
   }

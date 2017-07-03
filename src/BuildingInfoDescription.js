@@ -46,6 +46,8 @@ class Banner extends Component {
             </div>
           </div>
         </div>
+
+        <LineShort/>
       </section>
     );
   }

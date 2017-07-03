@@ -22,7 +22,6 @@ class Complex extends Component {
         <BuildingInfoMain/>
         <BuildingInfoCharacteristics/>
         <BuildingInfoDescription/>
-        <LineShort/>
         <BuildingInfoInfrastructure/>
         <Offers/>
         <Guide/>

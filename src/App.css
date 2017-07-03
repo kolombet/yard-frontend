@@ -11,6 +11,10 @@ body {
   background: #ececec url("./img/background.png") repeat;
 }
 
+.line-short {
+  border-bottom: solid 1px #e0e0e1;
+}
+
 /** HEADER **/
 .header {
   background-color: white;
