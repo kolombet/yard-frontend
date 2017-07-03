@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import compassLogo from './img/compass-logo.svg';
 import compassDevelopmentLogo from './img/compass-development-logo.svg';
@@ -13,7 +12,7 @@ class App extends Component {
       <header className="header">
         <div className="container">
           <div className="header-container">
-            <img className="header-logo" src={compassLogo}/>
+            <img className="header-logo" src={compassLogo} alt="compass logo"/>
             <nav className="header-navigation">
               <a className="header-link" href="#">Купить</a>
               <a className="header-link" href="#">Снять</a>
@@ -26,7 +25,7 @@ class App extends Component {
       <section className="banner">
         <div className="container">
           <div className="row center-md">
-            <img className="banner-image" src={compassDevelopmentLogo}/>
+            <img className="banner-image" src={compassDevelopmentLogo} alt="compass development logo"/>
           </div>
         </div>
       </section>
@@ -45,7 +44,7 @@ class App extends Component {
 
       <section className="container">
         <a className="card-link">
-          <img src={buildingPreview} className="bitmap complex-card-img"/>
+          <img src={buildingPreview} className="bitmap complex-card-img" alt="building preview"/>
           <article className="card-info">
             <p className="card-location">SOUTH BEACH, SAN FRANCISCO</p>
             <h3 className="card-address">764 Metropolitan Avenue</h3>
@@ -55,7 +54,7 @@ class App extends Component {
           </article>
         </a>
         <a className="card-link">
-          <img src={buildingPreview} className="bitmap complex-card-img"/>
+          <img src={buildingPreview} className="bitmap complex-card-img" alt="building preview"/>
           <article className="card-info">
             <p className="card-location">MIDTOWN EAST, MANHATTAN</p>
             <h3 className="card-address">100 East 53rd Street</h3>
@@ -66,7 +65,7 @@ class App extends Component {
           </article>
         </a>
         <a className="card-link">
-          <img src={buildingPreview} className="bitmap complex-card-img"/>
+          <img src={buildingPreview} className="bitmap complex-card-img" alt="building preview"/>
           <article className="card-info">
             <p className="card-location">NOLITA, MANHATTAN</p>
             <h3 className="card-address">152 Elizabeth</h3>
@@ -96,7 +95,7 @@ class App extends Component {
               <a className="footer-link" href="#">Садовые кварталы</a>
               <a className="footer-link" href="#">Резиденция Монэ</a>
               <a className="footer-link footer-all" href="#">Все ЖК
-                Москвы<img src={rightArrow} className="footer-arrow"/>
+                Москвы<img src={rightArrow} className="footer-arrow" alt=""/>
               </a>
             </nav>
             <nav className="col-md-2">
