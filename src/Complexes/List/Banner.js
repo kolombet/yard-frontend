@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import compassDevelopmentLogo from "./img/compass-development-logo.svg";
+import compassDevelopmentLogo from "../img/compass-development-logo.svg";
 
 class Banner extends Component {
   render() {

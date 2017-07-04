@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
-import Header from './Header';
-import Footer from './Footer';
+import '../App.css';
 import Gallery from './Gallery';
 import BuildingInfoTitle from './BuildingInfoTitle';
 import BuildingInfoMain from './BuildingInfoMain';
@@ -15,7 +13,6 @@ class Complex extends Component {
   render() {
     return (
       <div>
-        <Header/>
         <BuildingInfoTitle/>
         <Gallery/>
         <BuildingInfoMain/>
@@ -24,7 +21,6 @@ class Complex extends Component {
         <BuildingInfoInfrastructure/>
         <Offers/>
         <Guide/>
-        <Footer/>
       </div>
     );
   }

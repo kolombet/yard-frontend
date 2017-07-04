@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BuildingInfoMainItem from "./BuildingInfoMainItem";
-import HorizontalLine from "./HorizontalLine";
+import HorizontalLine from "../HorizontalLine";
 
 class BuildingInfoTitle extends Component {
   render() {
