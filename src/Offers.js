@@ -1,23 +1,34 @@
-import React, {Component} from 'react';
-import Offer from './Offer';
+import React, { Component } from "react";
+import Offer from "./Offer";
 
 class Offers extends Component {
   render() {
     return (
-      <section className="offer">
+      <section className="offers">
         <div className="container">
           <div className="row center-md">
             <h2 className="offer-main-title">Предложения в ЖК «Полянка/44»</h2>
           </div>
           <div className="row">
-            <Offer title="1-комнатные квартиры" area="от 59 до 120 м²" price="от 20.3 до 84.2 млн руб"/>
-            <Offer title="1-комнатные квартиры" area="от 59 до 120 м²" price="от 20.3 до 84.2 млн руб"/>
-            <Offer title="1-комнатные квартиры" area="от 59 до 120 м²" price="от 20.3 до 84.2 млн руб"/>
+            <Offer
+              rooms={1}
+              area={{ min: 59, max: 120 }}
+              price={{ min: 20.3, max: 84.2 }}
+            />
+            <Offer
+              rooms={1}
+              area={{ min: 59, max: 120 }}
+              price={{ min: 20.3, max: 84.2 }}
+            />
+            <Offer
+              rooms={1}
+              area={{ min: 59, max: 120 }}
+              price={{ min: 20.3, max: 84.2 }}
+            />
           </div>
         </div>
       </section>
     );
   }
 }
-
 export default Offers;

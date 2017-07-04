@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class BuildingInfoInfrastructure extends Component {
   render() {
@@ -11,17 +11,35 @@ class BuildingInfoInfrastructure extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-2"><p className="infrastructure-item">Бассейн</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Детский сад</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Частная школа</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Бассейн</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Детский сад</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Частная школа</p></div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Бассейн</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Детский сад</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Частная школа</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Бассейн</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Детский сад</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Частная школа</p>
+            </div>
           </div>
           <div className="row">
-            <div className="col-md-2"><p className="infrastructure-item">Частная школа</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Частная школа</p></div>
-            <div className="col-md-2"><p className="infrastructure-item">Частная школа</p></div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Частная школа</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Частная школа</p>
+            </div>
+            <div className="col-md-2">
+              <p className="infrastructure-item">Частная школа</p>
+            </div>
           </div>
         </div>
       </section>
