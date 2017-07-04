@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../../App.css';
 
-import Banner from "./List/Banner";
-import Contact from "./List/Contact";
-import Cards from "./List/Cards";
+import Banner from "./Banner";
+import Contact from "./Contact";
+import Cards from "./Cards";
 
 class Complexes extends Component {
   render() {

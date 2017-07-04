@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
-import Complex from "./Complex";
-import Complexes from "./Complexes";
+import Show from "./Complexes/Show";
+import List from "./Complexes/List";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={Complexes} />
-          <Route path="/complex" component={Complex} />
+          <Header/>
+          <Route exact path="/" component={List} />
+          <Route path="/complex" component={Show} />
+          <Footer/>
         </div>
       </Router>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import polyanka from "../img/polyanka/polyanka-photo.jpg";
-import map from "../img/map.png";
+import polyanka from "../../img/polyanka/polyanka-photo.jpg";
+import map from "../../img/map.png";
 import GuideNavigation from "./GuideNavigation";
 
 class Guide extends Component {

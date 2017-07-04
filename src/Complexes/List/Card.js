@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import buildingPreview from "../img/bitmap.jpg";
+import buildingPreview from "../../img/bitmap.jpg";
 import { Link } from "react-router-dom";
 
 class Card extends Component {

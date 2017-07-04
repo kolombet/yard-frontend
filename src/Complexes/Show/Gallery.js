@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import gallery from "../img/gallery/1/bitmap@2x.jpg";
+import gallery from "../../img/gallery/1/bitmap@2x.jpg";
 
 class Gallery extends Component {
   render() {

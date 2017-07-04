@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import rightArrow from "./img/right-arrow.svg";
 
-class Header extends Component {
+class Footer extends Component {
   render() {
     return (
       <footer className="footer">
@@ -61,4 +61,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Footer;

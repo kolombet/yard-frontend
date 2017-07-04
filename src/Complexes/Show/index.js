@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../../App.css';
 import Gallery from './Gallery';
 import BuildingInfoTitle from './BuildingInfoTitle';
 import BuildingInfoMain from './BuildingInfoMain';

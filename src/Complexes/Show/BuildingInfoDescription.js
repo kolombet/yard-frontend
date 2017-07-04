@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HorizontalLine from "../HorizontalLine";
+import HorizontalLine from "../../HorizontalLine";
 
 class Banner extends Component {
   render() {
