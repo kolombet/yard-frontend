@@ -1,28 +1,20 @@
-import React, {Component} from 'react';
-import Gallery from './Gallery';
-import BuildingInfoTitle from './BuildingInfoTitle';
-import BuildingInfoMain from './BuildingInfoMain';
-import BuildingInfoDescription from './BuildingInfoDescription';
-import BuildingInfoInfrastructure from './BuildingInfostructure';
-import Offers from './Offers';
-import Guide from './Guide';
-import BuildingInfoCharacteristics from "./BuildingInfoCharacteristics";
-
-class Complex extends Component {
-  render() {
-    return (
-      <div>
-        <BuildingInfoTitle/>
-        <Gallery/>
-        <BuildingInfoMain/>
-        <BuildingInfoCharacteristics/>
-        <BuildingInfoDescription/>
-        <BuildingInfoInfrastructure/>
-        <Offers/>
-        <Guide/>
-      </div>
-    );
-  }
-}
-
-export default Complex;
+import React from "react";
+import Gallery from "./Gallery";
+import Title from "./Title";
+import Features from "./Features";
+import Description from "./Description";
+import Infrastructure from "./Infrastructure";
+import Offers from "./Offers";
+import Guide from "./Guide";
+import Characteristics from "./Characteristics";
+export default () =>
+  <div>
+    <Title />
+    <Gallery />
+    <Features />
+    <Characteristics />
+    <Description />
+    <Infrastructure />
+    <Offers />
+    <Guide />
+  </div>;
