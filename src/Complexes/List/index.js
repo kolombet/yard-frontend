@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import '../../App.css';
-
 import Banner from "./Banner";
 import Contact from "./Contact";
 import Cards from "./Cards";
