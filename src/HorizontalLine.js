@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
 
-class HorizontalLine extends Component {
-  render() {
-    return <hr className="horizontal-line" />;
-  }
-}
+const Line = styled.hr`
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: solid 1px #e0e0e1;
+`;
 
-export default HorizontalLine;
+export default () =>
+  <Line/>

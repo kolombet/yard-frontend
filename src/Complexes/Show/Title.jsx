@@ -40,7 +40,7 @@ const Favorite = styled.button`
 
 export default () =>
 <Grid>
-  <Row between="xs">
+  <Row between="md">
     <Col>
       <Title>Жилой комплекс «Полянка/44»</Title>
       <Location>
