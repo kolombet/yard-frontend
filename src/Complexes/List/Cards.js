@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "./Card";
+import { Grid } from 'react-flexbox-grid';
+
 export default () =>
-  <section className="container">
+  <Grid>
     <Card
       title="SOUTH BEACH, SAN FRANCISCO"
       address="764 Metropolitan Avenue"
@@ -23,4 +25,4 @@ export default () =>
             the heart of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been
             transformed into 83 individually unique and luxury loft apartments."
     />
-  </section>;
+  </Grid>;

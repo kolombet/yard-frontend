@@ -1,14 +1,28 @@
 import React from "react";
 import compassDevelopmentLogo from "../../img/compass-development-logo.svg";
+import styled from 'styled-components';
+import { Grid, Row } from 'react-flexbox-grid';
+
+const Banner = styled.section`
+  display: block;
+  background-color: #161616;
+`;
+
+const Image = styled.img`
+  width: 419px;
+  height: 131px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+`;
+
 export default () =>
-  <section className="banner">
-    <div className="container">
-      <div className="row center-md">
-        <img
-          className="banner-image"
+  <Banner>
+    <Grid>
+      <Row center="md">
+        <Image
           src={compassDevelopmentLogo}
           alt="compass development logo"
         />
-      </div>
-    </div>
-  </section>;
+      </Row>
+    </Grid>
+  </Banner>;
