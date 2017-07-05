@@ -3,31 +3,94 @@ import { Link } from "react-router-dom";
 import polyanka from "../../img/polyanka/polyanka-photo.jpg";
 import map from "../../img/map.png";
 import GuideNavigation from "./GuideNavigation";
+import styled from "styled-components";
+import {Grid, Row, Col} from 'react-flexbox-grid';
+
+const Guide = styled.section`
+  padding-bottom: 9.563rem;
+  margin-bottom: 13.69rem;
+  background-color: #3e4247;
+  color: white;
+`;
+
+const Info = styled.div`
+  margin-top: 11.25rem;
+  margin-bottom: 11.25rem;
+`;
+
+const Summary = styled.h3`
+  margin-bottom: 3rem;
+  font-family: Philosopher, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #a9afb6;
+`;
+
+const Title = styled.h2`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: Philosopher, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  color: #ffffff;
+`;
+
+const GuideLink = styled(Link)`
+  margin-bottom: 11.31rem;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #00779a;
+`;
+
+const Photo = styled.img`
+  width: 583px;
+  height: 560px;
+  margin-top: 3.875rem;
+  margin-bottom: 3.938rem;
+`;
+
+const Map = styled.img`
+  position: absolute;
+  width: 583px;
+  height: 306px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+`;
+
+const Navigation = styled.div`
+  position: absolute;
+  width: 36.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+`;
+
 export default () =>
-  <section className="guide">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-          <div className="guide-info">
-            <h3 className="guide-summary">Якиманка</h3>
-            <h2 className="guide-title">
+  <Guide>
+    <Grid>
+      <Row>
+        <Col md={6}>
+          <Info>
+            <Summary>Якиманка</Summary>
+            <Title>
               Исторический центр Москвы в двух километрах от Кремля
-            </h2>
-            <Link to="/" className="guide-link">
+            </Title>
+            <GuideLink to="/">
               Гид по Якиманке →
-            </Link>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <img className="guide-photo" src={polyanka} alt="yakimanka" />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6">
-          <img className="guide-map" src={map} alt="yakimanka map" />
-        </div>
-        <div className="col-md-6">
-          <div className="guide-navigation">
+            </GuideLink>
+          </Info>
+        </Col>
+        <Col md={6}>
+          <Photo src={polyanka} alt="yakimanka" />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6}>
+          <Map src={map} alt="yakimanka map" />
+        </Col>
+        <Col md={6}>
+          <Navigation>
             <GuideNavigation
               title="Красный Октябрь"
               distance="24 минуты, 6 км"
@@ -37,8 +100,8 @@ export default () =>
               title="Третьяковская галерея"
               distance="14 минут, 4 км"
             />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>;
+          </Navigation>
+        </Col>
+      </Row>
+    </Grid>
+  </Guide>;

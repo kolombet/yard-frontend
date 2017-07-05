@@ -2,15 +2,38 @@ import React from "react";
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import HorizontalLine from "../../HorizontalLine";
+
+const Description = styled.section`
+  margin-top: 2.438rem;
+  margin-bottom: 1.5rem;
+`;
+
+const Title = styled.div`
+  margin: 0;
+  font-family: Philosopher, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #3e4247;
+`;
+
+const Text = styled.div`
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #3e4247;
+`;
+
 export default () =>
-  <Grid className="container">
-    <div className="description-wrapper">
-      <div className="row">
-        <div className="col-md-2">
-          <h2 className="description-title">Описание</h2>
-        </div>
-        <div className="col-md-10">
-          <p className="description-text">
+  <Grid>
+    <Description>
+      <Row>
+        <Col md={2}>
+          <Title>Описание</Title>
+        </Col>
+        <Col md={10}>
+          <Text>
             ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля.
             Территория разделена на три зоны: жилой район, центральный стадион
             «Динамо» и большой спортивный парк.
@@ -38,10 +61,10 @@ export default () =>
             зоны, для подростков — спортивные площадки на открытом воздухе, для
             взрослых — велосипедные дорожки и зоны отдыха, где можно подышать
             свежим воздухом во время рабочего перерыва.
-          </p>
-        </div>
-      </div>
-    </div>
+          </Text>
+        </Col>
+      </Row>
+    </Description>
 
     <HorizontalLine />
   </Grid>;
