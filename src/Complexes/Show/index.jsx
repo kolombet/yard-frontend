@@ -7,6 +7,7 @@ import Infrastructure from "./Infrastructure";
 import Offers from "./Offers";
 import Guide from "./Guide";
 import Characteristics from "./Characteristics";
+
 export default () =>
   <div>
     <Title />
