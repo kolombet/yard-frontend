@@ -1,5 +1,6 @@
 import React from "react";
 import Offer from "./Offer";
+
 export default () =>
   <section className="offers">
     <div className="container">

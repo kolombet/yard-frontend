@@ -1,9 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
-class HorizontalLine extends Component {
-  render() {
-    return <hr className="horizontal-line" />;
-  }
-}
-
-export default HorizontalLine;
+export default () =>
+  <hr className="horizontal-line" />

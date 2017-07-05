@@ -1,5 +1,6 @@
 import React from "react";
 import HorizontalLine from "../../HorizontalLine";
+
 export default () =>
   <section className="container">
     <div className="description-wrapper">

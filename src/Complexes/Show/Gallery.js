@@ -1,5 +1,6 @@
 import React from "react";
 import gallery from "../../img/gallery/1/bitmap@2x.jpg";
+
 export default () =>
   <div className="complex-gallery">
     <img src={gallery} alt="gallery" className="complex-gallery-item" />

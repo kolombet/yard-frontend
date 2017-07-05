@@ -1,4 +1,5 @@
 import React from "react";
+
 export default props =>
   <div className="info-main-block">
     <h2 className="info-main-title">

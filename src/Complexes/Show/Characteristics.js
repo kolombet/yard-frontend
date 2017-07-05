@@ -1,4 +1,5 @@
 import React from "react";
+
 export default () =>
   <section className="container">
     <h2 className="characteristics-title">Характеристики</h2>

@@ -1,6 +1,7 @@
 import React from "react";
 import Feature from "./Feature";
 import HorizontalLine from "../../HorizontalLine";
+
 export default () =>
   <section className="container">
     <div className="info-main">

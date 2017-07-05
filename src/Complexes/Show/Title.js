@@ -1,4 +1,5 @@
 import React from "react";
+
 export default () =>
   <section className="building-info">
     <div className="line-full" />

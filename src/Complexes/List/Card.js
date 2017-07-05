@@ -1,6 +1,7 @@
 import React from "react";
 import buildingPreview from "../../img/bitmap.jpg";
 import { Link } from "react-router-dom";
+
 export default props =>
   <Link to="/complex" className="card-link">
     <img
