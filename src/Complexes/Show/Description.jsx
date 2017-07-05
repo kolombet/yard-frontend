@@ -1,7 +1,9 @@
 import React from "react";
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import HorizontalLine from "../../HorizontalLine";
 export default () =>
-  <section className="container">
+  <Grid className="container">
     <div className="description-wrapper">
       <div className="row">
         <div className="col-md-2">
@@ -42,4 +44,4 @@ export default () =>
     </div>
 
     <HorizontalLine />
-  </section>;
+  </Grid>;
