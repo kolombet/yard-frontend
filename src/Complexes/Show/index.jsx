@@ -7,15 +7,18 @@ import Infrastructure from "./Infrastructure";
 import Offers from "./Offers";
 import Guide from "./Guide";
 import Characteristics from "./Characteristics";
+import BodyClassName from "react-body-classname";
 
 export default () =>
-  <div>
-    <Title />
-    <Gallery />
-    <Features />
-    <Characteristics />
-    <Description />
-    <Infrastructure />
-    <Offers />
-    <Guide />
-  </div>;
+  <BodyClassName className="complexe">
+    <div>
+      <Title />
+      <Gallery />
+      <Features />
+      <Characteristics />
+      <Description />
+      <Infrastructure />
+      <Offers />
+      <Guide />
+    </div>
+  </BodyClassName>;

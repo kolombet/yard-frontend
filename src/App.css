@@ -8,5 +8,10 @@ body {
 }
 
 .complexes {
-  background: #ececec url("./img/background.png") repeat;
+  background: #eaebf0 url("./img/background.png") repeat;
+  background-size: 20px 10px;;
+}
+
+.complex {
+  background-color: #ffffff;
 }
