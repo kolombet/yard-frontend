@@ -1,6 +1,6 @@
 import React from "react";
-import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 import HorizontalLine from "../../HorizontalLine";
 
 const Description = styled.section`
@@ -65,6 +65,5 @@ export default () =>
         </Col>
       </Row>
     </Description>
-
     <HorizontalLine />
   </Grid>;

@@ -1,7 +1,7 @@
 import React from "react";
 import buildingPreview from "../../img/bitmap.jpg";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Card = styled(Link)`
   display: flex;
@@ -51,15 +51,11 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-const Image = styled.img`
-`;
+const Image = styled.img``;
 
 export default props =>
   <Card to="/complexes/id">
-    <Image
-      src={buildingPreview}
-      alt="building preview"
-    />
+    <Image src={buildingPreview} alt="building preview" />
     <Info>
       <Location>
         {props.title}

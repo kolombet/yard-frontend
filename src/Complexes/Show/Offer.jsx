@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from "react-flexbox-grid";
 
 const Offer = styled.div`
   padding: 1.5rem 2rem;

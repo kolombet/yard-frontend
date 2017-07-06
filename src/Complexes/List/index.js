@@ -2,8 +2,8 @@ import React from "react";
 import Banner from "./Banner";
 import Contact from "./Contact";
 import Cards from "./Cards";
-import BodyClassName from 'react-body-classname';
-import styled from 'styled-components';
+import BodyClassName from "react-body-classname";
+import styled from "styled-components";
 
 const Complexes = styled(BodyClassName)`
   font-size: 16px;
@@ -21,4 +21,4 @@ export default () =>
       <Contact />
       <Cards />
     </div>
-  </Complexes>
+  </Complexes>;

@@ -4,7 +4,7 @@ import polyanka from "../../img/polyanka/polyanka-photo.jpg";
 import map from "../../img/map.png";
 import GuideNavigation from "./GuideNavigation";
 import styled from "styled-components";
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Guide = styled.section`
   padding-bottom: 9.563rem;
@@ -73,12 +73,8 @@ export default () =>
         <Col md={6}>
           <Info>
             <Summary>Якиманка</Summary>
-            <Title>
-              Исторический центр Москвы в двух километрах от Кремля
-            </Title>
-            <GuideLink to="/">
-              Гид по Якиманке →
-            </GuideLink>
+            <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
+            <GuideLink to="/">Гид по Якиманке →</GuideLink>
           </Info>
         </Col>
         <Col md={6}>

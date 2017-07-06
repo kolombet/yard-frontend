@@ -1,12 +1,10 @@
 import React from "react";
 import Feature from "./Feature";
 import HorizontalLine from "../../HorizontalLine";
-import styled from 'styled-components';
-import { Grid } from 'react-flexbox-grid';
+import styled from "styled-components";
+import { Grid } from "react-flexbox-grid";
 
-const Features = styled.section`
-  display: flex;
-`;
+const Features = styled.section`display: flex;`;
 
 export default () =>
   <Grid>
@@ -17,4 +15,4 @@ export default () =>
     </Features>
 
     <HorizontalLine />
-  </Grid>
+  </Grid>;

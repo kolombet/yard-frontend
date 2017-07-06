@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { Grid } from 'react-flexbox-grid';
+import { Grid } from "react-flexbox-grid";
 
 export default () =>
   <Grid>

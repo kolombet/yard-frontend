@@ -1,11 +1,9 @@
 import React from "react";
 import Offer from "./Offer";
 import styled from "styled-components";
-import {Grid, Row} from 'react-flexbox-grid';
+import { Grid, Row } from "react-flexbox-grid";
 
-const Offers = styled.section`
-  background-color: #f4f5f9;
-`;
+const Offers = styled.section`background-color: #f4f5f9;`;
 
 const Title = styled.h2`
   margin-top: 4rem;

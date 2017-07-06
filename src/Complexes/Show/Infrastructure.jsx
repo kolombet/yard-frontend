@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-const Infrastructures = styled.section`
-  margin-bottom: 3.5rem;
-`;
+const Infrastructures = styled.section`margin-bottom: 3.5rem;`;
+
 const Label = styled.div`
   margin-top: 0;
   margin-bottom: .5rem;
@@ -13,9 +12,12 @@ const Label = styled.div`
   line-height: 22px;
   color: #3e4247;
 `;
-const Infrastructure = (props) =>
+
+const Infrastructure = props =>
   <Col md={2}>
-    <Label>{props.name}</Label>
+    <Label>
+      {props.name}
+    </Label>
   </Col>;
 
 export default () =>
@@ -27,18 +29,18 @@ export default () =>
         </Col>
       </Row>
       <Row>
-        <Infrastructure name="Бассейн"/>
-        <Infrastructure name="Детский сад"/>
-        <Infrastructure name="Частная школа"/>
-        <Infrastructure name="Бассейн"/>
-        <Infrastructure name="Детский сад"/>
-        <Infrastructure name="Частная школа"/>
+        <Infrastructure name="Бассейн" />
+        <Infrastructure name="Детский сад" />
+        <Infrastructure name="Частная школа" />
+        <Infrastructure name="Бассейн" />
+        <Infrastructure name="Детский сад" />
+        <Infrastructure name="Частная школа" />
       </Row>
       <Row>
-        <Infrastructure name="Бассейн"/>
-        <Infrastructure name="Бассейн"/>
-        <Infrastructure name="Бассейн"/>
-        <Infrastructure name="Бассейн"/>
+        <Infrastructure name="Бассейн" />
+        <Infrastructure name="Бассейн" />
+        <Infrastructure name="Бассейн" />
+        <Infrastructure name="Бассейн" />
       </Row>
     </Infrastructures>
   </Grid>;

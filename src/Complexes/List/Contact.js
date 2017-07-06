@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Row } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import { Grid, Row } from "react-flexbox-grid";
+import styled from "styled-components";
 
 const Contact = styled.div`
   width: 804px;
@@ -52,9 +52,7 @@ export default () =>
           sales. From boutique rental conversions to luxurious ground-up
           condominiums, browse our portfolio of current offerings.
         </Description>
-        <ContactButton>
-          Contact The Team
-        </ContactButton>
+        <ContactButton>Contact The Team</ContactButton>
       </Contact>
     </Row>
   </Grid>;

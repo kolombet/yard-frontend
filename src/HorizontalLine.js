@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Line = styled.hr`
   margin-top: 0;
@@ -7,5 +7,4 @@ const Line = styled.hr`
   border-bottom: solid 1px #e0e0e1;
 `;
 
-export default () =>
-  <Line/>
+export default () => <Line />;

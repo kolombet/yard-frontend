@@ -1,6 +1,6 @@
 import React from "react";
-import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -21,7 +21,7 @@ const List = styled.dl`
 
 const Key = styled.dt`
   grid-column-start: 1;
-  margin-bottom:  0.6875rem;
+  margin-bottom: 0.6875rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 22px;
