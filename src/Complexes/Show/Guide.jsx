@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import polyanka from "../../img/polyanka/polyanka-photo.jpg";
-import map from "../../img/map.png";
 import GuideNavigation from "./GuideNavigation";
 import styled from "styled-components";
 import { Grid, Row, Col } from "react-flexbox-grid";
@@ -45,7 +43,7 @@ const GuideLink = styled(Link)`
   color: #00779a;
 `;
 
-const Photo = styled.img`
+const AreaImage = styled.img`
   width: 583px;
   height: 560px;
   margin-top: 3.875rem;
@@ -78,12 +76,12 @@ export default () =>
           </Info>
         </Col>
         <Col md={6}>
-          <Photo src={polyanka} alt="yakimanka" />
+          <AreaImage src={process.env.PUBLIC_URL + "/guide/1/area_image.jpg"} alt="area image" />
         </Col>
       </Row>
       <Row>
         <Col md={6}>
-          <Map src={map} alt="yakimanka map" />
+          <Map src={process.env.PUBLIC_URL + "/guide/1/map.png"} alt="map" />
         </Col>
         <Col md={6}>
           <Navigation>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import rightArrow from "../img/right-arrow.svg";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
+import RightArrow from './Components/RightArrow';
 
 const NavLink = styled(Link)`
   display: block;
@@ -76,7 +76,6 @@ const Description = styled.p`
   color: #a9afb6;
 `;
 
-const Arrow = styled.img`padding-left: 8px;`;
 
 export default () =>
   <FooterContainer>
@@ -95,7 +94,7 @@ export default () =>
           <NavLink to="/">Садовые кварталы</NavLink>
           <NavLink to="/">Резиденция Монэ</NavLink>
           <NavLinkLast to="/">
-            Все ЖК Москвы<Arrow src={rightArrow} alt="" />
+            Все ЖК Москвы<RightArrow />
           </NavLinkLast>
         </Col>
         <Col md={2}>

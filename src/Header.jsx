@@ -1,5 +1,5 @@
 import React from "react";
-import compassLogo from "../img/compass-logo.svg";
+import compassLogo from "./img/compass-logo.svg";
 import { Link } from "react-router-dom";
 import { Grid } from "react-flexbox-grid";
 import styled from "styled-components";
