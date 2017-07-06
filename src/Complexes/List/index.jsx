@@ -5,7 +5,7 @@ import Cards from "./Cards";
 import BodyClassName from "react-body-classname";
 
 export default () =>
-  <BodyClassName class="complexes">
+  <BodyClassName className="complexes">
     <div>
       <Banner />
       <Contact />
