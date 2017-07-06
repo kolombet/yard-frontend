@@ -1,6 +1,6 @@
 import React from "react";
 import Feature from "./Feature";
-import HorizontalLine from "../../HorizontalLine";
+import HorizontalLine from "../../Components/HorizontalLine";
 import styled from "styled-components";
 import { Grid } from "react-flexbox-grid";
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import rightArrow from "./img/right-arrow.svg";
+import rightArrow from "../img/right-arrow.svg";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 

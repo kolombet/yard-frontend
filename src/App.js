@@ -3,8 +3,8 @@ import "./App.css";
 import Show from "./Complexes/Show";
 import List from "./Complexes/List";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 class App extends Component {
   render() {
