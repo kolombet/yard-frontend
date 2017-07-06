@@ -46,13 +46,13 @@ export default () =>
       <HeaderContainer>
         <Logo src={compassLogo} alt="compass logo" />
         <Navigations>
-          <Navigation to="/" className="header-link">
+          <Navigation to="/">
             Купить
           </Navigation>
-          <Navigation to="/" className="header-link">
+          <Navigation to="/">
             Снять
           </Navigation>
-          <Navigation to="/" className="header-link">
+          <Navigation to="/">
             Наши агенты
           </Navigation>
         </Navigations>

@@ -13,6 +13,16 @@ const Label = styled.div`
   color: #3e4247;
 `;
 
+const Title = styled.h2`
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: Philosopher, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #3e4247;
+`;
+
 const Infrastructure = props =>
   <Col md={2}>
     <Label>
@@ -25,7 +35,7 @@ export default () =>
     <Infrastructures>
       <Row>
         <Col md={2}>
-          <h2 className="infrastructure-title">Инфраструктура</h2>
+          <Title>Инфраструктура</Title>
         </Col>
       </Row>
       <Row>

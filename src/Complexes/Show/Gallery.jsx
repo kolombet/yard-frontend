@@ -2,11 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Gallery = styled.section`position: relative;`;
+
 const Images = styled.div`
   overflow-x: auto;
   display: flex;
 `;
+
 const Image = styled.img`height: 400px;`;
+
 const Expand = styled.button`
   position: absolute;
   top: 358px;
