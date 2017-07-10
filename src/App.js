@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Show from './Complexes/Show';
-import List from './Complexes/List';
+import Show from './complexes/show';
+import List from './complexes/list';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';

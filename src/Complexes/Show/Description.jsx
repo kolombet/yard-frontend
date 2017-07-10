@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import HorizontalLine from '../../Components/HorizontalLine';
+import HorizontalLine from '../../components/HorizontalLine';
 
 const Description = styled.section`
   margin-top: 2.438rem;
