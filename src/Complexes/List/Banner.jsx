@@ -1,7 +1,7 @@
-import React from "react";
-import compassDevelopmentLogo from "../../img/compass-development-logo.svg";
-import styled from "styled-components";
-import { Grid, Row } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row } from 'react-flexbox-grid';
+import compassDevelopmentLogo from '../../img/compass-development-logo.svg';
 
 const Banner = styled.section`
   display: block;
@@ -16,10 +16,10 @@ const Image = styled.img`
 `;
 
 export default () =>
-  <Banner>
+  (<Banner>
     <Grid>
       <Row center="md">
         <Image src={compassDevelopmentLogo} alt="compass development logo" />
       </Row>
     </Grid>
-  </Banner>;
+  </Banner>);

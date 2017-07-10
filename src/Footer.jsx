@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import styled from 'styled-components';
 import RightArrow from './Components/RightArrow';
 
 const NavLink = styled(Link)`
@@ -76,9 +76,8 @@ const Description = styled.p`
   color: #a9afb6;
 `;
 
-
 export default () =>
-  <FooterContainer>
+  (<FooterContainer>
     <Grid>
       <Row>
         <Col md={2}>
@@ -107,12 +106,11 @@ export default () =>
       <Row>
         <Col md={8} mdOffset={4}>
           <Description>
-            Любая информация, представленная на данном сайте, носит
-            исключительно информационный характер и ни при каких условиях не
-            является публичной офертой, определяемой положениями статьи 437 ГК
-            РФ. © ООО «Ярд», 2017
+            Любая информация, представленная на данном сайте, носит исключительно информационный
+            характер и ни при каких условиях не является публичной офертой, определяемой положениями
+            статьи 437 ГК РФ. © ООО «Ярд», 2017
           </Description>
         </Col>
       </Row>
     </Grid>
-  </FooterContainer>;
+  </FooterContainer>);
