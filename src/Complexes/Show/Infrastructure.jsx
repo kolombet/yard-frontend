@@ -25,4 +25,3 @@ export default function Component(props) {
 Component.propTypes = {
   name: PropTypes.string.isRequired,
 };
-
