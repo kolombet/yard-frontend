@@ -1,4 +1,4 @@
-/* eslint no-use-before-define: 0 */  
+/* eslint-disable */
 
 
 // In production, we register a service worker to serve assets from local cache.
