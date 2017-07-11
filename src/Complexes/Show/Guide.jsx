@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import GuideNavigation from "./GuideNavigation";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import GuideNavigation from './GuideNavigation';
 
 const Guide = styled.section`
   padding-bottom: 9.563rem;
@@ -65,7 +65,7 @@ const Navigation = styled.div`
 `;
 
 export default () =>
-  <Guide>
+  (<Guide>
     <Grid>
       <Row>
         <Col md={6}>
@@ -76,26 +76,20 @@ export default () =>
           </Info>
         </Col>
         <Col md={6}>
-          <AreaImage src={process.env.PUBLIC_URL + "/guide/1/area_image.jpg"} alt="area image" />
+          <AreaImage src={`${process.env.PUBLIC_URL}/guide/1/area_image.jpg`} alt="area image" />
         </Col>
       </Row>
       <Row>
         <Col md={6}>
-          <Map src={process.env.PUBLIC_URL + "/guide/1/map.png"} alt="map" />
+          <Map src={`${process.env.PUBLIC_URL}/guide/1/map.png`} alt="map" />
         </Col>
         <Col md={6}>
           <Navigation>
-            <GuideNavigation
-              title="Красный Октябрь"
-              distance="24 минуты, 6 км"
-            />
+            <GuideNavigation title="Красный Октябрь" distance="24 минуты, 6 км" />
             <GuideNavigation title="World class" distance="2 минуты, 300 м" />
-            <GuideNavigation
-              title="Третьяковская галерея"
-              distance="14 минут, 4 км"
-            />
+            <GuideNavigation title="Третьяковская галерея" distance="14 минут, 4 км" />
           </Navigation>
         </Col>
       </Row>
     </Grid>
-  </Guide>;
+  </Guide>);

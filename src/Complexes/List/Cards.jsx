@@ -1,28 +1,22 @@
-import React from "react";
-import Card from "./Card";
-import { Grid } from "react-flexbox-grid";
+import React from 'react';
+import { Grid } from 'react-flexbox-grid';
+import Card from './Card';
 
 export default () =>
-  <Grid>
+  (<Grid>
     <Card
       title="SOUTH BEACH, SAN FRANCISCO"
       address="764 Metropolitan Avenue"
-      description="The Lewis Steel Building is a masterful industrial conversion located in
-            the heart of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been
-            transformed into 83 individually unique and luxury loft apartments."
+      description="Ipsum lorem"
     />
     <Card
       title="SOUTH BEACH, SAN FRANCISCO"
       address="764 Metropolitan Avenue"
-      description="The Lewis Steel Building is a masterful industrial conversion located in
-            the heart of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been
-            transformed into 83 individually unique and luxury loft apartments."
+      description="Ipsum lorem"
     />
     <Card
       title="SOUTH BEACH, SAN FRANCISCO"
       address="764 Metropolitan Avenue"
-      description="The Lewis Steel Building is a masterful industrial conversion located in
-            the heart of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been
-            transformed into 83 individually unique and luxury loft apartments."
+      description="Ipsum lorem"
     />
-  </Grid>;
+  </Grid>);

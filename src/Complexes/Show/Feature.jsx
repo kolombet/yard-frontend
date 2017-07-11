@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Feature = styled.div`
   padding-right: 3rem;
@@ -24,13 +25,21 @@ const Detail = styled.small`
   color: #a9afb6;
 `;
 
-export default props =>
-  <Feature>
-    <Title>
-      {props.title}
-      <br />
-      <Detail>
-        {props.description}
-      </Detail>
-    </Title>
-  </Feature>;
+export default function Component(props) {
+  return (
+    <Feature>
+      <Title>
+        {props.title}
+        <br />
+        <Detail>
+          {props.description}
+        </Detail>
+      </Title>
+    </Feature>
+  );
+}
+
+Component.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};

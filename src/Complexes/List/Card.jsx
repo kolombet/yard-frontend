@@ -1,7 +1,8 @@
-import React from "react";
-import buildingPreview from "../../img/bitmap.jpg";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import buildingPreview from '../../img/bitmap.jpg';
 
 const Card = styled(Link)`
   display: flex;
@@ -53,18 +54,27 @@ const Description = styled.p`
 
 const Image = styled.img``;
 
-export default props =>
-  <Card to="/complexes/id">
-    <Image src={buildingPreview} alt="building preview" />
-    <Info>
-      <Location>
-        {props.title}
-      </Location>
-      <Address>
-        {props.address}
-      </Address>
-      <Description>
-        {props.description}
-      </Description>
-    </Info>
-  </Card>;
+export default function Component(props) {
+  return (
+    <Card to="/complexes/id">
+      <Image src={buildingPreview} alt="building preview" />
+      <Info>
+        <Location>
+          {props.title}
+        </Location>
+        <Address>
+          {props.address}
+        </Address>
+        <Description>
+          {props.description}
+        </Description>
+      </Info>
+    </Card>
+  );
+}
+
+Component.propTypes = {
+  title: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};

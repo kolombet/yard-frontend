@@ -1,13 +1,13 @@
-import React from "react";
-import Feature from "./Feature";
-import HorizontalLine from "../../Components/HorizontalLine";
-import styled from "styled-components";
-import { Grid } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
+import Feature from './Feature';
+import HorizontalLine from '../../components/HorizontalLine';
 
 const Features = styled.section`display: flex;`;
 
 export default () =>
-  <Grid>
+  (<Grid>
     <Features>
       <Feature title="950" description="предложений" />
       <Feature title="John McAslan + Partners" description="архитектор" />
@@ -15,4 +15,4 @@ export default () =>
     </Features>
 
     <HorizontalLine />
-  </Grid>;
+  </Grid>);

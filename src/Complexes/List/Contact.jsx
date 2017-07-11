@@ -1,6 +1,6 @@
-import React from "react";
-import { Grid, Row } from "react-flexbox-grid";
-import styled from "styled-components";
+import React from 'react';
+import { Grid, Row } from 'react-flexbox-grid';
+import styled from 'styled-components';
 
 const Contact = styled.div`
   width: 804px;
@@ -43,16 +43,16 @@ const ContactButton = styled.button`
 `;
 
 export default () =>
-  <Grid>
+  (<Grid>
     <Row center="md">
       <Contact>
         <Title>Discover Our New Developments</Title>
         <Description>
-          Compass brings a modern approach to new development marketing and
-          sales. From boutique rental conversions to luxurious ground-up
-          condominiums, browse our portfolio of current offerings.
+          Compass brings a modern approach to new development marketing and sales. From boutique
+          rental conversions to luxurious ground-up condominiums, browse our portfolio of current
+          offerings.
         </Description>
         <ContactButton>Contact The Team</ContactButton>
       </Contact>
     </Row>
-  </Grid>;
+  </Grid>);

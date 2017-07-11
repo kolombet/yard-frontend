@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Title = styled.h1`
   margin-top: 1.563rem;
@@ -39,14 +39,12 @@ const Favorite = styled.button`
 `;
 
 export default () =>
-  <Grid>
+  (<Grid>
     <Row between="md">
       <Col>
         <Title>Жилой комплекс «Полянка/44»</Title>
-        <Location>
-          Район Якиманка, улица Большая Полянка, дом 44 • 119180
-        </Location>
+        <Location>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Location>
       </Col>
       <Favorite>В избранное</Favorite>
     </Row>
-  </Grid>;
+  </Grid>);

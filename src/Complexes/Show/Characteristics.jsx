@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -39,7 +39,7 @@ const Value = styled.dd`
 `;
 
 export default () =>
-  <Grid>
+  (<Grid>
     <Title>Характеристики</Title>
     <Row>
       <Col md={4}>
@@ -73,4 +73,4 @@ export default () =>
         </List>
       </Col>
     </Row>
-  </Grid>;
+  </Grid>);

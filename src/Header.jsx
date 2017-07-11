@@ -1,8 +1,8 @@
-import React from "react";
-import compassLogo from "./img/compass-logo.svg";
-import { Link } from "react-router-dom";
-import { Grid } from "react-flexbox-grid";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom';
+import compassLogo from './img/compass-logo.svg';
 
 const Navigation = styled(Link)`
   display: inline-block;
@@ -41,21 +41,15 @@ const Header = styled.header`
 `;
 
 export default () =>
-  <Header>
+  (<Header>
     <Grid>
       <HeaderContainer>
         <Logo src={compassLogo} alt="compass logo" />
         <Navigations>
-          <Navigation to="/">
-            Купить
-          </Navigation>
-          <Navigation to="/">
-            Снять
-          </Navigation>
-          <Navigation to="/">
-            Наши агенты
-          </Navigation>
+          <Navigation to="/">Купить</Navigation>
+          <Navigation to="/">Снять</Navigation>
+          <Navigation to="/">Наши агенты</Navigation>
         </Navigations>
       </HeaderContainer>
     </Grid>
-  </Header>;
+  </Header>);
