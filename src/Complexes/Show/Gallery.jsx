@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { getExternalImageUrl } from '../../util.js';
+import { getExternalImageUrl } from '../../util';
 
 const Gallery = styled.section`position: relative;`;
 
 const Images = styled.div`
   overflow-x: auto;
   display: flex;
+  height: 400px;
 `;
 
 const Image = styled.img`height: 400px;`;
@@ -33,7 +34,9 @@ export default function GalleryComponent(props) {
   return (
     <Gallery>
       <Images>
-        {props.images.map(image => <Image src={getExternalImageUrl(image)} alt="gallery" />)}
+        {props.images.map(image =>
+          <Image key={image.id} src={getExternalImageUrl(image)} alt="gallery" />,
+        )}
       </Images>
       <Expand>41 фотография</Expand>
     </Gallery>
@@ -46,7 +49,7 @@ GalleryComponent.propTypes = {
       width: PropTypes.number,
       height: PropTypes.number,
       isPublic: PropTypes.bool,
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

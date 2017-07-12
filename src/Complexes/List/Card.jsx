@@ -22,7 +22,7 @@ const Info = styled.article`
 
 const Underline = styled.div`
   border-bottom: solid 2px #646971;
-  width:100%;
+  width: 100%;
 `;
 
 const Location = styled.p`
@@ -56,9 +56,8 @@ const Description = styled.p`
 `;
 
 const Image = styled.img`
-  width: 490px;
+  width: 500px;
   height: 350px;
-  object-fit: cover;
 `;
 
 export default function CardComponent(props) {

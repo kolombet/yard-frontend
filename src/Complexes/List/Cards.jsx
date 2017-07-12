@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
-import { getExternalImageUrl } from '../../util.js';
+import { getExternalImageUrl, getComplexes } from '../../util';
 
 class Cards extends Component {
   constructor() {
@@ -10,11 +10,7 @@ class Cards extends Component {
   }
 
   componentDidMount() {
-    this.loadData();
-  }
-
-  loadData() {
-    fetch('https://yard.moscow/api/v1/complexes').then(response => response.json()).then((json) => {
+    getComplexes().then((json) => {
       this.setState({
         complexes: json.items,
       });
@@ -22,18 +18,24 @@ class Cards extends Component {
   }
 
   render() {
+    if (!this.state.complexes) return null;
+
     return (
       <Grid>
-        {this.state.complexes.map(complex =>
-          (<Card
-            key={complex.id}
-            id={complex.id}
-            location={complex.location.subLocalityName}
-            name={complex.name}
-            description="Ipsum lorem"
-            image={getExternalImageUrl(complex.image)}
-          />),
-        )}
+        {this.state.complexes.map((complex) => {
+          const { location, name, id, image } = complex;
+          const { subLocalityName, street, house } = location;
+          return (
+            <Card
+              key={id}
+              id={id}
+              location={`${subLocalityName}, ${street}, ${house}`}
+              name={name}
+              description="Ipsum lorem"
+              image={getExternalImageUrl(image)}
+            />
+          );
+        })}
       </Grid>
     );
   }

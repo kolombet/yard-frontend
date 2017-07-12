@@ -26,7 +26,7 @@ const DistanceInfo = styled.p`
   color: #a9afb6;
 `;
 
-export default function Component(props) {
+export default function NavigationComponent(props) {
   return (
     <Navigation>
       <Title>
@@ -39,7 +39,7 @@ export default function Component(props) {
   );
 }
 
-Component.propTypes = {
+NavigationComponent.propTypes = {
   title: PropTypes.string.isRequired,
-  distance: PropTypes.number.isRequired,
+  distance: PropTypes.string.isRequired,
 };

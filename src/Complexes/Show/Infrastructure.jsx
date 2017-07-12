@@ -12,7 +12,7 @@ const Label = styled.div`
   color: #3e4247;
 `;
 
-export default function Component(props) {
+export default function InfrastructureComponent(props) {
   return (
     <Col md={2}>
       <Label>
@@ -22,6 +22,6 @@ export default function Component(props) {
   );
 }
 
-Component.propTypes = {
+InfrastructureComponent.propTypes = {
   name: PropTypes.string.isRequired,
 };
