@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import Feature from './Feature';
-import HorizontalLine from '../../components/HorizontalLine';
+import HorizontalLine from '../../Components/HorizontalLine';
 
 const Features = styled.section`display: flex;`;
 

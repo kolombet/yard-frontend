@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Gallery = styled.section`position: relative;`;
@@ -27,19 +28,25 @@ const Expand = styled.button`
   color: white;
 `;
 
-export default () =>
-  (<Gallery>
-    <Images>
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/1.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/2.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/3.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/4.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/5.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/1.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/2.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/3.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/4.jpg`} alt="gallery" />
-      <Image src={`${process.env.PUBLIC_URL}/gallery/complex/5.jpg`} alt="gallery" />
-    </Images>
-    <Expand>41 фотография</Expand>
-  </Gallery>);
+export default function GalleryComponent(props) {
+  const image = props.images[0].id;
+  return (
+    <Gallery>
+      <Images>
+        <Image src={image} alt="gallery" />
+      </Images>
+      <Expand>41 фотография</Expand>
+    </Gallery>
+  );
+}
+
+GalleryComponent.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+      isPublic: PropTypes.bool,
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+};

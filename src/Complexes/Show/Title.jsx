@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Title = styled.h1`
+const Name = styled.h1`
   margin-top: 1.563rem;
   margin-bottom: .5rem;
   font-family: 'Philosopher', sans-serif;
@@ -38,13 +39,25 @@ const Favorite = styled.button`
   color: #00779a;
 `;
 
-export default () =>
-  (<Grid>
-    <Row between="md">
-      <Col>
-        <Title>Жилой комплекс «Полянка/44»</Title>
-        <Location>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Location>
-      </Col>
-      <Favorite>В избранное</Favorite>
-    </Row>
-  </Grid>);
+export default function TitleComponent(props) {
+  return (
+    <Grid>
+      <Row between="md">
+        <Col>
+          <Name>
+            {props.name}
+          </Name>
+          <Location>
+            {props.location}
+          </Location>
+        </Col>
+        <Favorite>В избранное</Favorite>
+      </Row>
+    </Grid>
+  );
+}
+
+TitleComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+};
