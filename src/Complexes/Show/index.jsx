@@ -36,6 +36,8 @@ class Index extends React.Component {
       location = this.state.complex.location.subLocalityName;
       images = this.state.complex.images;
     }
+    // const { complex: { location: { subLocalityName } } } = this.state;
+
     return (
       <BodyClassName className="complexe">
         <div>

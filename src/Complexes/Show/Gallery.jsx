@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { getExternalImageUrl } from '../../util.js';
 
 const Gallery = styled.section`position: relative;`;
 
@@ -29,11 +30,10 @@ const Expand = styled.button`
 `;
 
 export default function GalleryComponent(props) {
-  const image = props.images[0].id;
   return (
     <Gallery>
       <Images>
-        <Image src={image} alt="gallery" />
+        {props.images.map(image => <Image src={getExternalImageUrl(image)} alt="gallery" />)}
       </Images>
       <Expand>41 фотография</Expand>
     </Gallery>

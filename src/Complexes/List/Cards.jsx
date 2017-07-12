@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
+import { getExternalImageUrl } from '../../util.js';
 
 class Cards extends Component {
-  static getExternalImageUrl(image) {
-    return image
-      ? `https://s3-eu-central-1.amazonaws.com/yard-images/${image.id}`
-      : 'http://via.placeholder.com/500x350';
-  }
-
   constructor() {
     super();
     this.state = { complexes: [] };
@@ -36,7 +31,7 @@ class Cards extends Component {
             location={complex.location.subLocalityName}
             name={complex.name}
             description="Ipsum lorem"
-            image={this.getExternalImageUrl(complex.image)}
+            image={getExternalImageUrl(complex.image)}
           />),
         )}
       </Grid>
