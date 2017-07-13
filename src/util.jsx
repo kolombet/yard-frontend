@@ -8,3 +8,5 @@ const API_URL = 'https://yard.moscow/api/v1/';
 export const getApi = resource => fetch(API_URL + resource).then(res => res.json());
 export const getComplexes = () => getApi('complexes');
 export const getComplex = id => getApi(`complexes/${id}`);
+
+export const isDraft = state => state === 'draft';
