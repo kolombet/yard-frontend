@@ -25,7 +25,7 @@ const Detail = styled.small`
   color: #a9afb6;
 `;
 
-export default function Component(props) {
+export default function FeatureComponent(props) {
   return (
     <Feature>
       <Title>
@@ -39,7 +39,7 @@ export default function Component(props) {
   );
 }
 
-Component.propTypes = {
+FeatureComponent.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -38,39 +39,76 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default () =>
-  (<Grid>
-    <Title>Характеристики</Title>
-    <Row>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-    </Row>
-  </Grid>);
+export default function CharacteristicsComponent(props) {
+  return (
+    <Grid>
+      <Title>Характеристики</Title>
+      <Row>
+        <Col md={4}>
+          <List>
+            <Key>Количество квартир:</Key>
+            <Value>
+              {props.propertiesCount}
+            </Value>
+            <Key>Статус:</Key>
+            <Value>
+              {props.status}
+            </Value>
+            <Key>Цены:</Key>
+            <Value>
+              от {props.price.min} до {props.price.max} млн
+            </Value>
+          </List>
+        </Col>
+        <Col md={4}>
+          <List>
+            <Key>Безопасность:</Key>
+            <Value>
+              {props.security}
+            </Value>
+            <Key>Конструкция корпусов:</Key>
+            <Value>
+              {props.constructionType}
+            </Value>
+            <Key>Площадь:</Key>
+            <Value>
+              От {props.area.min} до {props.area.max} м²
+            </Value>
+          </List>
+        </Col>
+        <Col md={4}>
+          <List>
+            <Key>Высота потолков:</Key>
+            <Value>
+              От {props.ceilHeight.min} до {props.ceilHeight.max} м
+            </Value>
+            <Key>Обслуживание:</Key>
+            <Value>
+              {props.maintenanceCosts} руб / м² / месяц
+            </Value>
+          </List>
+        </Col>
+      </Row>
+    </Grid>
+  );
+}
+
+CharacteristicsComponent.propTypes = {
+  propertiesCount: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  price: PropTypes.shape({
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+  }).isRequired,
+  security: PropTypes.string.isRequired,
+  constructionType: PropTypes.string.isRequired,
+  area: PropTypes.shape({
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+  }).isRequired,
+  ceilHeight: PropTypes.shape({
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+  }).isRequired,
+  maintenanceCosts: PropTypes.number.isRequired,
+};

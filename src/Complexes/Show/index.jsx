@@ -28,16 +28,42 @@ class Index extends React.Component {
   render() {
     if (!this.state.complex) return null;
 
-    const { location, images, name } = this.state.complex;
+    const { location, images, name, details, statistics } = this.state.complex;
+    const { resalePropertiesCount } = statistics;
+    const { architect } = details;
     const { street, house, subLocalityName } = location;
+
+    const characteristics = {
+      propertiesCount: 0,
+      status: '',
+      price: {
+        min: 0,
+        max: 100,
+      },
+      security: 'secure',
+      constructionType: 'beton',
+      area: {
+        min: 0,
+        max: 100,
+      },
+      ceilHeight: {
+        min: 0,
+        max: 100,
+      },
+      maintenanceCosts: 100500,
+    };
 
     return (
       <BodyClassName className="complexe">
         <div>
           <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
           <Gallery images={images} />
-          <Features />
-          <Characteristics />
+          <Features
+            offersCount={resalePropertiesCount}
+            architect={architect}
+            developer="Группа «ПСН»"
+          />
+          <Characteristics {...characteristics} />
           <Description />
           <Infrastructures />
           <Offers />
