@@ -52,7 +52,7 @@ export default function CharacteristicsComponent(props) {
             </Value>
             <Key>Цены:</Key>
             <Value>
-              от {props.price.min} до {props.price.max} млн
+              От {props.price.min} до {props.price.max} млн
             </Value>
             <Key>Площадь:</Key>
             <Value>
