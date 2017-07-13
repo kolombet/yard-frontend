@@ -50,25 +50,9 @@ export default function CharacteristicsComponent(props) {
             <Value>
               {props.propertiesCount}
             </Value>
-            <Key>Статус:</Key>
-            <Value>
-              {props.status}
-            </Value>
             <Key>Цены:</Key>
             <Value>
               от {props.price.min} до {props.price.max} млн
-            </Value>
-          </List>
-        </Col>
-        <Col md={4}>
-          <List>
-            <Key>Безопасность:</Key>
-            <Value>
-              {props.security}
-            </Value>
-            <Key>Конструкция корпусов:</Key>
-            <Value>
-              {props.constructionType}
             </Value>
             <Key>Площадь:</Key>
             <Value>
@@ -78,6 +62,10 @@ export default function CharacteristicsComponent(props) {
         </Col>
         <Col md={4}>
           <List>
+            <Key>Конструкция корпусов:</Key>
+            <Value>
+              {props.constructionType}
+            </Value>
             <Key>Высота потолков:</Key>
             <Value>
               От {props.ceilHeight.min} до {props.ceilHeight.max} м
@@ -88,6 +76,14 @@ export default function CharacteristicsComponent(props) {
             </Value>
           </List>
         </Col>
+        <Col md={4}>
+          <List>
+            <Key>Безопасность:</Key>
+            <Value>
+              {props.security}
+            </Value>
+          </List>
+        </Col>
       </Row>
     </Grid>
   );
@@ -95,7 +91,6 @@ export default function CharacteristicsComponent(props) {
 
 CharacteristicsComponent.propTypes = {
   propertiesCount: PropTypes.number.isRequired,
-  status: PropTypes.string.isRequired,
   price: PropTypes.shape({
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
@@ -107,8 +102,8 @@ CharacteristicsComponent.propTypes = {
     max: PropTypes.number.isRequired,
   }).isRequired,
   ceilHeight: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
+    min: PropTypes.string.isRequired,
+    max: PropTypes.string.isRequired,
   }).isRequired,
   maintenanceCosts: PropTypes.number.isRequired,
 };

@@ -9,7 +9,7 @@ import Infrastructures from './Infrastructures';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
-import { getComplex } from '../../util';
+import { getComplex, formatMillion, getSecurity, getConstruction } from '../../util';
 
 class Index extends React.Component {
   constructor() {
@@ -29,28 +29,28 @@ class Index extends React.Component {
     if (!this.state.complex) return null;
 
     const { location, images, name, details, statistics } = this.state.complex;
-    const { resalePropertiesCount } = statistics;
-    const { architect } = details;
+    const { resalePropertiesCount, propertiesCount, price, totalArea } = statistics;
+    const { architect, security, constructionKind, ceilHeight, maintenanceCosts } = details;
     const { street, house, subLocalityName } = location;
 
     const characteristics = {
-      propertiesCount: 0,
+      propertiesCount,
       status: '',
       price: {
-        min: 0,
-        max: 100,
+        min: formatMillion(price.from.rub),
+        max: formatMillion(price.to.rub),
       },
-      security: 'secure',
-      constructionType: 'beton',
+      security: getSecurity(security),
+      constructionType: getConstruction(constructionKind),
       area: {
-        min: 0,
-        max: 100,
+        min: Math.round(totalArea.from),
+        max: Math.round(totalArea.to),
       },
       ceilHeight: {
-        min: 0,
-        max: 100,
+        min: ceilHeight.from.toFixed(1),
+        max: ceilHeight.to.toFixed(1),
       },
-      maintenanceCosts: 100500,
+      maintenanceCosts,
     };
 
     return (

@@ -10,3 +10,17 @@ export const getComplexes = () => getApi('complexes');
 export const getComplex = id => getApi(`complexes/${id}`);
 
 export const isDraft = state => state === 'draft';
+
+export const formatMillion = number => Math.floor(number / 1000000);
+
+const securityByType = {
+  guarded: 'охраняется',
+};
+
+const constructionByType = {
+  monolith: 'монолит',
+  brick_monolithic: 'кирпич',
+};
+
+export const getSecurity = type => securityByType[type] || '';
+export const getConstruction = type => constructionByType[type] || '';
