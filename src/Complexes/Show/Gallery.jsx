@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { getExternalImageUrl } from '../../util';
+import { getExternalImageUrl, getPhotoLocale } from '../../util';
 
 const Gallery = styled.section`position: relative;`;
 
@@ -38,7 +38,9 @@ export default function GalleryComponent(props) {
           <Image key={image.id} src={getExternalImageUrl(image)} alt="gallery" />,
         )}
       </Images>
-      <Expand>41 фотография</Expand>
+      <Expand>
+        {getPhotoLocale(props.images.length)}
+      </Expand>
     </Gallery>
   );
 }

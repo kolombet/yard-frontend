@@ -24,3 +24,13 @@ const constructionByType = {
 
 export const getSecurity = type => securityByType[type] || '';
 export const getConstruction = type => constructionByType[type] || '';
+
+export const getPhotoLocale = (count) => {
+  if (count <= 1) {
+    return `${count} фотография`;
+  }
+  if (count > 1 && count <= 4) {
+    return `${count} фотографии`;
+  }
+  return `${count} фотографий`;
+};
