@@ -27,10 +27,9 @@ export default function InfrastructuresComponent(props) {
           </Col>
         </Row>
         <Row>
-          {props.infrastructures.map((amenitie) => {
-            console.log(`id${amenitie.id}`);
-            return <Infrastructure key={amenitie.id} name={amenitie.name} />;
-          })}
+          {props.infrastructures.map(amenitie =>
+            <Infrastructure key={amenitie.id} name={amenitie.name} />,
+          )}
         </Row>
       </Infrastructures>
     </Grid>

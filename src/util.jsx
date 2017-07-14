@@ -7,7 +7,7 @@ import {
   saleKinds,
   renovateKinds,
 } from './complexes-dictionaries';
-import Complexes from './DummyData/Complexes';
+import Complexes from './DummyData/Complexes.json';
 
 const CARD_AMAZON_URL = 'https://s3-eu-central-1.amazonaws.com/yard-images/';
 const CARD_PLACEHOLDER = 'http://via.placeholder.com/500x350';
@@ -21,7 +21,7 @@ export const isLocalMode = false;
 export const getComplexes = () => {
   if (!isLocalMode) return getApi('complexes');
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(Complexes);
     }, 100);
@@ -30,7 +30,7 @@ export const getComplexes = () => {
 export const getComplex = (id) => {
   if (!isLocalMode) return getApi(`complexes/${id}`);
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(Complexes.items[id]);
     }, 100);

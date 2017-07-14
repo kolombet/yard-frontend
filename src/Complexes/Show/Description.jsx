@@ -51,6 +51,6 @@ export default function DescriptionComponent(props) {
 }
 
 DescriptionComponent.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
