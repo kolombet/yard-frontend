@@ -27,7 +27,6 @@ class Cards extends Component {
           return (
             <Card
               key={id}
-              id={id}
               location={`${subLocalityName}, ${street}, ${house}`}
               name={name}
               description="Ipsum lorem"

@@ -30,7 +30,6 @@ class Index extends React.Component {
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    console.log(`slug${slug}`);
     getComplex(slug).then((json) => {
       this.setState({
         complex: json,

@@ -82,7 +82,6 @@ export default function CardComponent(props) {
 }
 
 CardComponent.propTypes = {
-  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
