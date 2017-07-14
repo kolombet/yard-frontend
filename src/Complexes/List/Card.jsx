@@ -62,7 +62,7 @@ const Image = styled.img`
 
 export default function CardComponent(props) {
   return (
-    <Card to={`/complexes/${props.id}`}>
+    <Card to={`/complexes/${props.slug}`}>
       <Image src={props.image} alt="building preview" />
       <Underline>
         <Info>
@@ -87,4 +87,5 @@ CardComponent.propTypes = {
   location: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };

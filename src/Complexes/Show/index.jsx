@@ -28,7 +28,9 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    getComplex(this.props.match.params.id).then((json) => {
+    const slug = this.props.match.params.slug;
+    console.log(`slug${slug}`);
+    getComplex(slug).then((json) => {
       this.setState({
         complex: json,
       });
@@ -112,7 +114,7 @@ class Index extends React.Component {
 Index.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };
