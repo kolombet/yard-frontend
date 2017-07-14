@@ -118,8 +118,8 @@ CharacteristicsComponent.propTypes = {
     max: PropTypes.number.isRequired,
   }).isRequired,
   ceilHeight: PropTypes.shape({
-    min: PropTypes.string.isRequired,
-    max: PropTypes.string.isRequired,
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
   }).isRequired,
   maintenanceCosts: PropTypes.number.isRequired,
   propertyKind: PropTypes.string.isRequired,

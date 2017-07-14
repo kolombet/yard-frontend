@@ -1,3 +1,4 @@
+import toFixed from 'number-to-fixed';
 import {
   constructionKinds,
   securityKinds,
@@ -38,7 +39,7 @@ export const getComplex = (id) => {
 };
 export const isDraft = state => state === 'draft';
 
-export const formatMillion = number => Math.round(number / 1000000);
+export const formatMillion = number => toFixed(number / 1000000, 2);
 
 export const getSecurity = type => securityKinds[type] || '';
 export const getConstruction = type => constructionKinds[type] || '';

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BodyClassName from 'react-body-classname';
+import toFixed from 'number-to-fixed';
 import Gallery from './Gallery';
 import Title from './Title';
 import Features from './Features';
@@ -79,8 +80,8 @@ class Index extends React.Component {
         max: Math.round(totalArea.to),
       },
       ceilHeight: {
-        min: ceilHeight.from.toFixed(2),
-        max: ceilHeight.to.toFixed(2),
+        min: toFixed(ceilHeight.from, 2),
+        max: toFixed(ceilHeight.to, 2),
       },
       maintenanceCosts,
       propertyKind: getKind(propertyKind),
