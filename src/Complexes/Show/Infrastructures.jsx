@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Infrastructure from './Infrastructure';
@@ -15,27 +16,30 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default () =>
-  (<Grid>
-    <Infrastructures>
-      <Row>
-        <Col md={2}>
-          <Title>Инфраструктура</Title>
-        </Col>
-      </Row>
-      <Row>
-        <Infrastructure name="Бассейн" />
-        <Infrastructure name="Детский сад" />
-        <Infrastructure name="Частная школа" />
-        <Infrastructure name="Бассейн" />
-        <Infrastructure name="Детский сад" />
-        <Infrastructure name="Частная школа" />
-      </Row>
-      <Row>
-        <Infrastructure name="Бассейн" />
-        <Infrastructure name="Бассейн" />
-        <Infrastructure name="Бассейн" />
-        <Infrastructure name="Бассейн" />
-      </Row>
-    </Infrastructures>
-  </Grid>);
+export default function InfrastructuresComponent(props) {
+  return (
+    <Grid>
+      <Infrastructures>
+        <Row>
+          <Col md={2}>
+            <Title>Инфраструктура</Title>
+          </Col>
+        </Row>
+        <Row>
+          {props.amenities.map(amenitie =>
+            <Infrastructure key={amenitie.id} name={amenitie.name} />,
+          )}
+        </Row>
+      </Infrastructures>
+    </Grid>
+  );
+}
+
+InfrastructuresComponent.propTypes = {
+  amenities: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      id: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};

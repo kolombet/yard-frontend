@@ -38,7 +38,16 @@ class Index extends React.Component {
   render() {
     if (!this.state.complex) return null;
 
-    const { location, images, name, details, statistics, propertyDefaults } = this.state.complex;
+    const {
+      location,
+      images,
+      name,
+      details,
+      statistics,
+      propertyDefaults,
+      fullDescription,
+      amenities,
+    } = this.state.complex;
     const { resalePropertiesCount, propertiesCount, price, totalArea } = statistics;
     const {
       architect,
@@ -89,8 +98,8 @@ class Index extends React.Component {
             developer="Группа «ПСН»"
           />
           <Characteristics {...characteristics} />
-          <Description />
-          <Infrastructures />
+          <Description title="Описание" text={fullDescription} />
+          <Infrastructures {...amenities} />
           <Offers />
           <Guide />
         </div>
