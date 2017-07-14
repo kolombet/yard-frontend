@@ -18,7 +18,7 @@ const Title = styled.h2`
 `;
 
 const Detail = styled.small`
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 22px;

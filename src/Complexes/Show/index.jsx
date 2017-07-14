@@ -9,7 +9,17 @@ import Infrastructures from './Infrastructures';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
-import { getComplex, formatMillion, getSecurity, getConstruction } from '../../util';
+import {
+  getComplex,
+  formatMillion,
+  getSecurity,
+  getConstruction,
+  getKind,
+  getFurniture,
+  getCondition,
+  getSaleOfferKind,
+  getRenovate,
+} from '../../util';
 
 class Index extends React.Component {
   constructor() {
@@ -28,10 +38,20 @@ class Index extends React.Component {
   render() {
     if (!this.state.complex) return null;
 
-    const { location, images, name, details, statistics } = this.state.complex;
+    const { location, images, name, details, statistics, propertyDefaults } = this.state.complex;
     const { resalePropertiesCount, propertiesCount, price, totalArea } = statistics;
-    const { architect, security, constructionKind, ceilHeight, maintenanceCosts } = details;
+    const {
+      architect,
+      security,
+      constructionKind,
+      ceilHeight,
+      maintenanceCosts,
+      propertyKind,
+    } = details;
     const { street, house, subLocalityName } = location;
+    const { information, saleOffer } = propertyDefaults;
+    const { kind } = saleOffer;
+    const { furniture, condition, renovate } = information;
 
     const characteristics = {
       propertiesCount,
@@ -47,10 +67,15 @@ class Index extends React.Component {
         max: Math.round(totalArea.to),
       },
       ceilHeight: {
-        min: ceilHeight.from.toFixed(1),
-        max: ceilHeight.to.toFixed(1),
+        min: ceilHeight.from.toFixed(2),
+        max: ceilHeight.to.toFixed(2),
       },
       maintenanceCosts,
+      propertyKind: getKind(propertyKind),
+      furnitureKinds: getFurniture(furniture),
+      condition: getCondition(condition),
+      saleOfferKind: getSaleOfferKind(kind),
+      renovate: getRenovate(renovate),
     };
 
     return (

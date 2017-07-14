@@ -1,3 +1,13 @@
+import {
+  constructionKinds,
+  securityKinds,
+  kinds,
+  furnitureKinds,
+  conditions,
+  saleKinds,
+  renovateKinds,
+} from './complexes-dictionaries';
+
 const CARD_AMAZON_URL = 'https://s3-eu-central-1.amazonaws.com/yard-images/';
 const CARD_PLACEHOLDER = 'http://via.placeholder.com/500x350';
 
@@ -11,19 +21,15 @@ export const getComplex = id => getApi(`complexes/${id}`);
 
 export const isDraft = state => state === 'draft';
 
-export const formatMillion = number => Math.floor(number / 1000000);
+export const formatMillion = number => (number / 1000).toFixed(2);
 
-const securityByType = {
-  guarded: 'охраняется',
-};
-
-const constructionByType = {
-  monolith: 'монолит',
-  brick_monolithic: 'кирпич',
-};
-
-export const getSecurity = type => securityByType[type] || '';
-export const getConstruction = type => constructionByType[type] || '';
+export const getSecurity = type => securityKinds[type] || '';
+export const getConstruction = type => constructionKinds[type] || '';
+export const getKind = type => kinds[type] || '';
+export const getFurniture = type => furnitureKinds[type] || '';
+export const getCondition = type => conditions[type] || '';
+export const getSaleOfferKind = type => saleKinds[type] || '';
+export const getRenovate = type => renovateKinds[type] || '';
 
 export const getPhotoLocale = (count) => {
   if (count <= 1) {

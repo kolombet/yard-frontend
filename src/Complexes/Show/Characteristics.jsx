@@ -58,6 +58,10 @@ export default function CharacteristicsComponent(props) {
             <Value>
               От {props.area.min} до {props.area.max} м²
             </Value>
+            <Key>Ремонт:</Key>
+            <Value>
+              {props.renovate}
+            </Value>
           </List>
         </Col>
         <Col md={4}>
@@ -81,6 +85,18 @@ export default function CharacteristicsComponent(props) {
             <Key>Безопасность:</Key>
             <Value>
               {props.security}
+            </Value>
+            <Key>Тип:</Key>
+            <Value>
+              {props.propertyKind}
+            </Value>
+            <Key>Состояние:</Key>
+            <Value>
+              {props.condition}
+            </Value>
+            <Key>Мебель:</Key>
+            <Value>
+              {props.furnitureKinds}
             </Value>
           </List>
         </Col>
@@ -106,4 +122,8 @@ CharacteristicsComponent.propTypes = {
     max: PropTypes.string.isRequired,
   }).isRequired,
   maintenanceCosts: PropTypes.number.isRequired,
+  propertyKind: PropTypes.string.isRequired,
+  renovate: PropTypes.string.isRequired,
+  condition: PropTypes.string.isRequired,
+  furnitureKinds: PropTypes.string.isRequired,
 };
