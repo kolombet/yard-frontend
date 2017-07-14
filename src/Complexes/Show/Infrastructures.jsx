@@ -17,6 +17,7 @@ const Title = styled.h2`
 `;
 
 export default function InfrastructuresComponent(props) {
+  if (!props.infrastructures || props.infrastructures.length === 0) return null;
   return (
     <Grid>
       <Infrastructures>
@@ -26,9 +27,10 @@ export default function InfrastructuresComponent(props) {
           </Col>
         </Row>
         <Row>
-          {props.amenities.map(amenitie =>
-            <Infrastructure key={amenitie.id} name={amenitie.name} />,
-          )}
+          {props.infrastructures.map((amenitie) => {
+            console.log(`id${amenitie.id}`);
+            return <Infrastructure key={amenitie.id} name={amenitie.name} />;
+          })}
         </Row>
       </Infrastructures>
     </Grid>
@@ -36,10 +38,10 @@ export default function InfrastructuresComponent(props) {
 }
 
 InfrastructuresComponent.propTypes = {
-  amenities: PropTypes.arrayOf(
+  infrastructures: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };

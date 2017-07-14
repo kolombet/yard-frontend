@@ -45,9 +45,10 @@ class Index extends React.Component {
       details,
       statistics,
       propertyDefaults,
-      fullDescription,
+      fullDescription = '',
       amenities,
     } = this.state.complex;
+
     const { resalePropertiesCount, propertiesCount, price, totalArea } = statistics;
     const {
       architect,
@@ -99,7 +100,7 @@ class Index extends React.Component {
           />
           <Characteristics {...characteristics} />
           <Description title="Описание" text={fullDescription} />
-          <Infrastructures {...amenities} />
+          <Infrastructures infrastructures={amenities} />
           <Offers />
           <Guide />
         </div>

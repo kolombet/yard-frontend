@@ -7,6 +7,7 @@ import {
   saleKinds,
   renovateKinds,
 } from './complexes-dictionaries';
+import Complexes from './DummyData/Complexes';
 
 const CARD_AMAZON_URL = 'https://s3-eu-central-1.amazonaws.com/yard-images/';
 const CARD_PLACEHOLDER = 'http://via.placeholder.com/500x350';
@@ -16,12 +17,28 @@ export const getExternalImageUrl = image => (image ? CARD_AMAZON_URL + image.id 
 const API_URL = 'https://yard.moscow/api/v1/';
 
 export const getApi = resource => fetch(API_URL + resource).then(res => res.json());
-export const getComplexes = () => getApi('complexes');
-export const getComplex = id => getApi(`complexes/${id}`);
+export const isLocalMode = false;
+export const getComplexes = () => {
+  if (!isLocalMode) return getApi('complexes');
 
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(Complexes);
+    }, 100);
+  });
+};
+export const getComplex = (id) => {
+  if (!isLocalMode) return getApi(`complexes/${id}`);
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(Complexes.items[id]);
+    }, 100);
+  });
+};
 export const isDraft = state => state === 'draft';
 
-export const formatMillion = number => (number / 1000).toFixed(2);
+export const formatMillion = number => Math.round(number / 1000000);
 
 export const getSecurity = type => securityKinds[type] || '';
 export const getConstruction = type => constructionKinds[type] || '';

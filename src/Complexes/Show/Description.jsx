@@ -27,6 +27,8 @@ const Text = styled.div`
 `;
 
 export default function DescriptionComponent(props) {
+  if (!props.text || props.text.length === 0) return null;
+
   return (
     <Grid>
       <Description>
@@ -49,6 +51,6 @@ export default function DescriptionComponent(props) {
 }
 
 DescriptionComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
 };
