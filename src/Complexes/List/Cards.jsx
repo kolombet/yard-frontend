@@ -22,12 +22,12 @@ class Cards extends Component {
       <Grid>
         {this.state.complexes.map((complex) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
-          const { subLocalityName, street, house } = location;
+          const { subLocalityName, street } = location;
 
           return (
             <Card
               key={id}
-              location={`${subLocalityName}, ${street}, ${house}`}
+              location={`${subLocalityName}, ${street}`}
               name={name}
               description={shortDescription}
               image={image.id}

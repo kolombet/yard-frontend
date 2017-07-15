@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import Title from './Title';
 import Features from './Features';
 import Description from './Description';
-import Infrastructures from './Infrastructures';
+import Amenities from './Amenities';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
@@ -43,11 +43,13 @@ class Index extends React.Component {
       <BodyClassName className="complexe">
         <div>
           <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
-          <Gallery images={images} />
+          {images && <Gallery images={images} />}
+
           <Features offersCount={units} architect={architect} developer={developer} />
           <Characteristics complex={this.state.complex} />
-          <Description title="Описание" text={fullDescription} />
-          <Infrastructures infrastructures={amenities} />
+          {fullDescription.length > 0 &&
+            <Description title="Описание" fullDescription={fullDescription} />}
+          {amenities && <Amenities amenities={amenities} />}
           <Offers name={name} />
           <Guide />
         </div>

@@ -31,28 +31,23 @@ const Expand = styled.button`
   color: white;
 `;
 
-const Empty = styled.div``;
-
 export default (props) => {
-  if (props.images) {
-    const length = props.images.length;
-    const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
-    return (
-      <Gallery>
-        <Images>
-          {props.images.map(image =>
-            <Image key={image.id} src={getImageUrl(image.id, 1024)} alt="gallery" />,
-          )}
-        </Images>
-        <Grid>
-          <Wrapper>
-            <Expand>
-              {length} {count}
-            </Expand>
-          </Wrapper>
-        </Grid>
-      </Gallery>
-    );
-  }
-  return <Empty />;
+  const length = props.images.length;
+  const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
+  return (
+    <Gallery>
+      <Images>
+        {props.images.map(image =>
+          <Image key={image.id} src={getImageUrl(image.id, 1024)} alt="gallery" />,
+        )}
+      </Images>
+      <Grid>
+        <Wrapper>
+          <Expand>
+            {length} {count}
+          </Expand>
+        </Wrapper>
+      </Grid>
+    </Gallery>
+  );
 };

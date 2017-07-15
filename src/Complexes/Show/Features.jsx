@@ -7,9 +7,7 @@ import HorizontalLine from '../../Components/HorizontalLine';
 const Features = styled.section`display: flex;`;
 
 export default (props) => {
-  const offersCount = props.offersCount || 0;
-  const architect = props.architect || '';
-  const developer = props.developer || '';
+  const { offersCount = 0, architect = '', developer = '' } = props;
 
   return (
     <Grid>

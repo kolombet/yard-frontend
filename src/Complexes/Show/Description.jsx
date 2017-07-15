@@ -22,28 +22,21 @@ const Text = styled.div`
   color: #3e4247;
 `;
 
-export default (props) => {
-  if (props.text.length > 0) {
-    return (
-      <Grid>
-        <Description>
-          <Row>
-            <Col md={2}>
-              <Title>
-                {props.title}
-              </Title>
-            </Col>
-            <Col md={10}>
-              <Text>
-                {props.text}
-              </Text>
-            </Col>
-          </Row>
-        </Description>
-        <HorizontalLine />
-      </Grid>
-    );
-  }
-
-  return <Description />;
-};
+export default props =>
+  (<Grid>
+    <Description>
+      <Row>
+        <Col md={2}>
+          <Title>
+            {props.title}
+          </Title>
+        </Col>
+        <Col md={10}>
+          <Text>
+            {props.fullDescription}
+          </Text>
+        </Col>
+      </Row>
+    </Description>
+    <HorizontalLine />
+  </Grid>);
