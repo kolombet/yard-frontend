@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BodyClassName from 'react-body-classname';
-import toFixed from 'number-to-fixed';
 import Gallery from './Gallery';
 import Title from './Title';
 import Features from './Features';
@@ -70,15 +69,6 @@ class Index extends React.Component {
     const { information, saleOffer } = propertyDefaults;
     const { kind } = saleOffer;
     const { furniture, condition, renovate } = information;
-
-    // export const getSecurity = type => securityKinds[type] || '';
-    // export const getConstruction = type => constructionKinds[type] || '';
-    // export const getKind = type => ;
-    // export const getFurniture = type => furnitureKinds[type] || '';
-    // export const getCondition = type => conditions[type] || '';
-    // export const getSaleOfferKind = type => saleKinds[type] || '';
-    // export const getRenovate = type => renovateKinds[type] || '';
-    // export const getQuarter = index => quarters[index] || '';
 
     const characteristics = {
       propertiesCount,

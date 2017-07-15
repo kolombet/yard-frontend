@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import pluralize from 'pluralize-ru';
 import { getExternalImageUrl, getPhotoLocale } from '../../util';
 
 const Gallery = styled.section``;
@@ -32,6 +33,8 @@ const Expand = styled.button`
 `;
 
 export default function GalleryComponent(props) {
+  const length = props.images.length;
+  const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
   return (
     <Gallery>
       <Images>
@@ -42,7 +45,7 @@ export default function GalleryComponent(props) {
       <Grid>
         <Wrapper>
           <Expand>
-            {getPhotoLocale(props.images.length)}
+            {`${length} ${count}`}
           </Expand>
         </Wrapper>
       </Grid>
