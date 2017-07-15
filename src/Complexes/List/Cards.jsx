@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
-import { getComplexes } from '../../api';
+import { getApi, FILTER_PUBLIC } from '../../api';
 
 class Cards extends Component {
   constructor() {
@@ -10,7 +10,7 @@ class Cards extends Component {
   }
 
   componentDidMount() {
-    getComplexes().then((json) => {
+    getApi('complexes', FILTER_PUBLIC).then((json) => {
       this.setState({
         complexes: json.items,
       });

@@ -28,8 +28,8 @@ export default (props) => {
             </Col>
           </Row>
           <Row>
-            {props.infrastructures.map(amenitie =>
-              <Infrastructure key={amenitie.id} name={amenitie.name} />,
+            {props.infrastructures.map(infrastructure =>
+              <Infrastructure key={infrastructure.id} name={infrastructure.name} />,
             )}
           </Row>
         </Infrastructures>

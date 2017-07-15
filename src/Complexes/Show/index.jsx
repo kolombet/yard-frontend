@@ -8,17 +8,17 @@ import Infrastructures from './Infrastructures';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
-import { getComplex } from '../../api';
+import { getApi } from '../../api';
 
 class Index extends React.Component {
   constructor() {
     super();
-    this.state = { complex: null };
+    this.state = { complex: {} };
   }
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    getComplex(slug).then((json) => {
+    getApi(`complexes/${slug}`).then((json) => {
       this.setState({
         complex: json,
       });
@@ -26,37 +26,33 @@ class Index extends React.Component {
   }
 
   render() {
-    if (this.state.complex) {
-      const {
-        location,
-        images,
-        name,
-        details,
-        fullDescription = '',
-        amenities,
-        units,
-      } = this.state.complex;
+    const {
+      location = {},
+      images,
+      name,
+      details = {},
+      fullDescription = '',
+      amenities,
+      units,
+    } = this.state.complex;
 
-      const { architect } = details;
-      const { street, house, subLocalityName } = location;
+    const { architect, developer } = details;
+    const { street, house, subLocalityName } = location;
 
-      return (
-        <BodyClassName className="complexe">
-          <div>
-            <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
-            <Gallery images={images} />
-            <Features offersCount={units} architect={architect} />
-            <Characteristics complex={this.state.complex} />
-            <Description title="Описание" text={fullDescription} />
-            <Infrastructures infrastructures={amenities} />
-            <Offers name={name} />
-            <Guide />
-          </div>
-        </BodyClassName>
-      );
-    }
-
-    return null;
+    return (
+      <BodyClassName className="complexe">
+        <div>
+          <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
+          <Gallery images={images} />
+          <Features offersCount={units} architect={architect} developer={developer} />
+          <Characteristics complex={this.state.complex} />
+          <Description title="Описание" text={fullDescription} />
+          <Infrastructures infrastructures={amenities} />
+          <Offers name={name} />
+          <Guide />
+        </div>
+      </BodyClassName>
+    );
   }
 }
 
