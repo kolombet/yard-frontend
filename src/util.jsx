@@ -1,4 +1,3 @@
-import toFixed from 'number-to-fixed';
 import {
   constructionKinds,
   securityKinds,
@@ -14,31 +13,9 @@ import Complexes from './DummyData/Complexes.json';
 export const getExternalImageUrl = (imageID, height) =>
   `https://s3-eu-central-1.amazonaws.com/yard-images/${imageID}-${height}`;
 
-const API_URL = 'https://yard.moscow/api/v1/';
-
-export const getApi = resource => fetch(API_URL + resource).then(res => res.json());
-export const isLocalMode = false;
-export const getComplexes = () => {
-  if (!isLocalMode) return getApi('complexes');
-
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(Complexes);
-    }, 100);
-  });
-};
-export const getComplex = (id) => {
-  if (!isLocalMode) return getApi(`complexes/${id}`);
-
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(Complexes.items[id]);
-    }, 100);
-  });
-};
 export const isDraft = state => state === 'draft';
 
-export const formatMillion = number => toFixed(number / 1000000, 2);
+export const formatMillion = number => (+number.toFixed(2) / 1000000, 2);
 
 export const getSecurity = type => securityKinds[type] || '';
 export const getConstruction = type => constructionKinds[type] || '';

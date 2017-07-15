@@ -10,8 +10,8 @@ import Infrastructures from './Infrastructures';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
+import { getComplex } from '../../api';
 import {
-  getComplex,
   formatMillion,
   getSecurity,
   getConstruction,
@@ -85,8 +85,8 @@ class Index extends React.Component {
         max: Math.round(totalArea.to),
       },
       ceilHeight: {
-        min: toFixed(ceilHeight.from, 2),
-        max: toFixed(ceilHeight.to, 2),
+        min: +ceilHeight.from.toFixed(2),
+        max: +ceilHeight.to.toFixed(2),
       },
       maintenanceCosts,
       propertyKind: getKind(propertyKind),

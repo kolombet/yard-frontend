@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
-import { getComplexes, isDraft } from '../../util';
+import { getComplexes } from '../../api';
+import { isDraft } from '../../util';
 
 class Cards extends Component {
   constructor() {
