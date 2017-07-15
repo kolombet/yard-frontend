@@ -8,7 +8,7 @@ import Amenities from './Amenities';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
-import { getApi } from '../../api';
+import get from '../../api';
 
 class Index extends React.Component {
   constructor() {
@@ -18,7 +18,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    getApi(`complexes/${slug}`).then((json) => {
+    get(`complexes/${slug}`).then((json) => {
       this.setState({
         complex: json,
       });
@@ -46,10 +46,10 @@ class Index extends React.Component {
           {images && <Gallery images={images} />}
 
           <Features offersCount={units} architect={architect} developer={developer} />
-          <Characteristics complex={this.state.complex} />
+          {this.state.complex.details && <Characteristics complex={this.state.complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
-          {amenities && <Amenities amenities={amenities} />}
+          {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
           <Offers name={name} />
           <Guide />
         </div>

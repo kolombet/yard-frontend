@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import Amenitie from './Amenitie';
+import Amenity from './Amenity';
 
 const Wrapper = styled.section`margin-bottom: 3rem;`;
 
@@ -20,11 +20,11 @@ export default props =>
     <Wrapper>
       <Row>
         <Col md={2}>
-          {props.amenities.length > 0 && <Title>Инфраструктура</Title>}
+          <Title>Инфраструктура</Title>
         </Col>
       </Row>
       <Row>
-        {props.amenities.map(amenitie => <Amenitie key={amenitie.id} name={amenitie.name} />)}
+        {props.amenities.map(amenity => <Amenity key={amenity.id} name={amenity.name} />)}
       </Row>
     </Wrapper>
   </Grid>);

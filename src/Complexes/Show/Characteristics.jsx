@@ -47,28 +47,27 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-const Empty = styled.div``;
+const Characteristics = styled.section`margin-bottom: 3rem;`;
 
 export default (props) => {
-  const info = props.complex.details;
-  if (info) {
-    const {
-      propertyDefaults: { information: { furniture, condition, renovate } = {} } = {},
-      details: {
-        security,
-        constructionKind,
-        ceilHeight,
-        maintenanceCosts,
-        startYear,
-        startQuarter,
-        commissioningYear,
-        commissioningQuarter,
-      } = {},
-      statistics: { propertiesCount = '', price, totalArea } = {},
-    } =
-      props.complex || {};
+  const {
+    propertyDefaults: { information: { furniture, condition, renovate } = {} } = {},
+    details: {
+      security,
+      constructionKind,
+      ceilHeight,
+      maintenanceCosts,
+      startYear,
+      startQuarter,
+      commissioningYear,
+      commissioningQuarter,
+    } = {},
+    statistics: { propertiesCount = '', price, totalArea } = {},
+  } =
+    props.complex || {};
 
-    return (
+  return (
+    <Characteristics>
       <Grid>
         <Title>Характеристики</Title>
         <Row>
@@ -140,8 +139,6 @@ export default (props) => {
           </Col>
         </Row>
       </Grid>
-    );
-  }
-
-  return <Empty />;
+    </Characteristics>
+  );
 };
