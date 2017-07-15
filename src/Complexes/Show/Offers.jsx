@@ -36,5 +36,5 @@ export default function OffersComponent(props) {
 }
 
 OffersComponent.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };

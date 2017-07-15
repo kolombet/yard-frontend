@@ -20,6 +20,7 @@ import {
   getCondition,
   getSaleOfferKind,
   getRenovate,
+  getQuarter,
 } from '../../util';
 
 class Index extends React.Component {
@@ -49,9 +50,10 @@ class Index extends React.Component {
       propertyDefaults,
       fullDescription = '',
       amenities,
+      units,
     } = this.state.complex;
 
-    const { resalePropertiesCount, propertiesCount, price, totalArea } = statistics;
+    const { propertiesCount, price, totalArea } = statistics;
     const {
       architect,
       security,
@@ -59,6 +61,10 @@ class Index extends React.Component {
       ceilHeight,
       maintenanceCosts,
       propertyKind,
+      startYear,
+      startQuarter,
+      commissioningYear,
+      commissioningQuarter,
     } = details;
     const { street, house, subLocalityName } = location;
     const { information, saleOffer } = propertyDefaults;
@@ -88,6 +94,10 @@ class Index extends React.Component {
       condition: getCondition(condition),
       saleOfferKind: getSaleOfferKind(kind),
       renovate: getRenovate(renovate),
+      startYear,
+      startQuarter: getQuarter(startQuarter),
+      commissioningYear,
+      commissioningQuarter: getQuarter(commissioningQuarter),
     };
 
     return (
@@ -95,11 +105,7 @@ class Index extends React.Component {
         <div>
           <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
           <Gallery images={images} />
-          <Features
-            offersCount={resalePropertiesCount}
-            architect={architect}
-            developer="Группа «ПСН»"
-          />
+          <Features offersCount={units} architect={architect} />
           <Characteristics characteristics={characteristics} />
           <Description title="Описание" text={fullDescription} />
           <Infrastructures infrastructures={amenities} />

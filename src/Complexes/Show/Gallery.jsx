@@ -35,7 +35,7 @@ export default function GalleryComponent(props) {
     <Gallery>
       <Images>
         {props.images.map(image =>
-          <Image key={image.id} src={getExternalImageUrl(image)} alt="gallery" />,
+          <Image key={image.id} src={getExternalImageUrl(image.id, 1024)} alt="gallery" />,
         )}
       </Images>
       <Expand>

@@ -78,6 +78,10 @@ export default function CharacteristicsComponent(props) {
             <Value>
               {props.characteristics.maintenanceCosts} руб / м² / месяц
             </Value>
+            <Key>Мебель:</Key>
+            <Value>
+              {props.characteristics.furnitureKinds}
+            </Value>
           </List>
         </Col>
         <Col md={4}>
@@ -86,17 +90,19 @@ export default function CharacteristicsComponent(props) {
             <Value>
               {props.characteristics.security}
             </Value>
-            <Key>Тип:</Key>
-            <Value>
-              {props.characteristics.propertyKind}
-            </Value>
             <Key>Состояние:</Key>
             <Value>
               {props.characteristics.condition}
             </Value>
-            <Key>Мебель:</Key>
+            <Key>Начало строительства</Key>
             <Value>
-              {props.characteristics.furnitureKinds}
+              {props.characteristics.startQuarter} квартал {props.characteristics.startYear} года
+            </Value>
+
+            <Key>Конец строительства</Key>
+            <Value>
+              {props.characteristics.commissioningQuarter} квартал{' '}
+              {props.characteristics.commissioningYear} года
             </Value>
           </List>
         </Col>
@@ -127,5 +133,13 @@ CharacteristicsComponent.propTypes = {
     renovate: PropTypes.string.isRequired,
     condition: PropTypes.string.isRequired,
     furnitureKinds: PropTypes.string.isRequired,
+    startYear: PropTypes.number.isRequired,
+    startQuarter: PropTypes.string.isRequired,
+    commissioningYear: PropTypes.number.isRequired,
+    commissioningQuarter: PropTypes.string.isRequired,
   }),
+};
+
+CharacteristicsComponent.defaultProps = {
+  characteristics: {},
 };

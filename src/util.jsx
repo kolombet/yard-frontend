@@ -7,13 +7,12 @@ import {
   conditions,
   saleKinds,
   renovateKinds,
+  quarters,
 } from './complexes-dictionaries';
 import Complexes from './DummyData/Complexes.json';
 
-const CARD_AMAZON_URL = 'https://s3-eu-central-1.amazonaws.com/yard-images/';
-const CARD_PLACEHOLDER = 'http://via.placeholder.com/500x350';
-
-export const getExternalImageUrl = image => (image ? CARD_AMAZON_URL + image.id : CARD_PLACEHOLDER);
+export const getExternalImageUrl = (imageID, height) =>
+  `https://s3-eu-central-1.amazonaws.com/yard-images/${imageID}-${height}`;
 
 const API_URL = 'https://yard.moscow/api/v1/';
 
@@ -48,6 +47,7 @@ export const getFurniture = type => furnitureKinds[type] || '';
 export const getCondition = type => conditions[type] || '';
 export const getSaleOfferKind = type => saleKinds[type] || '';
 export const getRenovate = type => renovateKinds[type] || '';
+export const getQuarter = index => quarters[index] || '';
 
 export const getPhotoLocale = (count) => {
   if (count <= 1) {

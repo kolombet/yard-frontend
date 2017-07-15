@@ -11,9 +11,15 @@ export default function FeaturesComponent(props) {
   return (
     <Grid>
       <Features>
-        <Feature title={props.offersCount.toString()} description="предложений" />
-        <Feature title={props.architect} description="архитектор" />
-        <Feature title={props.developer} description="застройщик" />
+        {props.offersCount &&
+          props.offersCount > 0 &&
+          <Feature title={props.offersCount} description="предложений" />}
+        {props.architect &&
+          props.architect.length > 0 &&
+          <Feature title={props.architect} description="архитектор" />}
+        {props.developer &&
+          props.developer.length > 0 &&
+          <Feature title={props.developer} description="застройщик" />}
       </Features>
 
       <HorizontalLine />
@@ -22,7 +28,13 @@ export default function FeaturesComponent(props) {
 }
 
 FeaturesComponent.propTypes = {
-  offersCount: PropTypes.number.isRequired,
-  architect: PropTypes.string.isRequired,
-  developer: PropTypes.string.isRequired,
+  offersCount: PropTypes.number,
+  architect: PropTypes.string,
+  developer: PropTypes.string,
+};
+
+FeaturesComponent.defaultProps = {
+  offersCount: 0,
+  architect: '',
+  developer: '',
 };
