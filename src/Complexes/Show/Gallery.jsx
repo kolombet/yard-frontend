@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Grid } from 'react-flexbox-grid';
 import { getExternalImageUrl, getPhotoLocale } from '../../util';
 
-const Gallery = styled.section`position: relative;`;
+const Gallery = styled.section``;
+
+const Wrapper = styled.div`position: relative;`;
 
 const Images = styled.div`
   overflow-x: auto;
@@ -15,9 +18,7 @@ const Image = styled.img`height: 400px;`;
 
 const Expand = styled.button`
   position: absolute;
-  top: 358px;
-  left: 128px;
-  bottom: 16px;
+  bottom: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 2px;
@@ -38,9 +39,13 @@ export default function GalleryComponent(props) {
           <Image key={image.id} src={getExternalImageUrl(image.id, 1024)} alt="gallery" />,
         )}
       </Images>
-      <Expand>
-        {getPhotoLocale(props.images.length)}
-      </Expand>
+      <Grid>
+        <Wrapper>
+          <Expand>
+            {getPhotoLocale(props.images.length)}
+          </Expand>
+        </Wrapper>
+      </Grid>
     </Gallery>
   );
 }

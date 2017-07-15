@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { getExternalImageUrl } from '../../util';
+import Cover from './Cover';
 
 const Card = styled(Link)`
   display: flex;
@@ -56,22 +56,11 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-const Image = styled.img`
-  max-width: 491px;
-  max-height: 350px;
-`;
-
 export default function CardComponent(props) {
   return (
     <Card to={`/complexes/${props.slug}`}>
-      <Image
-        src={getExternalImageUrl(props.image, 512)}
-        srcSet={
-          `${getExternalImageUrl(props.image, 1024)} 2x,` +
-          `${getExternalImageUrl(props.image, 2048)} 3x,`
-        }
-        alt={props.name}
-      />
+      <Cover id={props.image} />
+
       <Underline>
         <Info>
           <Location>

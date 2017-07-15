@@ -11,15 +11,9 @@ export default function FeaturesComponent(props) {
   return (
     <Grid>
       <Features>
-        {props.offersCount &&
-          props.offersCount > 0 &&
-          <Feature title={props.offersCount} description="предложений" />}
-        {props.architect &&
-          props.architect.length > 0 &&
-          <Feature title={props.architect} description="архитектор" />}
-        {props.developer &&
-          props.developer.length > 0 &&
-          <Feature title={props.developer} description="застройщик" />}
+        {props.offersCount > 0 && <Feature title={props.offersCount} description="предложений" />}
+        {props.architect.length > 0 && <Feature title={props.architect} description="архитектор" />}
+        {props.developer.length > 0 && <Feature title={props.developer} description="застройщик" />}
       </Features>
 
       <HorizontalLine />
