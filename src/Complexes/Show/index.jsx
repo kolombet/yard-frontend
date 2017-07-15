@@ -11,17 +11,17 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { getComplex } from '../../api';
+import { formatMillion } from '../../util';
 import {
-  formatMillion,
-  getSecurity,
-  getConstruction,
-  getKind,
-  getFurniture,
-  getCondition,
-  getSaleOfferKind,
-  getRenovate,
-  getQuarter,
-} from '../../util';
+  constructionKinds,
+  securityKinds,
+  kinds,
+  furnitureKinds,
+  conditions,
+  saleKinds,
+  renovateKinds,
+  quarters,
+} from '../dictionary';
 
 class Index extends React.Component {
   constructor() {
@@ -71,6 +71,15 @@ class Index extends React.Component {
     const { kind } = saleOffer;
     const { furniture, condition, renovate } = information;
 
+    // export const getSecurity = type => securityKinds[type] || '';
+    // export const getConstruction = type => constructionKinds[type] || '';
+    // export const getKind = type => ;
+    // export const getFurniture = type => furnitureKinds[type] || '';
+    // export const getCondition = type => conditions[type] || '';
+    // export const getSaleOfferKind = type => saleKinds[type] || '';
+    // export const getRenovate = type => renovateKinds[type] || '';
+    // export const getQuarter = index => quarters[index] || '';
+
     const characteristics = {
       propertiesCount,
       status: '',
@@ -78,8 +87,8 @@ class Index extends React.Component {
         min: formatMillion(price.from.rub),
         max: formatMillion(price.to.rub),
       },
-      security: getSecurity(security),
-      constructionType: getConstruction(constructionKind),
+      security: securityKinds[security] || '',
+      constructionType: constructionKinds[constructionKind] || '',
       area: {
         min: Math.round(totalArea.from),
         max: Math.round(totalArea.to),
@@ -89,15 +98,15 @@ class Index extends React.Component {
         max: +ceilHeight.to.toFixed(2),
       },
       maintenanceCosts,
-      propertyKind: getKind(propertyKind),
-      furnitureKinds: getFurniture(furniture),
-      condition: getCondition(condition),
-      saleOfferKind: getSaleOfferKind(kind),
-      renovate: getRenovate(renovate),
+      propertyKind: kinds[propertyKind] || '',
+      furnitureKinds: furnitureKinds[furniture] || '',
+      condition: conditions[condition] || '',
+      saleOfferKind: saleKinds[kind] || '',
+      renovate: renovateKinds[renovate] || '',
       startYear,
-      startQuarter: getQuarter(startQuarter),
+      startQuarter: index => quarters[startQuarter],
       commissioningYear,
-      commissioningQuarter: getQuarter(commissioningQuarter),
+      commissioningQuarter: index => quarters[commissioningQuarter],
     };
 
     return (
