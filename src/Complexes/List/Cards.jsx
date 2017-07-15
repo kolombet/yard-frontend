@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
 import { getComplexes } from '../../api';
-import { isDraft } from '../../util';
 
 class Cards extends Component {
   constructor() {
@@ -21,7 +20,7 @@ class Cards extends Component {
   render() {
     return (
       <Grid>
-        {this.state.complexes.filter(complex => !isDraft(complex.state)).map((complex) => {
+        {this.state.complexes.map((complex) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
           const { subLocalityName, street, house } = location;
 

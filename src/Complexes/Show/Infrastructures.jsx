@@ -37,5 +37,5 @@ export default (props) => {
     );
   }
 
-  return <Empty/>
+  return <Empty />;
 };

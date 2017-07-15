@@ -45,5 +45,5 @@ export default (props) => {
     );
   }
 
-  return <Description/>
+  return <Description />;
 };

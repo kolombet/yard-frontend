@@ -20,7 +20,7 @@ export default (props) => {
 
   return (
     <Wrapper>
-      <LazyLoad>
+      <LazyLoad offsetTop={200}>
         <Image src={image} srcSet={`${image2x} 2x, ${image3x} 3x,`} alt={props.name} />
       </LazyLoad>
     </Wrapper>
