@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
@@ -32,7 +31,7 @@ const Expand = styled.button`
   color: white;
 `;
 
-export default function GalleryComponent(props) {
+export default (props) => {
   const length = props.images.length;
   const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
   return (
@@ -51,15 +50,4 @@ export default function GalleryComponent(props) {
       </Grid>
     </Gallery>
   );
-}
-
-GalleryComponent.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      width: PropTypes.number,
-      height: PropTypes.number,
-      isPublic: PropTypes.bool,
-      id: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
 };

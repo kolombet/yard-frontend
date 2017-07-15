@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Cover from './Cover';
@@ -56,32 +55,22 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default function CardComponent(props) {
-  return (
-    <Card to={`/complexes/${props.slug}`}>
-      <Cover id={props.image} />
+export default props => (
+  <Card to={`/complexes/${props.slug}`}>
+    <Cover id={props.image} />
 
-      <Underline>
-        <Info>
-          <Location>
-            {props.location}
-          </Location>
-          <Name>
-            {props.name}
-          </Name>
-          <Description>
-            {props.description}
-          </Description>
-        </Info>
-      </Underline>
-    </Card>
-  );
-}
-
-CardComponent.propTypes = {
-  image: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-};
+    <Underline>
+      <Info>
+        <Location>
+          {props.location}
+        </Location>
+        <Name>
+          {props.name}
+        </Name>
+        <Description>
+          {props.description}
+        </Description>
+      </Info>
+    </Underline>
+  </Card>
+);

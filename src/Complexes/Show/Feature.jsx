@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Feature = styled.div`
@@ -25,21 +24,13 @@ const Detail = styled.small`
   color: #a9afb6;
 `;
 
-export default function FeatureComponent(props) {
-  return (
-    <Feature>
-      <Title>
-        {props.title}
-        <br />
-        <Detail>
-          {props.description}
-        </Detail>
-      </Title>
-    </Feature>
-  );
-}
-
-FeatureComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
+export default props =>
+  (<Feature>
+    <Title>
+      {props.title}
+      <br />
+      <Detail>
+        {props.description}
+      </Detail>
+    </Title>
+  </Feature>);

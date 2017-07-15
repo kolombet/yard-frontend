@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Infrastructure from './Infrastructure';
@@ -16,7 +15,7 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default function InfrastructuresComponent(props) {
+export default (props) => {
   if (!props.infrastructures || props.infrastructures.length === 0) return null;
   return (
     <Grid>
@@ -34,13 +33,4 @@ export default function InfrastructuresComponent(props) {
       </Infrastructures>
     </Grid>
   );
-}
-
-InfrastructuresComponent.propTypes = {
-  infrastructures: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      id: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
 };

@@ -1,13 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import HorizontalLine from '../../Components/HorizontalLine';
 
-const Description = styled.section`
-  margin-top: 2.438rem;
-  margin-bottom: 1.5rem;
-`;
+const Description = styled.section`margin-bottom: 1.5rem;`;
 
 const Title = styled.div`
   margin: 0;
@@ -26,7 +22,7 @@ const Text = styled.div`
   color: #3e4247;
 `;
 
-export default function DescriptionComponent(props) {
+export default (props) => {
   if (!props.text || props.text.length === 0) return null;
 
   return (
@@ -48,9 +44,4 @@ export default function DescriptionComponent(props) {
       <HorizontalLine />
     </Grid>
   );
-}
-
-DescriptionComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
 };

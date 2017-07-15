@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BodyClassName from 'react-body-classname';
 import Gallery from './Gallery';
 import Title from './Title';
@@ -58,13 +57,5 @@ class Index extends React.Component {
     );
   }
 }
-
-Index.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export default Index;

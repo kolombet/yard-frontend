@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -39,25 +38,17 @@ const Favorite = styled.button`
   color: #00779a;
 `;
 
-export default function TitleComponent(props) {
-  return (
-    <Grid>
-      <Row between="md">
-        <Col>
-          <Name>
-            ЖК «{props.name}»
-          </Name>
-          <Location>
-            {props.location}
-          </Location>
-        </Col>
-        <Favorite>В избранное</Favorite>
-      </Row>
-    </Grid>
-  );
-}
-
-TitleComponent.propTypes = {
-  name: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-};
+export default props =>
+  (<Grid>
+    <Row between="md">
+      <Col>
+        <Name>
+          ЖК «{props.name}»
+        </Name>
+        <Location>
+          {props.location}
+        </Location>
+      </Col>
+      <Favorite>В избранное</Favorite>
+    </Row>
+  </Grid>);
