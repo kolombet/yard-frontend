@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Grid, Row } from 'react-flexbox-grid';
 import Offer from './Offer';
 
@@ -15,16 +16,25 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default () =>
-  (<Offers>
-    <Grid>
-      <Row center="md">
-        <Title>Предложения в ЖК «Полянка/44»</Title>
-      </Row>
-      <Row>
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
-      </Row>
-    </Grid>
-  </Offers>);
+export default function OffersComponent(props) {
+  return (
+    <Offers>
+      <Grid>
+        <Row center="md">
+          <Title>
+            Предложения в ЖК «{props.name}»
+          </Title>
+        </Row>
+        <Row>
+          <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
+          <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
+          <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
+        </Row>
+      </Grid>
+    </Offers>
+  );
+}
+
+OffersComponent.propTypes = {
+  name: PropTypes.string,
+};

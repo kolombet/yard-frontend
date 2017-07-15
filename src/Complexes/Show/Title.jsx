@@ -45,7 +45,7 @@ export default function TitleComponent(props) {
       <Row between="md">
         <Col>
           <Name>
-            {props.name}
+            ЖК «{props.name}»
           </Name>
           <Location>
             {props.location}

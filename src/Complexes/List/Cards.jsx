@@ -21,7 +21,7 @@ class Cards extends Component {
     return (
       <Grid>
         {this.state.complexes.filter(complex => !isDraft(complex.state)).map((complex) => {
-          const { location, name, id, image, slug } = complex;
+          const { location, name, id, image, slug, fullDescription = 'dd' } = complex;
           const { subLocalityName, street, house } = location;
 
           return (
@@ -29,7 +29,7 @@ class Cards extends Component {
               key={id}
               location={`${subLocalityName}, ${street}, ${house}`}
               name={name}
-              description="Ipsum lorem"
+              description={fullDescription}
               image={getExternalImageUrl(image)}
               slug={slug}
             />

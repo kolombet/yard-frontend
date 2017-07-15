@@ -100,10 +100,10 @@ class Index extends React.Component {
             architect={architect}
             developer="Группа «ПСН»"
           />
-          <Characteristics {...characteristics} />
+          <Characteristics characteristics={characteristics} />
           <Description title="Описание" text={fullDescription} />
           <Infrastructures infrastructures={amenities} />
-          <Offers />
+          <Offers name={name} />
           <Guide />
         </div>
       </BodyClassName>

@@ -48,19 +48,19 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Количество квартир:</Key>
             <Value>
-              {props.propertiesCount}
+              {props.characteristics.propertiesCount}
             </Value>
             <Key>Цены:</Key>
             <Value>
-              От {props.price.min} до {props.price.max} млн
+              От {props.characteristics.price.min} до {props.characteristics.price.max} млн
             </Value>
             <Key>Площадь:</Key>
             <Value>
-              От {props.area.min} до {props.area.max} м²
+              От {props.characteristics.area.min} до {props.characteristics.area.max} м²
             </Value>
             <Key>Ремонт:</Key>
             <Value>
-              {props.renovate}
+              {props.characteristics.renovate}
             </Value>
           </List>
         </Col>
@@ -68,15 +68,15 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Конструкция корпусов:</Key>
             <Value>
-              {props.constructionType}
+              {props.characteristics.constructionType}
             </Value>
             <Key>Высота потолков:</Key>
             <Value>
-              От {props.ceilHeight.min} до {props.ceilHeight.max} м
+              От {props.characteristics.ceilHeight.min} до {props.characteristics.ceilHeight.max} м
             </Value>
             <Key>Обслуживание:</Key>
             <Value>
-              {props.maintenanceCosts} руб / м² / месяц
+              {props.characteristics.maintenanceCosts} руб / м² / месяц
             </Value>
           </List>
         </Col>
@@ -84,19 +84,19 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Безопасность:</Key>
             <Value>
-              {props.security}
+              {props.characteristics.security}
             </Value>
             <Key>Тип:</Key>
             <Value>
-              {props.propertyKind}
+              {props.characteristics.propertyKind}
             </Value>
             <Key>Состояние:</Key>
             <Value>
-              {props.condition}
+              {props.characteristics.condition}
             </Value>
             <Key>Мебель:</Key>
             <Value>
-              {props.furnitureKinds}
+              {props.characteristics.furnitureKinds}
             </Value>
           </List>
         </Col>
@@ -106,24 +106,26 @@ export default function CharacteristicsComponent(props) {
 }
 
 CharacteristicsComponent.propTypes = {
-  propertiesCount: PropTypes.number.isRequired,
-  price: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-  }).isRequired,
-  security: PropTypes.string.isRequired,
-  constructionType: PropTypes.string.isRequired,
-  area: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-  }).isRequired,
-  ceilHeight: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-  }).isRequired,
-  maintenanceCosts: PropTypes.number.isRequired,
-  propertyKind: PropTypes.string.isRequired,
-  renovate: PropTypes.string.isRequired,
-  condition: PropTypes.string.isRequired,
-  furnitureKinds: PropTypes.string.isRequired,
+  characteristics: PropTypes.shape({
+    propertiesCount: PropTypes.number.isRequired,
+    price: PropTypes.shape({
+      min: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired,
+    }).isRequired,
+    security: PropTypes.string.isRequired,
+    constructionType: PropTypes.string.isRequired,
+    area: PropTypes.shape({
+      min: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired,
+    }).isRequired,
+    ceilHeight: PropTypes.shape({
+      min: PropTypes.number.isRequired,
+      max: PropTypes.number.isRequired,
+    }).isRequired,
+    maintenanceCosts: PropTypes.number.isRequired,
+    propertyKind: PropTypes.string.isRequired,
+    renovate: PropTypes.string.isRequired,
+    condition: PropTypes.string.isRequired,
+    furnitureKinds: PropTypes.string.isRequired,
+  }),
 };
