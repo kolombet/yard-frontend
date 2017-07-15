@@ -23,25 +23,27 @@ const Text = styled.div`
 `;
 
 export default (props) => {
-  if (!props.text || props.text.length === 0) return null;
+  if (props.text.length > 0) {
+    return (
+      <Grid>
+        <Description>
+          <Row>
+            <Col md={2}>
+              <Title>
+                {props.title}
+              </Title>
+            </Col>
+            <Col md={10}>
+              <Text>
+                {props.text}
+              </Text>
+            </Col>
+          </Row>
+        </Description>
+        <HorizontalLine />
+      </Grid>
+    );
+  }
 
-  return (
-    <Grid>
-      <Description>
-        <Row>
-          <Col md={2}>
-            <Title>
-              {props.title}
-            </Title>
-          </Col>
-          <Col md={10}>
-            <Text>
-              {props.text}
-            </Text>
-          </Col>
-        </Row>
-      </Description>
-      <HorizontalLine />
-    </Grid>
-  );
+  return <Description/>
 };

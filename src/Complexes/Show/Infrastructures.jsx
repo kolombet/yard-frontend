@@ -15,22 +15,27 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
+const Empty = styled.div``;
+
 export default (props) => {
-  if (!props.infrastructures || props.infrastructures.length === 0) return null;
-  return (
-    <Grid>
-      <Infrastructures>
-        <Row>
-          <Col md={2}>
-            <Title>Инфраструктура</Title>
-          </Col>
-        </Row>
-        <Row>
-          {props.infrastructures.map(amenitie =>
-            <Infrastructure key={amenitie.id} name={amenitie.name} />,
-          )}
-        </Row>
-      </Infrastructures>
-    </Grid>
-  );
+  if (props.infrastructures && props.infrastructures.length > 0) {
+    return (
+      <Grid>
+        <Infrastructures>
+          <Row>
+            <Col md={2}>
+              <Title>Инфраструктура</Title>
+            </Col>
+          </Row>
+          <Row>
+            {props.infrastructures.map(amenitie =>
+              <Infrastructure key={amenitie.id} name={amenitie.name} />,
+            )}
+          </Row>
+        </Infrastructures>
+      </Grid>
+    );
+  }
+
+  return <Empty/>
 };
