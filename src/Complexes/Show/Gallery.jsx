@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
-import { getExternalImageUrl, getPhotoLocale } from '../../util';
+import { getImageUrl } from '../../util';
 
 const Gallery = styled.section``;
 
@@ -39,7 +39,7 @@ export default function GalleryComponent(props) {
     <Gallery>
       <Images>
         {props.images.map(image =>
-          <Image key={image.id} src={getExternalImageUrl(image.id, 1024)} alt="gallery" />,
+          <Image key={image.id} src={getImageUrl(image.id, 1024)} alt="gallery" />,
         )}
       </Images>
       <Grid>

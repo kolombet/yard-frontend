@@ -1,7 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { formatMillion } from '../../util';
+import {
+  constructionKinds,
+  securityKinds,
+  furnitureKinds,
+  conditions,
+  renovateKinds,
+  quarters,
+} from '../dictionary';
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -40,6 +48,22 @@ const Value = styled.dd`
 `;
 
 export default function CharacteristicsComponent(props) {
+  const { details, statistics, propertyDefaults } = props.complex;
+
+  const { propertiesCount, price, totalArea } = statistics;
+  const {
+    security,
+    constructionKind,
+    ceilHeight,
+    maintenanceCosts,
+    startYear,
+    startQuarter,
+    commissioningYear,
+    commissioningQuarter,
+  } = details;
+  const { information } = propertyDefaults;
+  const { furniture, condition, renovate } = information;
+
   return (
     <Grid>
       <Title>Характеристики</Title>
@@ -48,19 +72,24 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Количество квартир:</Key>
             <Value>
-              {props.characteristics.propertiesCount}
+              {propertiesCount}
             </Value>
             <Key>Цены:</Key>
-            <Value>
-              От {props.characteristics.price.min} до {props.characteristics.price.max} млн
-            </Value>
+            {price.from.rub === price.to.rub
+              ? <Value>
+                {formatMillion(price.to.rub)} млн
+              </Value>
+              : <Value>
+                  От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
+              </Value>}
+
             <Key>Площадь:</Key>
             <Value>
-              От {props.characteristics.area.min} до {props.characteristics.area.max} м²
+              От {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м²
             </Value>
             <Key>Ремонт:</Key>
             <Value>
-              {props.characteristics.renovate}
+              {renovateKinds[renovate] || ''}
             </Value>
           </List>
         </Col>
@@ -68,19 +97,19 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Конструкция корпусов:</Key>
             <Value>
-              {props.characteristics.constructionType}
+              {constructionKinds[constructionKind] || ''}
             </Value>
             <Key>Высота потолков:</Key>
             <Value>
-              От {props.characteristics.ceilHeight.min} до {props.characteristics.ceilHeight.max} м
+              От {+ceilHeight.from.toFixed(2)} до {+ceilHeight.to.toFixed(2)} м
             </Value>
             <Key>Обслуживание:</Key>
             <Value>
-              {props.characteristics.maintenanceCosts} руб / м² / месяц
+              {maintenanceCosts} руб / м² / месяц
             </Value>
             <Key>Мебель:</Key>
             <Value>
-              {props.characteristics.furnitureKinds}
+              {furnitureKinds[furniture] || ''}
             </Value>
           </List>
         </Col>
@@ -88,21 +117,21 @@ export default function CharacteristicsComponent(props) {
           <List>
             <Key>Безопасность:</Key>
             <Value>
-              {props.characteristics.security}
+              {securityKinds[security] || ''}
             </Value>
             <Key>Состояние:</Key>
             <Value>
-              {props.characteristics.condition}
+              {conditions[condition] || ''}
             </Value>
             <Key>Начало строительства</Key>
             <Value>
-              {props.characteristics.startQuarter} квартал {props.characteristics.startYear} года
+              {quarters[startQuarter]} квартал {startYear} года
             </Value>
 
             <Key>Конец строительства</Key>
             <Value>
-              {props.characteristics.commissioningQuarter} квартал{' '}
-              {props.characteristics.commissioningYear} года
+              {quarters[commissioningQuarter]} квартал
+              {commissioningYear} года
             </Value>
           </List>
         </Col>
@@ -110,36 +139,3 @@ export default function CharacteristicsComponent(props) {
     </Grid>
   );
 }
-
-CharacteristicsComponent.propTypes = {
-  characteristics: PropTypes.shape({
-    propertiesCount: PropTypes.number.isRequired,
-    price: PropTypes.shape({
-      min: PropTypes.number.isRequired,
-      max: PropTypes.number.isRequired,
-    }).isRequired,
-    security: PropTypes.string.isRequired,
-    constructionType: PropTypes.string.isRequired,
-    area: PropTypes.shape({
-      min: PropTypes.number.isRequired,
-      max: PropTypes.number.isRequired,
-    }).isRequired,
-    ceilHeight: PropTypes.shape({
-      min: PropTypes.number.isRequired,
-      max: PropTypes.number.isRequired,
-    }).isRequired,
-    maintenanceCosts: PropTypes.number.isRequired,
-    propertyKind: PropTypes.string.isRequired,
-    renovate: PropTypes.string.isRequired,
-    condition: PropTypes.string.isRequired,
-    furnitureKinds: PropTypes.string.isRequired,
-    startYear: PropTypes.number.isRequired,
-    startQuarter: PropTypes.string.isRequired,
-    commissioningYear: PropTypes.number.isRequired,
-    commissioningQuarter: PropTypes.string.isRequired,
-  }),
-};
-
-CharacteristicsComponent.defaultProps = {
-  characteristics: {},
-};
