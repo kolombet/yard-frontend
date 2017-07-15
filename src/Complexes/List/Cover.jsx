@@ -1,5 +1,4 @@
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 import styled from 'styled-components';
 import { getImageUrl } from '../../util';
 
@@ -20,9 +19,7 @@ export default (props) => {
 
   return (
     <Wrapper>
-      <LazyLoad offsetTop={200}>
-        <Image src={image} srcSet={`${image2x} 2x, ${image3x} 3x,`} alt={props.name} />
-      </LazyLoad>
+      <Image src={image} srcSet={`${image2x} 2x, ${image3x} 3x,`} alt={props.name} />
     </Wrapper>
   );
 };
