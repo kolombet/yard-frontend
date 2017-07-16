@@ -8,7 +8,7 @@ import Amenities from './Amenities';
 import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
-import get from '../../api';
+import { get } from '../../api';
 
 class Index extends React.Component {
   constructor() {
