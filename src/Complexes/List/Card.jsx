@@ -55,8 +55,8 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default props => (
-  <Card to={`/complexes/${props.slug}`}>
+export default props =>
+  (<Card to={`/complexes/show/${props.slug}`}>
     <Cover id={props.image} />
 
     <Underline>
@@ -72,5 +72,4 @@ export default props => (
         </Description>
       </Info>
     </Underline>
-  </Card>
-);
+  </Card>);
