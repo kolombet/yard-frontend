@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
+import qs from 'qs';
 import Card from './Card';
 import { get } from '../../api';
-import qs from 'qs';
 
 class Cards extends Component {
   constructor() {
