@@ -13,7 +13,8 @@ deploy:
   provider: script
   skip_cleanup: true
   on:
-    branch: master
+    branch: travis
   script:
     - yarn build  
     - now build --public --token $NOW_TOKEN
+    - now alias --token $NOW_TOKEN
