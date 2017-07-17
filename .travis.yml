@@ -10,5 +10,6 @@ install:
 script:
   - yarn lint
 deploy:
-  - yarn build  
-  - now build --public --token $NOW_TOKEN
+  script:
+    - yarn build  
+    - now build --public --token $NOW_TOKEN
