@@ -10,7 +10,6 @@ export default () =>
   (<Router>
     <div className="App">
       <Header />
-      <Header />
       <Route exact path="/" component={List} />
       <Route path="/complexes/id" component={Show} />
       <Footer />
