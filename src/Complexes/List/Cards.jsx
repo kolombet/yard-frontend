@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import Card from './Card';
 import { get } from '../../api';
+import qs from 'qs';
 
 class Cards extends Component {
   constructor() {
@@ -10,7 +11,8 @@ class Cards extends Component {
   }
 
   componentDidMount() {
-    get('complexes?filter[state]=public').then((json) => {
+    const filter = qs.stringify({ filter: { state: 'public' } });
+    get(`complexes?${filter}`).then((json) => {
       this.setState({
         complexes: json.items,
       });

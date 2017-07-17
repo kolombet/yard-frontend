@@ -56,7 +56,7 @@ const Description = styled.p`
 `;
 
 export default props =>
-  (<Card to={`/complexes/show/${props.slug}`}>
+  (<Card to={`/complexes/${props.slug}`}>
     <Cover id={props.image} />
 
     <Underline>
