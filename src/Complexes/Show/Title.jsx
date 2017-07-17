@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Title = styled.h1`
+const Name = styled.h1`
   margin-top: 1.563rem;
   margin-bottom: .5rem;
   font-family: 'Philosopher', sans-serif;
@@ -38,12 +38,16 @@ const Favorite = styled.button`
   color: #00779a;
 `;
 
-export default () =>
+export default props =>
   (<Grid>
     <Row between="md">
       <Col>
-        <Title>Жилой комплекс «Полянка/44»</Title>
-        <Location>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Location>
+        <Name>
+          ЖК «{props.name}»
+        </Name>
+        <Location>
+          {props.location}
+        </Location>
       </Col>
       <Favorite>В избранное</Favorite>
     </Row>

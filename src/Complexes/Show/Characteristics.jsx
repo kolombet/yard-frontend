@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { formatMillion } from '../../util';
+import {
+  constructionKinds,
+  securityKinds,
+  furnitureKinds,
+  conditions,
+  renovateKinds,
+  quarters,
+} from '../dictionary';
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -38,39 +47,98 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default () =>
-  (<Grid>
-    <Title>Характеристики</Title>
-    <Row>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-      <Col md={4}>
-        <List>
-          <Key>Количество квартир:</Key>
-          <Value>1 503</Value>
-          <Key>Статус:</Key>
-          <Value>Квартиры</Value>
-          <Key>Цены:</Key>
-          <Value>от 5.3 до 143.5 млн</Value>
-        </List>
-      </Col>
-    </Row>
-  </Grid>);
+const Characteristics = styled.section`margin-bottom: 3rem;`;
+
+export default (props) => {
+  const {
+    propertyDefaults: { information: { furniture, condition, renovate } = {} } = {},
+    details: {
+      security,
+      constructionKind,
+      ceilHeight,
+      maintenanceCosts,
+      startYear,
+      startQuarter,
+      commissioningYear,
+      commissioningQuarter,
+    } = {},
+    statistics: { propertiesCount = '', price, totalArea } = {},
+  } =
+    props.complex || {};
+
+  return (
+    <Characteristics>
+      <Grid>
+        <Title>Характеристики</Title>
+        <Row>
+          <Col md={4}>
+            <List>
+              <Key>Количество квартир:</Key>
+              <Value>
+                {propertiesCount}
+              </Value>
+              <Key>Цены:</Key>
+              {price.from.rub === price.to.rub
+                ? <Value>
+                  {formatMillion(price.to.rub)} млн
+                </Value>
+                : <Value>
+                    От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
+                </Value>}
+
+              <Key>Площадь:</Key>
+              <Value>
+                От {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м²
+              </Value>
+              <Key>Ремонт:</Key>
+              <Value>
+                {renovateKinds[renovate] || ''}
+              </Value>
+            </List>
+          </Col>
+          <Col md={4}>
+            <List>
+              <Key>Конструкция корпусов:</Key>
+              <Value>
+                {constructionKinds[constructionKind] || ''}
+              </Value>
+              <Key>Высота потолков:</Key>
+              <Value>
+                От {+ceilHeight.from.toFixed(2)} до {+ceilHeight.to.toFixed(2)} м
+              </Value>
+              <Key>Обслуживание:</Key>
+              <Value>
+                {maintenanceCosts} руб / м² / месяц
+              </Value>
+              <Key>Мебель:</Key>
+              <Value>
+                {furnitureKinds[furniture] || ''}
+              </Value>
+            </List>
+          </Col>
+          <Col md={4}>
+            <List>
+              <Key>Безопасность:</Key>
+              <Value>
+                {securityKinds[security] || ''}
+              </Value>
+              <Key>Состояние:</Key>
+              <Value>
+                {conditions[condition] || ''}
+              </Value>
+              <Key>Начало строительства</Key>
+              <Value>
+                {quarters[startQuarter]} квартал {startYear} года
+              </Value>
+
+              <Key>Конец строительства</Key>
+              <Value>
+                {quarters[commissioningQuarter]} квартал {commissioningYear} года
+              </Value>
+            </List>
+          </Col>
+        </Row>
+      </Grid>
+    </Characteristics>
+  );
+};

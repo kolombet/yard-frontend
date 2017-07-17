@@ -2,17 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import Feature from './Feature';
-import HorizontalLine from '../../components/HorizontalLine';
+import HorizontalLine from '../../Components/HorizontalLine';
 
 const Features = styled.section`display: flex;`;
 
-export default () =>
-  (<Grid>
-    <Features>
-      <Feature title="950" description="предложений" />
-      <Feature title="John McAslan + Partners" description="архитектор" />
-      <Feature title="Группа «ПСН»" description="застройщик" />
-    </Features>
+export default (props) => {
+  const { offersCount = 0, architect = '', developer = '' } = props;
 
-    <HorizontalLine />
-  </Grid>);
+  return (
+    <Grid>
+      <Features>
+        {offersCount > 0 && <Feature title={offersCount} description="предложений" />}
+        {architect.length > 0 && <Feature title={architect} description="архитектор" />}
+        {developer.length > 0 && <Feature title={developer} description="застройщик" />}
+      </Features>
+
+      <HorizontalLine />
+    </Grid>
+  );
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import RightArrow from './components/RightArrow';
+import RightArrow from './Components/RightArrow';
 
 const NavLink = styled(Link)`
   display: block;

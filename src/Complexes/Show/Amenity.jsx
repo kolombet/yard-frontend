@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Col } from 'react-flexbox-grid';
 
@@ -12,16 +11,9 @@ const Label = styled.div`
   color: #3e4247;
 `;
 
-export default function Component(props) {
-  return (
-    <Col md={2}>
-      <Label>
-        {props.name}
-      </Label>
-    </Col>
-  );
-}
-
-Component.propTypes = {
-  name: PropTypes.string.isRequired,
-};
+export default props =>
+  (<Col md={2}>
+    <Label>
+      {props.name}
+    </Label>
+  </Col>);

@@ -4,6 +4,16 @@ import { Grid } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 import compassLogo from './img/compass-logo.svg';
 
+const LogoLink = styled(Link)`
+`;
+
+const LogoImage = styled.img`
+  width: 179px;
+  height: 24px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+`;
+
 const Navigation = styled(Link)`
   display: inline-block;
   font-family: 'Fira Sans', sans-serif;
@@ -23,13 +33,6 @@ const Navigations = styled.nav`
   padding-top: 1.4375rem;
 `;
 
-const Logo = styled.img`
-  width: 179px;
-  height: 24px;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-`;
-
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -44,7 +47,9 @@ export default () =>
   (<Header>
     <Grid>
       <HeaderContainer>
-        <Logo src={compassLogo} alt="compass logo" />
+        <LogoLink to="/complexes/list">
+          <LogoImage src={compassLogo} alt="compass logo" />
+        </LogoLink>
         <Navigations>
           <Navigation to="/">Купить</Navigation>
           <Navigation to="/">Снять</Navigation>
