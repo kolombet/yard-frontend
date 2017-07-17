@@ -26,7 +26,8 @@
     "eslint-plugin-import": "2.6.1",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "now": "^7.2.4"
   },
   "now": {
     "alias": "kolombet-yard-frontend"
