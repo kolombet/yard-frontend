@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import buildingPreview from '../../img/bitmap.jpg';
+import Cover from './Cover';
 
 const Card = styled(Link)`
   display: flex;
@@ -19,7 +18,11 @@ const Card = styled(Link)`
 const Info = styled.article`
   padding-left: 2rem;
   padding-right: 5.375rem;
+`;
+
+const Underline = styled.div`
   border-bottom: solid 2px #646971;
+  width: 100%;
 `;
 
 const Location = styled.p`
@@ -32,7 +35,7 @@ const Location = styled.p`
   text-align: left;
 `;
 
-const Address = styled.h3`
+const Name = styled.h3`
   margin: 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 40px;
@@ -52,29 +55,21 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-const Image = styled.img``;
+export default props =>
+  (<Card to={`/complexes/${props.slug}`}>
+    <Cover id={props.image} />
 
-export default function Component(props) {
-  return (
-    <Card to="/complexes/id">
-      <Image src={buildingPreview} alt="building preview" />
+    <Underline>
       <Info>
         <Location>
-          {props.title}
+          {props.location}
         </Location>
-        <Address>
-          {props.address}
-        </Address>
+        <Name>
+          {props.name}
+        </Name>
         <Description>
           {props.description}
         </Description>
       </Info>
-    </Card>
-  );
-}
-
-Component.propTypes = {
-  title: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
+    </Underline>
+  </Card>);

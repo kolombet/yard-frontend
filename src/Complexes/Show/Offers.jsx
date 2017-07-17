@@ -15,11 +15,13 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default () =>
-  (<Offers>
+export default props => (
+  <Offers>
     <Grid>
       <Row center="md">
-        <Title>Предложения в ЖК «Полянка/44»</Title>
+        <Title>
+            Предложения в ЖК «{props.name}»
+        </Title>
       </Row>
       <Row>
         <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
@@ -27,4 +29,5 @@ export default () =>
         <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
       </Row>
     </Grid>
-  </Offers>);
+  </Offers>
+);

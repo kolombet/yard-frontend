@@ -4350,6 +4350,10 @@ now@^7.2.4:
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/now/-/now-7.2.4.tgz#eeeddb2e7219133f1f1e183da0c691ae406a4925"
 
+normalize.css@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
+
 npmlog@^4.0.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
@@ -4651,6 +4655,10 @@ pkg-up@^1.0.0:
   resolved "https://registry.yarnpkg.com/pkg-up/-/pkg-up-1.0.0.tgz#3e08fb461525c4421624a33b9f7e6d0af5b05a26"
   dependencies:
     find-up "^1.0.0"
+
+pluralize-ru@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/pluralize-ru/-/pluralize-ru-1.0.1.tgz#92c09ced46089b268a530fa895e6b9ec04fe7795"
 
 pluralize@^1.2.1:
   version "1.2.1"
@@ -5055,6 +5063,10 @@ q@^1.1.2:
 qs@6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
+qs@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.0.tgz#8d04954d364def3efc55b5a0793e1e2c8b1e6e49"
 
 query-string@^4.1.0:
   version "4.3.4"

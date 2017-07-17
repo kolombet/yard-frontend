@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Feature = styled.div`
@@ -18,28 +17,20 @@ const Title = styled.h2`
 `;
 
 const Detail = styled.small`
-  font-family: FiraSans, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 22px;
   color: #a9afb6;
 `;
 
-export default function Component(props) {
-  return (
-    <Feature>
-      <Title>
-        {props.title}
-        <br />
-        <Detail>
-          {props.description}
-        </Detail>
-      </Title>
-    </Feature>
-  );
-}
-
-Component.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
+export default props =>
+  (<Feature>
+    <Title>
+      {props.title}
+      <br />
+      <Detail>
+        {props.description}
+      </Detail>
+    </Title>
+  </Feature>);

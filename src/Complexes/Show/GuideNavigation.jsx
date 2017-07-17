@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Navigation = styled.div`
@@ -26,20 +25,12 @@ const DistanceInfo = styled.p`
   color: #a9afb6;
 `;
 
-export default function Component(props) {
-  return (
-    <Navigation>
-      <Title>
-        {props.title}
-      </Title>
-      <DistanceInfo>
-        {props.distance}
-      </DistanceInfo>
-    </Navigation>
-  );
-}
-
-Component.propTypes = {
-  title: PropTypes.string.isRequired,
-  distance: PropTypes.number.isRequired,
-};
+export default props =>
+  (<Navigation>
+    <Title>
+      {props.title}
+    </Title>
+    <DistanceInfo>
+      {props.distance}
+    </DistanceInfo>
+  </Navigation>);
