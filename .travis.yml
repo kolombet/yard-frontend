@@ -10,6 +10,10 @@ install:
 script:
   - yarn lint
 deploy:
+  provider: script
+  skip_cleanup: true
+  on:
+    branch: master
   script:
     - yarn build  
     - now build --public --token $NOW_TOKEN
