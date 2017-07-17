@@ -6,7 +6,9 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 install:
   - yarn
+  - yarn global add now 
 script:
   - yarn lint
-  - yarn build
-  - now build --public
+deploy:
+  - yarn build  
+  - now build --public --token $NOW_TOKEN
