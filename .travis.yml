@@ -10,5 +10,5 @@ deploy:
     branch: master
   script:
     - yarn build  
-    - now build --public --token $NOW_TOKEN
+    - now build --public --name yard-frontend --token $NOW_TOKEN
     - now alias --token $NOW_TOKEN
