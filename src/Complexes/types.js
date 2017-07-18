@@ -40,8 +40,8 @@ export type AmenityType = {
 };
 
 export type ComplexDetailsType = {
-  architect: ?string,
-  developer: ?string,
+  architect: string,
+  developer: string,
   security: string,
   constructionKind: string,
   ceilHeight: {
@@ -86,7 +86,7 @@ export type ComplexType = {
   name: string,
   slug: ?string,
   images: ?Array<GalleryImageType>,
-  fullDescription: ?string,
+  fullDescription: string,
   location: LocationType,
   image: ?ImageType,
   state: ?string,

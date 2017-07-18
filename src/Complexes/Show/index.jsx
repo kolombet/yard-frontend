@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import BodyClassName from 'react-body-classname';
 import Gallery from './Gallery';
@@ -9,44 +11,36 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
-import type { ComplexType } from '../types';
+import type { ComplexType, OfferType } from '../types';
 
-type State = { complex: ComplexType };
+type State = ComplexType | Object;
 
 class Index extends React.Component {
   constructor() {
     super();
-    this.state = { complex: {} };
+    this.state = {};
   }
-  state: State;
+  state:State;
 
   componentDidMount() {
-    const slug = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((json) => {
-      this.setState({
-        complex: json,
-      });
+    const slug: string = this.props.match.params.slug;
+    get(`complexes/${slug}`).then((data: ComplexType) => {
+      this.setState(data);
     });
   }
 
   render() {
-    const {
-      location = {},
-      images,
-      name,
-      details = {},
-      fullDescription = '',
-      amenities,
-      units,
-    } = this.state.complex;
+    const complex: ComplexType | Object = this.state || {};
+    const { location = {}, images, name, details = {}, fullDescription = '', amenities, units } =
+      complex || {};
 
-    const { architect, developer } = details;
+    const { architect = '', developer = '' } = details;
     const { street, house, subLocalityName } = location;
 
-    const offers = [
-      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
-      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
-      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
+    const offers: Array<OfferType> = [
+      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
     ];
 
     return (

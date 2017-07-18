@@ -5,49 +5,28 @@ import { Grid } from 'react-flexbox-grid';
 import qs from 'qs';
 import Card from './Card';
 import { get } from '../../api';
+import { ComplexType } from '../types';
 
-type Complex = {
-  id: number,
-  name: string,
-  location: {
-    subLocalityName: string,
-    street: string,
-  },
-  image: {
-    id: string,
-    width: number,
-    height: number,
-    isPublic: boolean,
-  },
-  state: string,
-  slug: string,
-  shortDescription: string,
-};
-
-type State = {
-  items: Array<Complex>,
-};
+type State = Array<ComplexType> | Array;
 
 class Cards extends Component {
   constructor() {
     super();
-    this.state = { complexes: [] };
+    this.state = [];
   }
-  state: State;
+  state:State;
 
   componentDidMount() {
     const filter: string = qs.stringify({ filter: { state: 'public' } });
-    get(`complexes?${filter}`).then((json) => {
-      this.setState({
-        complexes: json.items,
-      });
+    get(`complexes?${filter}`).then((data) => {
+      this.setState(data.items);
     });
   }
 
   render() {
     return (
       <Grid>
-        {this.state.complexes.map((complex: Complex) => {
+        {this.state.complexes.map((complex: ComplexType) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
           const { subLocalityName, street } = location;
 

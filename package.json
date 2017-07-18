@@ -22,7 +22,8 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --ext js --ext jsx src/",
     "prepush": "npm run lint",
-    "flow": "flow"
+    "flow": "flow",
+    "flow-typed": "./node_modules/.bin/flow-typed"
   },
   "devDependencies": {
     "babel-preset-flow": "^6.23.0",
