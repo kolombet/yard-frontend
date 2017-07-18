@@ -13,7 +13,6 @@ export default () =>
     <ScrollToTop>
       <div className="App">
         <Header />
-        <Header />
         <Redirect from="/" to="/complexes" />
         <Route exact path="/complexes/" component={List} />
         <Route path="/complexes/:slug" component={Show} />
