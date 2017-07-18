@@ -4,7 +4,29 @@ import qs from 'qs';
 import Card from './Card';
 import { get } from '../../api';
 
+type Complex = {
+  id: number
+  name: string,
+  location: {
+    subLocalityName: string,
+    street: string
+  },
+  image: {
+    height: number,
+    isPublic: boolean,
+    id: string,
+    width: number
+  }
+  state: string,
+  slug: string,
+  shortDescription: string
+};
+
 class Cards extends Component {
+  state: {
+    items: Array<Complex>
+  }
+
   constructor() {
     super();
     this.state = { complexes: [] };
@@ -22,7 +44,7 @@ class Cards extends Component {
   render() {
     return (
       <Grid>
-        {this.state.complexes.map((complex) => {
+        {this.state.complexes.map((complex:Complex) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
           const { subLocalityName, street } = location;
 
