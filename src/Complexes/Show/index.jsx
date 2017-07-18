@@ -12,36 +12,39 @@ import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
 
+type GalleryImage = { id: string, isPublic: boolean };
+type Image = {
+  id: string,
+  width: number,
+  height: number,
+  isPublic: boolean,
+};
+
+type Location = {
+  subLocalityName: string,
+  street: string,
+  house: number,
+};
+
 type Complex = {
   id: number,
   name: string,
-  location: {
-    subLocalityName: string,
-    street: string,
-    house: number,
-  },
-  images: Array<Image>,
-  image: {
-    id: string,
-    width: number,
-    height: number,
-    isPublic: boolean,
-  },
-  state: string,
-  slug: string,
-  shortDescription: string,
-  fullDescription: string,
+  location: Location,
+  images: ?Array<GalleryImage>,
+  image: ?Image,
+  state: ?string,
+  slug: ?string,
+  shortDescription: ?string,
+  fullDescription: ?string,
   details: {
-    architect: string,
-    developer: string,
+    architect: ?string,
+    developer: ?string,
   },
-  amenities: Array<string>,
+  amenities: Array<?string>,
   units: number,
 };
 
-type Image = { id: string, isPublic: boolean };
-
-type State = { complex: Complex };
+type State = { complex: ?Complex };
 
 class Index extends React.Component {
   state: State;

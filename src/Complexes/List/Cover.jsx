@@ -18,6 +18,7 @@ type Props = {
   id: string,
   width: number,
   height: number,
+  name: string,
 };
 
 export default (props: Props) => {
