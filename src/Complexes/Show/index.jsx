@@ -1,5 +1,3 @@
-//@flow
-
 import React from 'react';
 import BodyClassName from 'react-body-classname';
 import Gallery from './Gallery';
@@ -11,40 +9,9 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
+import { ComplexType } from '../types';
 
-type GalleryImage = { id: string, isPublic: boolean };
-type Image = {
-  id: string,
-  width: number,
-  height: number,
-  isPublic: boolean,
-};
-
-type Location = {
-  subLocalityName: string,
-  street: string,
-  house: number,
-};
-
-type Complex = {
-  id: number,
-  name: string,
-  location: Location,
-  images: ?Array<GalleryImage>,
-  image: ?Image,
-  state: ?string,
-  slug: ?string,
-  shortDescription: ?string,
-  fullDescription: ?string,
-  details: {
-    architect: ?string,
-    developer: ?string,
-  },
-  amenities: Array<?string>,
-  units: number,
-};
-
-type State = { complex: ?Complex };
+type State = { complex: ComplexType };
 
 class Index extends React.Component {
   state: State;
@@ -77,6 +44,12 @@ class Index extends React.Component {
     const { architect, developer } = details;
     const { street, house, subLocalityName } = location;
 
+    const offers = [
+      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
+      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
+      { rooms: 5, areaType: { min: 20, max: 50 }, priceType: { min: 5, max: 10 } },
+    ];
+
     return (
       <BodyClassName className="complexe">
         <div>
@@ -88,7 +61,7 @@ class Index extends React.Component {
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
-          <Offers name={name} />
+          <Offers offers={offers} name={name} />
           <Guide />
         </div>
       </BodyClassName>

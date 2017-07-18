@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
 import { getImageUrl } from '../../util';
+import { GalleryImageType } from '../types';
 
 const Gallery = styled.section``;
 
@@ -33,7 +34,9 @@ const Expand = styled.button`
   color: white;
 `;
 
-export default (props) => {
+type Props = { images: Array<GalleryImageType> };
+
+export default (props: Props) => {
   const length = props.images.length;
   const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
   return (

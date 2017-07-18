@@ -66,8 +66,10 @@ const Navigation = styled.div`
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 `;
 
+const publicURL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
-  (<Guide>
+  <Guide>
     <Grid>
       <Row>
         <Col md={6}>
@@ -78,12 +80,12 @@ export default () =>
           </Info>
         </Col>
         <Col md={6}>
-          <AreaImage src={`${process.env.PUBLIC_URL}/guide/1/area_image.jpg`} alt="area image" />
+          <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
         </Col>
       </Row>
       <Row>
         <Col md={6}>
-          <Map src={`${process.env.PUBLIC_URL}/guide/1/map.png`} alt="map" />
+          <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
         </Col>
         <Col md={6}>
           <Navigation>
@@ -94,4 +96,4 @@ export default () =>
         </Col>
       </Row>
     </Grid>
-  </Guide>);
+  </Guide>;

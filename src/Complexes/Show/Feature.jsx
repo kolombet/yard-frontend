@@ -26,8 +26,13 @@ const Detail = styled.small`
   color: #a9afb6;
 `;
 
-export default props =>
-  (<Feature>
+type Props = {
+  title: string,
+  description: string,
+};
+
+export default (props: Props) =>
+  <Feature>
     <Title>
       {props.title}
       <br />
@@ -35,4 +40,4 @@ export default props =>
         {props.description}
       </Detail>
     </Title>
-  </Feature>);
+  </Feature>;

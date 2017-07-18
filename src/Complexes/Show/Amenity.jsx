@@ -13,9 +13,13 @@ const Label = styled.div`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Col md={2}>
+type Props = {
+  name: string,
+};
+
+export default (props: Props) =>
+  <Col md={2}>
     <Label>
       {props.name}
     </Label>
-  </Col>);
+  </Col>;

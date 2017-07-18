@@ -27,12 +27,17 @@ const DistanceInfo = styled.p`
   color: #a9afb6;
 `;
 
-export default props =>
-  (<Navigation>
+type Props = {
+  title: string,
+  distance: string,
+};
+
+export default (props: Props) =>
+  <Navigation>
     <Title>
       {props.title}
     </Title>
     <DistanceInfo>
       {props.distance}
     </DistanceInfo>
-  </Navigation>);
+  </Navigation>;

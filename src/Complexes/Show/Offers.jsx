@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row } from 'react-flexbox-grid';
 import Offer from './Offer';
+import { OfferType } from '../types.js';
 
 const Offers = styled.section`background-color: #f4f5f9;`;
 
@@ -17,8 +18,13 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Offers>
+type Props = {
+  name: string,
+  offers: Array<OfferType>,
+};
+
+export default (props: Props) =>
+  <Offers>
     <Grid>
       <Row center="md">
         <Title>
@@ -26,9 +32,9 @@ export default props =>
         </Title>
       </Row>
       <Row>
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
-        <Offer rooms={1} area={{ min: 59, max: 120 }} price={{ min: 20.3, max: 84.2 }} />
+        {props.offers.map((offer: OfferType) => {
+          return <Offer rooms={offer.rooms} area={offer.area} price={offer.price} />;
+        })}
       </Row>
     </Grid>
-  </Offers>);
+  </Offers>;

@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Amenity from './Amenity';
+import { AmenityType } from '../types';
 
 const Wrapper = styled.section`margin-bottom: 3rem;`;
 
@@ -17,8 +18,10 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Grid>
+type Props = { amenities: Array<AmenityType> };
+
+export default (props: Props) =>
+  <Grid>
     <Wrapper>
       <Row>
         <Col md={2}>
@@ -29,4 +32,4 @@ export default props =>
         {props.amenities.map(amenity => <Amenity key={amenity.id} name={amenity.name} />)}
       </Row>
     </Wrapper>
-  </Grid>);
+  </Grid>;

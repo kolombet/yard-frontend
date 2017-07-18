@@ -24,8 +24,13 @@ const Text = styled.div`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Grid>
+type Props = {
+  title: string,
+  fullDescription: string,
+};
+
+export default (props: Props) =>
+  <Grid>
     <Description>
       <Row>
         <Col md={2}>
@@ -41,4 +46,4 @@ export default props =>
       </Row>
     </Description>
     <HorizontalLine />
-  </Grid>);
+  </Grid>;
