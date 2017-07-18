@@ -1,4 +1,4 @@
-//@flow
+// @flow
 
 import React from 'react';
 import styled from 'styled-components';
@@ -14,6 +14,7 @@ import {
 } from '../dictionary';
 
 import type { ComplexType } from '../types';
+
 const Title = styled.h2`
   margin-top: 2rem;
   margin-bottom: 1.125rem;
@@ -115,11 +116,11 @@ export default ({ complex }: Props) => {
               <Key>Цены:</Key>
               {price.from.rub === price.to.rub
                 ? <Value>
-                    {formatMillion(price.to.rub)} млн
-                  </Value>
+                  {formatMillion(price.to.rub)} млн
+                </Value>
                 : <Value>
                     От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
-                  </Value>}
+                </Value>}
 
               <Key>Площадь:</Key>
               <Value>

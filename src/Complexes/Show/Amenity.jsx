@@ -18,8 +18,8 @@ type Props = {
 };
 
 export default (props: Props) =>
-  <Col md={2}>
+  (<Col md={2}>
     <Label>
       {props.name}
     </Label>
-  </Col>;
+  </Col>);

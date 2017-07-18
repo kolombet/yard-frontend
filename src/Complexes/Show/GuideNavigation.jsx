@@ -33,11 +33,11 @@ type Props = {
 };
 
 export default (props: Props) =>
-  <Navigation>
+  (<Navigation>
     <Title>
       {props.title}
     </Title>
     <DistanceInfo>
       {props.distance}
     </DistanceInfo>
-  </Navigation>;
+  </Navigation>);

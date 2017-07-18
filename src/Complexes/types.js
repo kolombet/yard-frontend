@@ -71,14 +71,14 @@ export type ComplexStatisticsType = {
   },
 };
 
-export type ComplexPropertyDefaultsType = {
-  information: PropertyDefaultInformationType,
-};
-
 export type PropertyDefaultInformationType = {
   furniture: string,
   condition: string,
   renovate: string,
+};
+
+export type ComplexPropertyDefaultsType = {
+  information: PropertyDefaultInformationType,
 };
 
 export type ComplexType = {

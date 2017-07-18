@@ -29,16 +29,15 @@ type State = {
 };
 
 class Cards extends Component {
-  state: State;
-
   constructor() {
     super();
     this.state = { complexes: [] };
   }
+  state: State;
 
   componentDidMount() {
     const filter: string = qs.stringify({ filter: { state: 'public' } });
-    get(`complexes?${filter}`).then(json => {
+    get(`complexes?${filter}`).then((json) => {
       this.setState({
         complexes: json.items,
       });

@@ -30,7 +30,7 @@ type Props = {
 };
 
 export default (props: Props) =>
-  <Grid>
+  (<Grid>
     <Description>
       <Row>
         <Col md={2}>
@@ -46,4 +46,4 @@ export default (props: Props) =>
       </Row>
     </Description>
     <HorizontalLine />
-  </Grid>;
+  </Grid>);

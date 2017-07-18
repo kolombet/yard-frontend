@@ -46,7 +46,7 @@ type Props = {
 };
 
 export default (props: Props) =>
-  <Grid>
+  (<Grid>
     <Row between="md">
       <Col>
         <Name>
@@ -58,4 +58,4 @@ export default (props: Props) =>
       </Col>
       <Favorite>В избранное</Favorite>
     </Row>
-  </Grid>;
+  </Grid>);

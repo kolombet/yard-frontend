@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import type { PriceType, AreaType, OfferType } from '../types';
+import type { OfferType } from '../types';
 
 const Offer = styled.div`
   padding: 1.5rem 2rem;
@@ -70,7 +70,7 @@ const OpenOffer = styled.button`
 `;
 
 export default (props: OfferType) =>
-  <Col md={4}>
+  (<Col md={4}>
     <Offer>
       <Title>
         {props.rooms}-комнатные квартиры
@@ -87,4 +87,4 @@ export default (props: OfferType) =>
         <OpenOffer>Посмотреть предложения</OpenOffer>
       </Row>
     </Offer>
-  </Col>;
+  </Col>);

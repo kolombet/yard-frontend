@@ -21,7 +21,7 @@ const Title = styled.h2`
 type Props = { amenities: Array<AmenityType> };
 
 export default (props: Props) =>
-  <Grid>
+  (<Grid>
     <Wrapper>
       <Row>
         <Col md={2}>
@@ -32,4 +32,4 @@ export default (props: Props) =>
         {props.amenities.map(amenity => <Amenity key={amenity.id} name={amenity.name} />)}
       </Row>
     </Wrapper>
-  </Grid>;
+  </Grid>);

@@ -14,16 +14,15 @@ import type { ComplexType } from '../types';
 type State = { complex: ComplexType };
 
 class Index extends React.Component {
-  state: State;
-
   constructor() {
     super();
     this.state = { complex: {} };
   }
+  state: State;
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    get(`complexes/${slug}`).then(json => {
+    get(`complexes/${slug}`).then((json) => {
       this.setState({
         complex: json,
       });

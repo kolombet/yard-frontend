@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Cover from './Cover';
+import type { ImageType } from '../types';
 
 const Card = styled(Link)`
   display: flex;
@@ -58,20 +59,15 @@ const Description = styled.p`
 `;
 
 type CardProps = {
-  id: number,
-  url: string,
+  slug: string,
   location: string,
   name: string,
   description: string,
-  image: {
-    id: string,
-    width: number,
-    height: number,
-  },
+  image: ImageType,
 };
 
 export default (props: CardProps) =>
-  <Card to={`/complexes/${props.slug}`}>
+  (<Card to={`/complexes/${props.slug}`}>
     <Cover id={props.image} />
 
     <Underline>
@@ -87,4 +83,4 @@ export default (props: CardProps) =>
         </Description>
       </Info>
     </Underline>
-  </Card>;
+  </Card>);

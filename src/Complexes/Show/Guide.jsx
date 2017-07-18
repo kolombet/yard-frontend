@@ -69,7 +69,7 @@ const Navigation = styled.div`
 const publicURL: string = process.env.PUBLIC_URL || '';
 
 export default () =>
-  <Guide>
+  (<Guide>
     <Grid>
       <Row>
         <Col md={6}>
@@ -96,4 +96,4 @@ export default () =>
         </Col>
       </Row>
     </Grid>
-  </Guide>;
+  </Guide>);

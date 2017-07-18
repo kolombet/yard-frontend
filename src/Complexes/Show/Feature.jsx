@@ -32,7 +32,7 @@ type Props = {
 };
 
 export default (props: Props) =>
-  <Feature>
+  (<Feature>
     <Title>
       {props.title}
       <br />
@@ -40,4 +40,4 @@ export default (props: Props) =>
         {props.description}
       </Detail>
     </Title>
-  </Feature>;
+  </Feature>);
