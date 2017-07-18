@@ -1,3 +1,5 @@
+// @flow
+
 export type AreaType = {
   min: number,
   max: number,
@@ -37,20 +39,61 @@ export type AmenityType = {
   name: string,
 };
 
+export type ComplexDetailsType = {
+  architect: ?string,
+  developer: ?string,
+  security: string,
+  constructionKind: string,
+  ceilHeight: {
+    from: number,
+    to: number,
+  },
+  maintenanceCosts: ?string,
+  startYear: string,
+  startQuarter: string,
+  commissioningYear: string,
+  commissioningQuarter: string,
+};
+
+export type ComplexStatisticsType = {
+  propertiesCount: number,
+  price: {
+    from: {
+      rub: number,
+    },
+    to: {
+      rub: number,
+    },
+  },
+  totalArea: {
+    from: number,
+    to: number,
+  },
+};
+
+export type ComplexPropertyDefaultsType = {
+  information: PropertyDefaultInformationType,
+};
+
+export type PropertyDefaultInformationType = {
+  furniture: string,
+  condition: string,
+  renovate: string,
+};
+
 export type ComplexType = {
   id: number,
   name: string,
-  location: Location,
-  images: ?Array<GalleryImage>,
-  image: ?Image,
-  state: ?string,
   slug: ?string,
-  shortDescription: ?string,
+  images: ?Array<GalleryImageType>,
   fullDescription: ?string,
-  details: {
-    architect: ?string,
-    developer: ?string,
-  },
-  amenities: Array<Amenity>,
+  location: LocationType,
+  image: ?ImageType,
+  state: ?string,
+  shortDescription: ?string,
+  details: ComplexDetailsType,
+  statistics: ComplexStatisticsType,
+  amenities: Array<AmenityType>,
+  propertyDefaults: ComplexPropertyDefaultsType,
   units: number,
 };

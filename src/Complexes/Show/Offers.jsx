@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row } from 'react-flexbox-grid';
 import Offer from './Offer';
-import { OfferType } from '../types.js';
+import type { OfferType } from '../types.js';
 
 const Offers = styled.section`background-color: #f4f5f9;`;
 

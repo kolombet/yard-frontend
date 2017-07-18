@@ -1,3 +1,5 @@
+//@flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -11,6 +13,7 @@ import {
   quarters,
 } from '../dictionary';
 
+import type { ComplexType } from '../types';
 const Title = styled.h2`
   margin-top: 2rem;
   margin-bottom: 1.125rem;
@@ -49,22 +52,54 @@ const Value = styled.dd`
 
 const Characteristics = styled.section`margin-bottom: 3rem;`;
 
-export default (props) => {
+type Props = {
+  complex: ComplexType,
+};
+
+const defaultStatistics = {
+  propertiesCount: '',
+  price: { from: { rub: 0 }, to: { rub: 0 } },
+  totalArea: { from: 0, to: 0 },
+};
+
+const defaultDetails = {
+  security: 'guarded',
+  constructionKind: 'brick',
+  ceilHeight: {},
+  maintenanceCosts: 0,
+  startYear: 0,
+  startQuarter: 'first',
+  commissioningYear: 0,
+  commissioningQuarter: 'first',
+};
+
+const defaultInformation = {
+  information: {
+    furniture: 'absent',
+    condition: 'great',
+    renovate: 'rough_finish',
+  },
+};
+
+export default ({ complex }: Props) => {
   const {
-    propertyDefaults: { information: { furniture, condition, renovate } = {} } = {},
-    details: {
-      security,
-      constructionKind,
-      ceilHeight,
-      maintenanceCosts,
-      startYear,
-      startQuarter,
-      commissioningYear,
-      commissioningQuarter,
-    } = {},
-    statistics: { propertiesCount = '', price, totalArea } = {},
-  } =
-    props.complex || {};
+    statistics = defaultStatistics,
+    details = defaultDetails,
+    propertyDefaults = defaultInformation,
+  } = complex;
+  const { propertiesCount = '', price, totalArea } = statistics;
+  const {
+    security,
+    constructionKind = 'brick',
+    ceilHeight,
+    maintenanceCosts,
+    startYear,
+    startQuarter,
+    commissioningYear,
+    commissioningQuarter,
+  } = details;
+  const { information } = propertyDefaults;
+  const { furniture, condition, renovate } = information;
 
   return (
     <Characteristics>
@@ -80,11 +115,11 @@ export default (props) => {
               <Key>Цены:</Key>
               {price.from.rub === price.to.rub
                 ? <Value>
-                  {formatMillion(price.to.rub)} млн
-                </Value>
+                    {formatMillion(price.to.rub)} млн
+                  </Value>
                 : <Value>
                     От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
-                </Value>}
+                  </Value>}
 
               <Key>Площадь:</Key>
               <Value>
@@ -92,7 +127,7 @@ export default (props) => {
               </Value>
               <Key>Ремонт:</Key>
               <Value>
-                {renovateKinds[renovate] || ''}
+                {renovateKinds[renovate]}
               </Value>
             </List>
           </Col>
@@ -100,7 +135,7 @@ export default (props) => {
             <List>
               <Key>Конструкция корпусов:</Key>
               <Value>
-                {constructionKinds[constructionKind] || ''}
+                {constructionKinds[constructionKind]}
               </Value>
               <Key>Высота потолков:</Key>
               <Value>

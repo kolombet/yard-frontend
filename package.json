@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^7.2.3",
     "normalize.css": "^7.0.0",
     "pluralize-ru": "^1.0.1",
     "qs": "^6.5.0",

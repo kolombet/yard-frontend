@@ -9,7 +9,7 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
-import { ComplexType } from '../types';
+import type { ComplexType } from '../types';
 
 type State = { complex: ComplexType };
 

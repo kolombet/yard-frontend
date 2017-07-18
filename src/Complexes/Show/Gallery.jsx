@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
 import { getImageUrl } from '../../util';
-import { GalleryImageType } from '../types';
+import type { GalleryImageType } from '../types';
 
 const Gallery = styled.section``;
 
