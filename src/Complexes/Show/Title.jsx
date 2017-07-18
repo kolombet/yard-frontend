@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -38,8 +40,13 @@ const Favorite = styled.button`
   color: #00779a;
 `;
 
-export default props =>
-  (<Grid>
+type Props = {
+  name: string,
+  location: string,
+};
+
+export default (props: Props) =>
+  <Grid>
     <Row between="md">
       <Col>
         <Name>
@@ -51,4 +58,4 @@ export default props =>
       </Col>
       <Favorite>В избранное</Favorite>
     </Row>
-  </Grid>);
+  </Grid>;

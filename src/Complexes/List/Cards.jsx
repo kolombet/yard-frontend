@@ -1,3 +1,5 @@
+// @flowtype
+
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import qs from 'qs';
@@ -5,27 +7,29 @@ import Card from './Card';
 import { get } from '../../api';
 
 type Complex = {
-  id: number
+  id: number,
   name: string,
   location: {
     subLocalityName: string,
-    street: string
+    street: string,
   },
   image: {
+    id: string,
+    width: number,
     height: number,
     isPublic: boolean,
-    id: string,
-    width: number
-  }
+  },
   state: string,
   slug: string,
-  shortDescription: string
+  shortDescription: string,
+};
+
+type State = {
+  items: Array<Complex>,
 };
 
 class Cards extends Component {
-  state: {
-    items: Array<Complex>
-  }
+  state: State;
 
   constructor() {
     super();
@@ -33,8 +37,8 @@ class Cards extends Component {
   }
 
   componentDidMount() {
-    const filter = qs.stringify({ filter: { state: 'public' } });
-    get(`complexes?${filter}`).then((json) => {
+    const filter: string = qs.stringify({ filter: { state: 'public' } });
+    get(`complexes?${filter}`).then(json => {
       this.setState({
         complexes: json.items,
       });
@@ -44,7 +48,7 @@ class Cards extends Component {
   render() {
     return (
       <Grid>
-        {this.state.complexes.map((complex:Complex) => {
+        {this.state.complexes.map((complex: Complex) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
           const { subLocalityName, street } = location;
 

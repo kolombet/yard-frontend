@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
@@ -66,23 +68,22 @@ const OpenOffer = styled.button`
   text-align: center;
 `;
 
-export default props => (
-  <Col md={4}>
+export default props =>
+  (<Col md={4}>
     <Offer>
       <Title>
         {props.rooms}-комнатные квартиры
       </Title>
       <Area>Площадь</Area>
       <AreaValue>
-          от {props.area.min} до {props.area.max} м²
+        от {props.area.min} до {props.area.max} м²
       </AreaValue>
       <Price>Стоимость</Price>
       <PriceValue>
-          от {props.price.min} до {props.price.max} млн руб
+        от {props.price.min} до {props.price.max} млн руб
       </PriceValue>
       <Row center="md">
         <OpenOffer>Посмотреть предложения</OpenOffer>
       </Row>
     </Offer>
-  </Col>
-);
+  </Col>);

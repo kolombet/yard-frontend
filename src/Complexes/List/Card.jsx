@@ -1,3 +1,5 @@
+// @flowtype
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -55,8 +57,21 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Card to={`/complexes/${props.slug}`}>
+type CardProps = {
+  id: number,
+  url: string,
+  location: string,
+  name: string,
+  description: string,
+  image: {
+    id: string,
+    width: number,
+    height: number,
+  },
+};
+
+export default (props: CardProps) =>
+  <Card to={`/complexes/${props.slug}`}>
     <Cover id={props.image} />
 
     <Underline>
@@ -72,4 +87,4 @@ export default props =>
         </Description>
       </Info>
     </Underline>
-  </Card>);
+  </Card>;

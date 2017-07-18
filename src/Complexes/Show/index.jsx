@@ -1,3 +1,5 @@
+//@flow
+
 import React from 'react';
 import BodyClassName from 'react-body-classname';
 import Gallery from './Gallery';
@@ -10,7 +12,40 @@ import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
 
+type Complex = {
+  id: number,
+  name: string,
+  location: {
+    subLocalityName: string,
+    street: string,
+    house: number,
+  },
+  images: Array<Image>,
+  image: {
+    id: string,
+    width: number,
+    height: number,
+    isPublic: boolean,
+  },
+  state: string,
+  slug: string,
+  shortDescription: string,
+  fullDescription: string,
+  details: {
+    architect: string,
+    developer: string,
+  },
+  amenities: Array<string>,
+  units: number,
+};
+
+type Image = { id: string, isPublic: boolean };
+
+type State = { complex: Complex };
+
 class Index extends React.Component {
+  state: State;
+
   constructor() {
     super();
     this.state = { complex: {} };
@@ -18,7 +53,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((json) => {
+    get(`complexes/${slug}`).then(json => {
       this.setState({
         complex: json,
       });
