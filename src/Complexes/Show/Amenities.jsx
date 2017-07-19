@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Amenity from './Amenity';
-import type { AmenityType } from '../types';
+import type { Amenity as AmenityType } from '../types';
 
 const Wrapper = styled.section`margin-bottom: 3rem;`;
 

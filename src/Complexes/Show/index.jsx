@@ -11,14 +11,16 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
-import type { ComplexType, OfferType } from '../types';
+import type { Complex as ComplexType, Offer as OfferType } from '../types';
+import dummy from './dummy';
 
 type State = {
-  complex: ComplexType | {},
+  complex: ComplexType,
 };
 
 class Index extends React.Component {
-  state: State = { complex: {} };
+  state: State;
+  state = { complex: JSON.parse(dummy) };
 
   componentDidMount() {
     const slug: string = this.props.match.params.slug;
@@ -28,7 +30,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const complex: ComplexType | Object = this.state.complex || {};
+    const { complex } = this.state;
     const {
       location = {},
       images,
@@ -55,7 +57,7 @@ class Index extends React.Component {
           {images && <Gallery images={images} />}
 
           <Features offersCount={units} architect={architect} developer={developer} />
-          {this.state.complex.details && <Characteristics complex={this.state} />}
+          {complex.details && <Characteristics complex={complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}

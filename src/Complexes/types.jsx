@@ -1,45 +1,45 @@
 // @flow
 
-export type AreaType = {
+type Area = {
   min: number,
   max: number,
 };
 
-export type PriceType = {
+type Price = {
   min: number,
   max: number,
 };
 
-export type OfferType = {
+type Offer = {
   rooms: number,
-  area: AreaType,
-  price: PriceType,
+  area: Area,
+  price: Price,
 };
 
-export type GalleryImageType = {
+type GalleryImage = {
   id: string,
   isPublic: boolean,
 };
 
-export type ImageType = {
+type Image = {
   id: string,
   width: number,
   height: number,
   isPublic: boolean,
 };
 
-export type LocationType = {
+type Location = {
   subLocalityName: string,
   street: string,
   house: number,
 };
 
-export type AmenityType = {
+type Amenity = {
   id: number,
   name: string,
 };
 
-export type ComplexDetailsType = {
+type ComplexDetails = {
   architect: string,
   developer: string,
   security: string,
@@ -55,7 +55,7 @@ export type ComplexDetailsType = {
   commissioningQuarter: string,
 };
 
-export type ComplexStatisticsType = {
+type ComplexStatistics = {
   propertiesCount: number,
   price: {
     from: {
@@ -71,29 +71,31 @@ export type ComplexStatisticsType = {
   },
 };
 
-export type PropertyDefaultInformationType = {
+type PropertyDefaultInformation = {
   furniture: string,
   condition: string,
   renovate: string,
 };
 
-export type ComplexPropertyDefaultsType = {
-  information: PropertyDefaultInformationType,
+type ComplexPropertyDefaults = {
+  information: PropertyDefaultInformation,
 };
 
-export type ComplexType = {
+type Complex = {
   id: number,
   name: string,
   slug: ?string,
-  images: ?Array<GalleryImageType>,
+  images: ?Array<GalleryImage>,
   fullDescription: string,
-  location: LocationType,
-  image: ?ImageType,
+  location: Location,
+  image: ?Image,
   state: ?string,
   shortDescription: ?string,
-  details: ComplexDetailsType,
-  statistics: ComplexStatisticsType,
-  amenities: Array<AmenityType>,
-  propertyDefaults: ComplexPropertyDefaultsType,
+  details: ComplexDetails,
+  statistics: ComplexStatistics,
+  amenities: Array<Amenity>,
+  propertyDefaults: ComplexPropertyDefaults,
   units: number,
 };
+
+export type { Complex, Image, Amenity, GalleryImage, Offer };

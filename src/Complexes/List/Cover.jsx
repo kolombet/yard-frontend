@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getImageUrl } from '../../util';
-import type { ImageType } from '../types';
+import type { Image as ImageType } from '../types';
 
 const Wrapper = styled.div`
   width: 491px;

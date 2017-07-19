@@ -13,7 +13,7 @@ import {
   quarters,
 } from '../dictionary';
 
-import type { ComplexType } from '../types';
+import type { Complex as ComplexType } from '../types';
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -82,7 +82,8 @@ const defaultInformation = {
   },
 };
 
-export default ({ complex }: Props) => {
+export default (props: Props) => {
+  const { complex } = props;
   const {
     statistics = defaultStatistics,
     details = defaultDetails,

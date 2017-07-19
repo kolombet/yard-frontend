@@ -5,10 +5,12 @@ import { Grid } from 'react-flexbox-grid';
 import qs from 'qs';
 import Card from './Card';
 import { get } from '../../api';
-import { ComplexType } from '../types';
+import { Complex as ComplexType } from '../types';
 
 class Cards extends Component {
-  state: Array<ComplexType> = { complexes: [] };
+  state: Array<ComplexType>;
+
+  state = { complexes: [] };
 
   componentDidMount() {
     const filter = qs.stringify({ filter: { state: 'public' } });

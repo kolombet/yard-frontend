@@ -1,0 +1,92 @@
+{
+  "adjacentTerritory": {
+    "isAccessOpen": false,
+    "isAllowedCars": false,
+    "isGreeneryPlanted": true
+  },
+  "name": "Knightsbridge Private Park",
+  "updatedAt": "2017-07-04T21:31:14.727Z",
+  "location": {
+    "latitude": "55.7221",
+    "localityId": 3,
+    "subLocalityName": "РҐР°РјРѕРІРЅРёРєРё",
+    "subwayIds": [],
+    "countryName": "Р РѕСЃСЃРёСЏ",
+    "longitude": "37.5702281",
+    "postalCode": 119048,
+    "countryId": 1,
+    "subLocalityId": 7,
+    "house": "14/19",
+    "localityName": "РњРѕСЃРєРІР°",
+    "street": "СѓР» РљРѕРѕРїРµСЂР°С‚РёРІРЅР°СЏ",
+    "regionId": 2,
+    "regionName": "РњРѕСЃРєРІР°"
+  },
+  "state": "draft",
+  "statistics": {
+    "resalePropertiesCount": 0,
+    "price": {
+      "from": { "usd": 0, "eur": 0, "rub": 0 },
+      "to": { "usd": 0, "eur": 0, "rub": 0 }
+    },
+    "totalResaleArea": { "from": 0.0, "to": 0.0 },
+    "resalePrice": {
+      "from": { "usd": 0, "eur": 0, "rub": 0 },
+      "to": { "usd": 0, "eur": 0, "rub": 0 }
+    },
+    "propertiesCount": 0,
+    "totalPrimaryArea": { "from": 0.0, "to": 0.0 },
+    "primaryPrice": {
+      "from": { "usd": 0, "eur": 0, "rub": 0 },
+      "to": { "usd": 0, "eur": 0, "rub": 0 }
+    },
+    "primaryPropertiesCount": 0,
+    "totalArea": { "from": 0.0, "to": 0.0 }
+  },
+  "purchaseTimeConditions": {},
+  "linkedContactIds": [],
+  "propertyDefaults": {
+    "saleOffer": {
+      "isMortgage": true,
+      "agentFee": 3.0,
+      "isBargain": false,
+      "kind": "direct_sell",
+      "isInstallment": false
+    },
+    "information": {
+      "renovate": "for_finishing",
+      "condition": "great",
+      "ventilation": "central",
+      "furniture": "absent",
+      "conditioning": "own"
+    }
+  },
+  "slug": "knightsbridge-private-park",
+  "responsibleUser": { "id": 2, "departmentId": 1 },
+  "createdByUserId": 2,
+  "id": 5,
+  "amenities": [],
+  "updatedByUserId": 2,
+  "createdAt": "2016-11-14T20:57:53.257Z",
+  "details": {
+    "commissioningYear": 2016,
+    "security": "guarded",
+    "parkings": 0,
+    "contractType": "ddu",
+    "withWasteDisposalRoom": true,
+    "commissioningQuarter": "fourth",
+    "constructionKind": "brick_monolithic",
+    "propertyKind": "flat",
+    "withRubbishChute": false,
+    "maintenanceCosts": 150,
+    "startQuarter": "fourth",
+    "startYear": 2010,
+    "ceilHeight": { "from": 1.0, "to": 1.0 },
+    "undergroundGarages": 475,
+    "infrastructureUnits": [],
+    "architect": "Speech",
+    "accreditors": []
+  },
+  "installment": {},
+  "images": []
+}
