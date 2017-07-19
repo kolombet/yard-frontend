@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-eslint": "^7.2.3",
     "normalize.css": "^7.0.0",
     "pluralize-ru": "^1.0.1",
     "qs": "^6.5.0",
@@ -21,11 +20,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --ext js --ext jsx src/",
-    "prepush": "npm run lint",
+    "prepush": "eslint",
     "flow": "flow",
-    "flow-typed": "./node_modules/.bin/flow-typed"
+    "flow-typed": "flow-typed"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",

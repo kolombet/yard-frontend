@@ -2,8 +2,7 @@
   "parser": "babel-eslint",
   "extends": ["airbnb"],
   "rules": {
-    "react/prop-types": 0,
-    "strict": 0
+    "react/prop-types": 0
   },
   "plugins": ["react", "jsx-a11y", "import"],
   "env": {

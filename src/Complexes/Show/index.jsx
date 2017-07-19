@@ -13,26 +13,31 @@ import Characteristics from './Characteristics';
 import { get } from '../../api';
 import type { ComplexType, OfferType } from '../types';
 
-type State = ComplexType | Object;
+type State = {
+  complex: ComplexType | {},
+};
 
 class Index extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  state:State;
+  state: State = { complex: {} };
 
   componentDidMount() {
     const slug: string = this.props.match.params.slug;
     get(`complexes/${slug}`).then((data: ComplexType) => {
-      this.setState(data);
+      this.setState({ complex: data });
     });
   }
 
   render() {
-    const complex: ComplexType | Object = this.state || {};
-    const { location = {}, images, name, details = {}, fullDescription = '', amenities, units } =
-      complex || {};
+    const complex: ComplexType | Object = this.state.complex || {};
+    const {
+      location = {},
+      images,
+      name,
+      details = {},
+      fullDescription = '',
+      amenities,
+      units,
+    } = complex;
 
     const { architect = '', developer = '' } = details;
     const { street, house, subLocalityName } = location;
@@ -50,7 +55,7 @@ class Index extends React.Component {
           {images && <Gallery images={images} />}
 
           <Features offersCount={units} architect={architect} developer={developer} />
-          {this.state.complex.details && <Characteristics complex={this.state.complex} />}
+          {this.state.complex.details && <Characteristics complex={this.state} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
