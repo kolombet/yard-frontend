@@ -4346,6 +4346,10 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
+now@^7.2.4:
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/now/-/now-7.2.4.tgz#eeeddb2e7219133f1f1e183da0c691ae406a4925"
+
 normalize.css@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
