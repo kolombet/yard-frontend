@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  - yarn lint
+deploy:
+  provider: script
+  skip_cleanup: true
+  on:
+    branch: master
+  script:
+    - yarn build  
+    - now build --public --name yard-frontend --token $NOW_TOKEN
+    - now alias --token $NOW_TOKEN

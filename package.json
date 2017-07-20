@@ -36,7 +36,8 @@
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.50.0",
     "flow-typed": "^2.1.5",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "now": "^7.2.4"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -48,5 +49,8 @@
       "browser": true,
       "jest": true
     }
+  },
+  "now": {
+    "alias": "kolombet-yard-frontend"
   }
 }
