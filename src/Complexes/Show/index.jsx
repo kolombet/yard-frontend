@@ -2,6 +2,7 @@
 
 import React from 'react';
 import BodyClassName from 'react-body-classname';
+import shortid from 'shortid';
 import Gallery from './Gallery';
 import Title from './Title';
 import Features from './Features';
@@ -20,6 +21,13 @@ class Index extends React.Component {
     complex: ComplexType,
   };
 
+  componentDidMount() {
+    const slug: string = this.props.match.params.slug;
+    get(`complexes/${slug}`).then((data: ComplexType) => {
+      this.setState({ complex: data });
+    });
+  }
+
   props: {
     match: {
       params: {
@@ -27,13 +35,6 @@ class Index extends React.Component {
       },
     },
   };
-
-  componentDidMount() {
-    const slug: string = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((data: ComplexType) => {
-      this.setState({ complex: data });
-    });
-  }
 
   render() {
     const { complex } = this.state;
@@ -51,9 +52,9 @@ class Index extends React.Component {
     const { street, house, subLocalityName } = location;
 
     const offers: Array<OfferType> = [
-      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
-      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
-      { rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
     ];
 
     return (
