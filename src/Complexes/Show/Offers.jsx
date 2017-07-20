@@ -32,8 +32,8 @@ export default (props: Props) =>
         </Title>
       </Row>
       <Row>
-        {props.offers.map((offer: OfferType) =>
-          <Offer rooms={offer.rooms} area={offer.area} price={offer.price} />,
+        {props.offers.map((offer: OfferType, id:number) =>
+          <Offer key={id} rooms={offer.rooms} area={offer.area} price={offer.price} />,
         )}
       </Row>
     </Grid>
