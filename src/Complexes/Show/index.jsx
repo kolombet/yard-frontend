@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import BodyClassName from 'react-body-classname';
 import Gallery from './Gallery';
@@ -11,20 +9,17 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
-import type { Complex as ComplexType, Offer as OfferType } from '../types';
 import dummy from './dummy';
 
-type State = {
-  complex: ComplexType,
-};
-
 class Index extends React.Component {
-  state: State;
-  state = { complex: JSON.parse(dummy) };
+  constructor() {
+    super();
+    this.state = { complex: {} };
+  }
 
   componentDidMount() {
     const slug: string = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((data: ComplexType) => {
+    get(`complexes/${slug}`).then((data) => {
       this.setState({ complex: data });
     });
   }

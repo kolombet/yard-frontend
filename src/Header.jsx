@@ -49,7 +49,7 @@ export default () =>
   (<Header>
     <Grid>
       <HeaderContainer>
-        <LogoLink to="/complexes/list">
+        <LogoLink to="/complexes/">
           <LogoImage src={compassLogo} alt="compass logo" />
         </LogoLink>
         <Navigations>
