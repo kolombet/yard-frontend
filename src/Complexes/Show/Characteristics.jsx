@@ -57,38 +57,8 @@ type Props = {
   complex: ComplexType,
 };
 
-const defaultStatistics = {
-  propertiesCount: '',
-  price: { from: { rub: 0 }, to: { rub: 0 } },
-  totalArea: { from: 0, to: 0 },
-};
-
-const defaultDetails = {
-  security: 'guarded',
-  constructionKind: 'brick',
-  ceilHeight: {},
-  maintenanceCosts: 0,
-  startYear: 0,
-  startQuarter: 'first',
-  commissioningYear: 0,
-  commissioningQuarter: 'first',
-};
-
-const defaultInformation = {
-  information: {
-    furniture: 'absent',
-    condition: 'great',
-    renovate: 'rough_finish',
-  },
-};
-
-export default (props: Props) => {
-  const { complex } = props;
-  const {
-    statistics = defaultStatistics,
-    details = defaultDetails,
-    propertyDefaults = defaultInformation,
-  } = complex;
+export default ({ complex }: Props = {}) => {
+  const { statistics = {}, details = {}, propertyDefaults = {} } = complex;
   const { propertiesCount = '', price, totalArea } = statistics;
   const {
     security,
@@ -118,10 +88,10 @@ export default (props: Props) => {
               {price.from.rub === price.to.rub
                 ? <Value>
                   {formatMillion(price.to.rub)} млн
-                </Value>
+                  </Value>
                 : <Value>
                     От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
-                </Value>}
+                  </Value>}
 
               <Key>Площадь:</Key>
               <Value>
