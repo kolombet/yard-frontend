@@ -11,14 +11,10 @@ type Price = {
 };
 
 type Offer = {
+  id: string,
   rooms: number,
   area: Area,
   price: Price,
-};
-
-type GalleryImage = {
-  id: string,
-  isPublic: boolean,
 };
 
 type Image = {
@@ -84,18 +80,19 @@ type ComplexPropertyDefaults = {
 type Complex = {
   id: number,
   name: string,
-  slug: ?string,
-  images: ?Array<GalleryImage>,
-  fullDescription: string,
+  slug: string,
+  images: Array<Image>,
+  image: Image,
+  details: ComplexDetails,
+  note: string,
   location: Location,
-  image: ?Image,
+  statistics: ComplexStatistics,
+  propertyDefaults: ComplexPropertyDefaults,
+  fullDescription: string,
   state: ?string,
   shortDescription: ?string,
-  details: ComplexDetails,
-  statistics: ComplexStatistics,
   amenities: Array<Amenity>,
-  propertyDefaults: ComplexPropertyDefaults,
   units: number,
 };
 
-export type { Complex, Image, Amenity, GalleryImage, Offer };
+export type { Complex, Image, Amenity, Offer };

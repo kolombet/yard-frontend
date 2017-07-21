@@ -69,22 +69,28 @@ const OpenOffer = styled.button`
   text-align: center;
 `;
 
-export default (props: OfferType) =>
-  (<Col md={4}>
-    <Offer>
+type Props = {
+  offer: OfferType,
+};
+
+export default ({ offer }: Props = {}) => {
+  const { rooms, area, price } = offer;
+  <Col md={4}>
+      <Offer>
       <Title>
-        {props.rooms}-комнатные квартиры
+          {rooms}-комнатные квартиры
       </Title>
       <Area>Площадь</Area>
       <AreaValue>
-        от {props.area.min} до {props.area.max} м²
+        от {area.min} до {area.max} м²
       </AreaValue>
       <Price>Стоимость</Price>
       <PriceValue>
-        от {props.price.min} до {props.price.max} млн руб
+        от {price.min} до {price.max} млн руб
       </PriceValue>
       <Row center="md">
-        <OpenOffer>Посмотреть предложения</OpenOffer>
-      </Row>
+          <OpenOffer>Посмотреть предложения</OpenOffer>
+        </Row>
     </Offer>
-  </Col>);
+    </Col>;
+};

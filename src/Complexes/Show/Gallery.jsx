@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
 import { getImageUrl } from '../../util';
-import type { GalleryImage as GalleryImageType } from '../types';
+import type { Image as ImageType } from '../types';
 
 const Gallery = styled.section``;
 
@@ -34,7 +34,7 @@ const Expand = styled.button`
   color: white;
 `;
 
-type Props = { images: Array<GalleryImageType> };
+type Props = { images: Array<ImageType> };
 
 export default (props: Props) => {
   const length = props.images.length;
