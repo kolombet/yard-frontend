@@ -25,7 +25,7 @@ class Cards extends Component {
   render() {
     return (
       <Grid>
-        {this.state.complexes.map((complex) => {
+        {this.state.complexes.map((complex:ComplexType) => {
           const { location, name, id, image, slug, shortDescription = '' } = complex;
           const { subLocalityName, street } = location;
 

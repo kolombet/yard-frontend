@@ -75,22 +75,24 @@ type Props = {
 
 export default ({ offer }: Props = {}) => {
   const { rooms, area, price } = offer;
-  <Col md={4}>
+  return (
+    <Col md={4}>
       <Offer>
-      <Title>
+        <Title>
           {rooms}-комнатные квартиры
-      </Title>
-      <Area>Площадь</Area>
-      <AreaValue>
-        от {area.min} до {area.max} м²
-      </AreaValue>
-      <Price>Стоимость</Price>
-      <PriceValue>
-        от {price.min} до {price.max} млн руб
-      </PriceValue>
-      <Row center="md">
+        </Title>
+        <Area>Площадь</Area>
+        <AreaValue>
+          от {area.min} до {area.max} м²
+        </AreaValue>
+        <Price>Стоимость</Price>
+        <PriceValue>
+          от {price.min} до {price.max} млн руб
+        </PriceValue>
+        <Row center="md">
           <OpenOffer>Посмотреть предложения</OpenOffer>
         </Row>
-    </Offer>
-    </Col>;
+      </Offer>
+    </Col>
+  );
 };
