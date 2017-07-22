@@ -1,6 +1,9 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
+import type { Offer as OfferType } from '../types';
 
 const Offer = styled.div`
   padding: 1.5rem 2rem;
@@ -66,23 +69,30 @@ const OpenOffer = styled.button`
   text-align: center;
 `;
 
-export default props => (
-  <Col md={4}>
-    <Offer>
-      <Title>
-        {props.rooms}-комнатные квартиры
-      </Title>
-      <Area>Площадь</Area>
-      <AreaValue>
-          от {props.area.min} до {props.area.max} м²
-      </AreaValue>
-      <Price>Стоимость</Price>
-      <PriceValue>
-          от {props.price.min} до {props.price.max} млн руб
-      </PriceValue>
-      <Row center="md">
-        <OpenOffer>Посмотреть предложения</OpenOffer>
-      </Row>
-    </Offer>
-  </Col>
-);
+type Props = {
+  offer: OfferType,
+};
+
+export default ({ offer }: Props = {}) => {
+  const { rooms, area, price } = offer;
+  return (
+    <Col md={4}>
+      <Offer>
+        <Title>
+          {rooms}-комнатные квартиры
+        </Title>
+        <Area>Площадь</Area>
+        <AreaValue>
+          от {area.min} до {area.max} м²
+        </AreaValue>
+        <Price>Стоимость</Price>
+        <PriceValue>
+          от {price.min} до {price.max} млн руб
+        </PriceValue>
+        <Row center="md">
+          <OpenOffer>Посмотреть предложения</OpenOffer>
+        </Row>
+      </Offer>
+    </Col>
+  );
+};

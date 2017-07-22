@@ -1,7 +1,10 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Amenity from './Amenity';
+import type { Amenity as AmenityType } from '../types';
 
 const Wrapper = styled.section`margin-bottom: 3rem;`;
 
@@ -15,7 +18,9 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-export default props =>
+type Props = { amenities: Array<AmenityType> };
+
+export default (props: Props) =>
   (<Grid>
     <Wrapper>
       <Row>

@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -24,7 +26,12 @@ const Detail = styled.small`
   color: #a9afb6;
 `;
 
-export default props =>
+type Props = {
+  title: string,
+  description: string,
+};
+
+export default (props: Props) =>
   (<Feature>
     <Title>
       {props.title}

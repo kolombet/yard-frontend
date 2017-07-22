@@ -1,8 +1,11 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
 import { getImageUrl } from '../../util';
+import type { Image as ImageType } from '../types';
 
 const Gallery = styled.section``;
 
@@ -31,7 +34,9 @@ const Expand = styled.button`
   color: white;
 `;
 
-export default (props) => {
+type Props = { images: Array<ImageType> };
+
+export default (props: Props) => {
   const length = props.images.length;
   const count = pluralize(length, 'фотографий', 'фотография', 'фотографии', 'фотографий');
   return (

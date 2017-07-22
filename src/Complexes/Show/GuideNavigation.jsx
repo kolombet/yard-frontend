@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,7 +27,12 @@ const DistanceInfo = styled.p`
   color: #a9afb6;
 `;
 
-export default props =>
+type Props = {
+  title: string,
+  distance: string,
+};
+
+export default (props: Props) =>
   (<Navigation>
     <Title>
       {props.title}
