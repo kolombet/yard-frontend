@@ -48,9 +48,9 @@ class Index extends React.Component {
           {this.state.complex.details && <Characteristics complex={this.state.complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
-          {/* {amenities && amenities.length > 0 && <Amenities amenities={amenities} />} */}
-          {/* <Offers name={name} /> */}
-          {/* <Guide /> */}
+          {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
+          <Offers name={name} />
+          <Guide />
         </div>
       </BodyClassName>
     );

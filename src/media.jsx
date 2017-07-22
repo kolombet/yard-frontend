@@ -3,17 +3,17 @@
 import { css } from 'styled-components';
 
 const media = {
-  sm: (...args: any) => css`
+  sm: (...args) => css`
     @media (min-width: 768px) {
       ${css(...args)}
     }
   `,
-  md: (...args: any) => css`
+  md: (...args) => css`
     @media (min-width: 992px) {
       ${css(...args)}
     }
   `,
-  lg: (...args: any) => css`
+  lg: (...args) => css`
     @media (min-width: 1200px) {
       ${css(...args)}
     }
