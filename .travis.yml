@@ -9,6 +9,4 @@ deploy:
   on:
     branch: master
   script:
-    - yarn build  
-    - now build --public --name yard-frontend --token $NOW_TOKEN
-    - now alias --token $NOW_TOKEN
+    yarn build && now build --public --name yard-frontend --token $NOW_TOKEN && now alias --token $NOW_TOKEN

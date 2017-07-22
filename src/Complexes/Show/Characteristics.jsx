@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -11,6 +13,8 @@ import {
   renovateKinds,
   quarters,
 } from '../dictionary';
+
+import type { Complex as ComplexType } from '../types';
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -57,22 +61,25 @@ const Characteristics = styled.section`
   `};
 `;
 
-export default (props) => {
+type Props = {
+  complex: ComplexType,
+};
+
+export default ({ complex }: Props = {}) => {
+  const { statistics = {}, details = {}, propertyDefaults = {} } = complex;
+  const { propertiesCount = '', price, totalArea } = statistics;
   const {
-    propertyDefaults: { information: { furniture, condition, renovate } = {} } = {},
-    details: {
-      security,
-      constructionKind,
-      ceilHeight,
-      maintenanceCosts,
-      startYear,
-      startQuarter,
-      commissioningYear,
-      commissioningQuarter,
-    } = {},
-    statistics: { propertiesCount = '', price, totalArea } = {},
-  } =
-    props.complex || {};
+    security,
+    constructionKind = 'brick',
+    ceilHeight,
+    maintenanceCosts,
+    startYear,
+    startQuarter,
+    commissioningYear,
+    commissioningQuarter,
+  } = details;
+  const { information } = propertyDefaults;
+  const { furniture, condition, renovate } = information;
 
   return (
     <Characteristics>
@@ -100,7 +107,7 @@ export default (props) => {
               </Value>
               <Key>Ремонт:</Key>
               <Value>
-                {renovateKinds[renovate] || ''}
+                {renovateKinds[renovate]}
               </Value>
             </List>
           </Col>
@@ -108,7 +115,7 @@ export default (props) => {
             <List>
               <Key>Конструкция корпусов:</Key>
               <Value>
-                {constructionKinds[constructionKind] || ''}
+                {constructionKinds[constructionKind]}
               </Value>
               <Key>Высота потолков:</Key>
               <Value>

@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -65,7 +67,12 @@ const Wrapper = styled.div`
 
 const Title = styled.div``;
 
-export default props =>
+type Props = {
+  name: string,
+  location: string,
+};
+
+export default (props: Props) =>
   (<Grid>
     <Wrapper>
       <Title>

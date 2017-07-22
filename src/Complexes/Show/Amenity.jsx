@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Col } from 'react-flexbox-grid';
@@ -11,7 +13,11 @@ const Label = styled.div`
   color: #3e4247;
 `;
 
-export default props =>
+type Props = {
+  name: string,
+};
+
+export default (props: Props) =>
   (<Col md={2}>
     <Label>
       {props.name}

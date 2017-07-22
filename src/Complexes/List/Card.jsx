@@ -1,8 +1,11 @@
+// @flowtype
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Cover from './Cover';
 import media from '../../media';
+import type { Image as ImageType } from '../types';
 
 const Card = styled(Link)`
   width: auto;
@@ -84,7 +87,15 @@ const Description = styled.p`
   `};
 `;
 
-export default props =>
+type CardProps = {
+  slug: string,
+  location: string,
+  name: string,
+  description: string,
+  image: ImageType,
+};
+
+export default (props: CardProps) =>
   (<Card to={`/complexes/${props.slug}`}>
     <Cover id={props.image} />
 

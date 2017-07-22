@@ -1,5 +1,8 @@
+// @flow
+
 import React from 'react';
 import BodyClassName from 'react-body-classname';
+import shortid from 'shortid';
 import Gallery from './Gallery';
 import Title from './Title';
 import Features from './Features';
@@ -9,23 +12,35 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
+import type { Complex as ComplexType, Offer as OfferType } from '../types';
+
+type Props = {
+  match: {
+    params: {
+      slug: string,
+    },
+  },
+};
 
 class Index extends React.Component {
-  constructor() {
-    super();
-    this.state = { complex: {} };
-  }
+  state = { complex: {} };
+
+  state: {
+    complex: ComplexType,
+  };
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((json) => {
-      this.setState({
-        complex: json,
-      });
+
+    get(`complexes/${slug}`).then((complex: ComplexType) => {
+      this.setState({ complex });
     });
   }
 
+  props: Props;
+
   render() {
+    const { complex } = this.state;
     const {
       location = {},
       images,
@@ -33,11 +48,21 @@ class Index extends React.Component {
       details = {},
       fullDescription = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
       amenities,
-      units = '123',
+      units = '12345',
     } = this.state.complex;
 
-    const { architect = 'mr.architect', developer = 'hello company' } = details;
+    const { architect = 'test', developer = 'test' } = details;
+      units,
+    } = complex;
+
+    const { architect = '', developer = '' } = details;
     const { street, house, subLocalityName } = location;
+
+    const offers: Array<OfferType> = [
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+    ];
 
     return (
       <BodyClassName className="complexe">
@@ -45,11 +70,11 @@ class Index extends React.Component {
           <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
           {images && <Gallery images={images} />}
           <Features offersCount={units} architect={architect} developer={developer} />
-          {this.state.complex.details && <Characteristics complex={this.state.complex} />}
+          {complex.details && <Characteristics complex={complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
-          <Offers name={name} />
+          <Offers offers={offers} name={name} />
           <Guide />
         </div>
       </BodyClassName>

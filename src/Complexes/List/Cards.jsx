@@ -1,9 +1,12 @@
+// @flow
+
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import qs from 'qs';
 import Card from './Card';
 import { get } from '../../api';
+import type { Complex as ComplexType } from '../types';
 import media from '../../media';
 
 const Wrapper = styled.article`
@@ -17,16 +20,17 @@ const Wrapper = styled.article`
 `;
 
 class Cards extends Component {
-  constructor() {
-    super();
-    this.state = { complexes: [] };
-  }
+  state = { complexes: [] };
+  state: {
+    complexes: Array<ComplexType>,
+  };
 
   componentDidMount() {
     const filter = qs.stringify({ filter: { state: 'public' } });
-    get(`complexes?${filter}`).then((json) => {
+
+    get(`complexes?${filter}`).then((data) => {
       this.setState({
-        complexes: json.items,
+        complexes: data.items,
       });
     });
   }
@@ -35,7 +39,7 @@ class Cards extends Component {
     return (
       <Wrapper>
         <Grid>
-          {this.state.complexes.map((complex) => {
+          {this.state.complexes.map((complex:ComplexType) => {
             const { location, name, id, image, slug, shortDescription = '' } = complex;
             const { subLocalityName, street } = location;
 
