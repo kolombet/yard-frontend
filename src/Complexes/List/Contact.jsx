@@ -1,11 +1,18 @@
 import React from 'react';
 import { Grid, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import media from '../../media';
 
 const Contact = styled.div`
   width: 804px;
   padding-top: 4rem;
   padding-bottom: 4rem;
+
+  ${media.sm`
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  `};
 `;
 
 const Title = styled.h2`
@@ -16,6 +23,10 @@ const Title = styled.h2`
   font-weight: bold;
   line-height: 1.55;
   color: #3e4247;
+
+  ${media.sm`
+    font-size:20px;
+  `};
 `;
 
 const Description = styled.p`
@@ -42,17 +53,26 @@ const ContactButton = styled.button`
   text-align: center;
 `;
 
+const Wrapper = styled.div`
+  ${media.sm`
+    margin-left: 1rem;
+    margin-right: 1rem;
+  `};
+`;
+
 export default () =>
-  (<Grid>
-    <Row center="md">
-      <Contact>
-        <Title>Discover Our New Developments</Title>
-        <Description>
-          Compass brings a modern approach to new development marketing and sales. From boutique
-          rental conversions to luxurious ground-up condominiums, browse our portfolio of current
-          offerings.
-        </Description>
-        <ContactButton>Contact The Team</ContactButton>
-      </Contact>
-    </Row>
-  </Grid>);
+  (<Wrapper>
+    <Grid>
+      <Row center="xs md">
+        <Contact>
+          <Title>Discover Our New Developments</Title>
+          <Description>
+            Compass brings a modern approach to new development marketing and sales. From boutique
+            rental conversions to luxurious ground-up condominiums, browse our portfolio of current
+            offerings.
+          </Description>
+          <ContactButton>Contact The Team</ContactButton>
+        </Contact>
+      </Row>
+    </Grid>
+  </Wrapper>);

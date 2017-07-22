@@ -1,15 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getImageUrl } from '../../util';
+import media from '../../media';
 
 const Wrapper = styled.div`
   width: 491px;
   height: 350px;
+
+  ${media.sm`
+    width: 100%;
+    height: auto;
+  `};
 `;
 
 const Image = styled.img`
   width: 491px;
   height: 350px;
+
+  ${media.sm`
+    width: 100%;
+    height: auto;
+  `};
 `;
 
 export default (props) => {

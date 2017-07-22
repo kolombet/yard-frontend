@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Cover from './Cover';
+import media from '../../media';
 
 const Card = styled(Link)`
   display: flex;
@@ -13,11 +14,21 @@ const Card = styled(Link)`
   &:hover {
     box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.3);
   }
+
+  ${media.sm`
+    width: auto;
+    display: block;
+  `};
 `;
 
 const Info = styled.article`
   padding-left: 2rem;
   padding-right: 5.375rem;
+
+  ${media.sm`
+    padding-left: 1rem;
+    padding-right: 1rem;
+  `};
 `;
 
 const Underline = styled.div`
@@ -33,6 +44,11 @@ const Location = styled.p`
   color: #646971;
   text-transform: uppercase;
   text-align: left;
+
+  ${media.sm`
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  `};
 `;
 
 const Name = styled.h3`
@@ -43,6 +59,11 @@ const Name = styled.h3`
   text-align: left;
   line-height: 1.4;
   color: #000000;
+
+  ${media.sm`
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  `};
 `;
 
 const Description = styled.p`
@@ -53,6 +74,11 @@ const Description = styled.p`
   line-height: 1.5;
   text-align: left;
   color: #3e4247;
+
+  ${media.sm`
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  `};
 `;
 
 export default props =>
