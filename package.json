@@ -21,7 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --ext js --ext jsx src/",
-    "prepush": "eslint",
+    "prepush": "eslint && flow",
     "flow": "flow",
     "flow-typed": "flow-typed"
   },

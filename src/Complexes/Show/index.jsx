@@ -14,6 +14,14 @@ import Characteristics from './Characteristics';
 import { get } from '../../api';
 import type { Complex as ComplexType, Offer as OfferType } from '../types';
 
+type Props = {
+  match: {
+    params: {
+      slug: string,
+    },
+  },
+};
+
 class Index extends React.Component {
   state = { complex: {} };
 
@@ -22,19 +30,14 @@ class Index extends React.Component {
   };
 
   componentDidMount() {
-    const slug: string = this.props.match.params.slug;
-    get(`complexes/${slug}`).then((data: ComplexType) => {
-      this.setState({ complex: data });
+    const slug = this.props.match.params.slug;
+
+    get(`complexes/${slug}`).then((complex: ComplexType) => {
+      this.setState({ complex });
     });
   }
 
-  props: {
-    match: {
-      params: {
-        slug: string,
-      },
-    },
-  };
+  props: Props;
 
   render() {
     const { complex } = this.state;

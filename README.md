@@ -1,6 +1,14 @@
 # Yard frontend
 
-Study project for [js react development course by Evgeny Rodionov](https://kurskurskurs.erodionov.ru/)
+Study project for [ react js development course by Evgeny Rodionov](https://kurskurskurs.erodionov.ru/)
+
+# Stack 
+
+* react  
+* styled-components  
+* flexboxgrid 
+* eslint (airbnb styleguide)
+* flowtype
 
 # Run project
 

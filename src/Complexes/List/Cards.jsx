@@ -15,6 +15,7 @@ class Cards extends Component {
 
   componentDidMount() {
     const filter = qs.stringify({ filter: { state: 'public' } });
+
     get(`complexes?${filter}`).then((data) => {
       this.setState({
         complexes: data.items,
