@@ -1,6 +1,8 @@
 /* @flow */
 
-export default const media = {
+import { css } from 'styled-components';
+
+const media = {
   sm: (...args: any) => css`
     @media (max-width: 768px) {
       ${css(...args)}
@@ -15,5 +17,7 @@ export default const media = {
     @media (max-width: 1200px) {
       ${css(...args)}
     }
-  `
+  `,
 };
+
+export default media;

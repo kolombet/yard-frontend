@@ -7,8 +7,8 @@ import Cards from './Cards';
 export default () =>
   (<BodyClassName className="complexes">
     <div>
-      <Banner />
+      {/* <Banner />
       <Contact />
-      <Cards />
+      <Cards /> */}
     </div>
   </BodyClassName>);
