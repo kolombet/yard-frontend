@@ -5,7 +5,8 @@ import Cover from './Cover';
 import media from '../../media';
 
 const Card = styled(Link)`
-  display: flex;
+  width: auto;
+  display: block;
   margin-bottom: 3rem;
   background-color: #ffffff;
   cursor: pointer;
@@ -16,18 +17,17 @@ const Card = styled(Link)`
   }
 
   ${media.sm`
-    width: auto;
-    display: block;
+    display: flex;
   `};
 `;
 
 const Info = styled.article`
-  padding-left: 2rem;
-  padding-right: 5.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   ${media.sm`
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 5.375rem;
   `};
 `;
 
@@ -37,8 +37,9 @@ const Underline = styled.div`
 `;
 
 const Location = styled.p`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
+
   font-family: Monaco, Menlo, Consolas, monospace;
   font-size: 16px;
   color: #646971;
@@ -46,12 +47,14 @@ const Location = styled.p`
   text-align: left;
 
   ${media.sm`
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   `};
 `;
 
 const Name = styled.h3`
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   margin: 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 40px;
@@ -61,14 +64,14 @@ const Name = styled.h3`
   color: #000000;
 
   ${media.sm`
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
   `};
 `;
 
 const Description = styled.p`
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -76,8 +79,8 @@ const Description = styled.p`
   color: #3e4247;
 
   ${media.sm`
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
   `};
 `;
 

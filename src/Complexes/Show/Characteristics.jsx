@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { formatMillion } from '../../util';
+import media from '../../media';
 import {
   constructionKinds,
   securityKinds,
@@ -47,7 +48,14 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-const Characteristics = styled.section`margin-bottom: 3rem;`;
+const Characteristics = styled.section`
+  overflow-x: scroll;
+  margin-bottom: 3rem;
+
+  ${media.sm`
+    overflow-x: initial;
+  `};
+`;
 
 export default (props) => {
   const {
@@ -81,10 +89,10 @@ export default (props) => {
               {price.from.rub === price.to.rub
                 ? <Value>
                   {formatMillion(price.to.rub)} млн
-                </Value>
+                  </Value>
                 : <Value>
                     От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
-                </Value>}
+                  </Value>}
 
               <Key>Площадь:</Key>
               <Value>

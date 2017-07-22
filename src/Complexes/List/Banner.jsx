@@ -5,10 +5,10 @@ import compassDevelopmentLogo from '../../img/compass-development-logo.svg';
 import media from '../../media';
 
 const Banner = styled.section`
-  display: block;
+  display: none;
   background-color: #161616;
   ${media.sm`
-    display:none;
+    display: block;
   `};
 `;
 

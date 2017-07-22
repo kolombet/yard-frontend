@@ -7,12 +7,12 @@ import { get } from '../../api';
 import media from '../../media';
 
 const Wrapper = styled.article`
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   ${media.sm`
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
   `};
 `;
 

@@ -4,17 +4,17 @@ import { css } from 'styled-components';
 
 const media = {
   sm: (...args: any) => css`
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       ${css(...args)}
     }
   `,
   md: (...args: any) => css`
-    @media (max-width: 992px) {
+    @media (min-width: 992px) {
       ${css(...args)}
     }
   `,
   lg: (...args: any) => css`
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       ${css(...args)}
     }
   `,

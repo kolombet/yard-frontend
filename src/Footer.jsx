@@ -58,21 +58,21 @@ const Title = styled.h4`
 `;
 
 const Line = styled.hr`
-  margin-top: 0;
-  width: 186px;
+  margin-top: 3rem;
+  width: 100%;
   margin-bottom: 1rem;
   border: solid 1px #3e4247;
   box-sizing: content-box;
 
   ${media.sm`
-      margin-top: 3rem;
-      width: 100%;
+    margin-top: 0;
+    width: 186px;      
   `};
 `;
 
 const Description = styled.p`
   margin-top: 6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 11px;
   font-weight: 300;
@@ -80,17 +80,19 @@ const Description = styled.p`
   color: #a9afb6;
 
   ${media.sm`
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   `};
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   ${media.sm`
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
   `};
 `;
 

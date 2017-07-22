@@ -9,16 +9,16 @@ const LogoLink = styled(Link)`
 `;
 
 const LogoImage = styled.img`
-  width: 179px;
-  height: 24px;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  width: 119px;
+  height: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
   ${media.sm`
-    width: 119px;
-    height: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    width: 179px;
+    height: 24px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;   
   `};
 `;
 
@@ -37,11 +37,11 @@ const Navigation = styled(Link)`
 `;
 
 const Navigations = styled.nav`
-  display: block;
+  display: none;
   padding-top: 1.4375rem;
 
   ${media.sm`
-      display: none;
+      display: block;
   `};
 `;
 
@@ -56,9 +56,11 @@ const Header = styled.header`
 `;
 
 const Wrapper = styled.div`
+  margin-left: 1rem;
+  margin-right: 1rem;
   ${media.sm`
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   `};
 `;
 

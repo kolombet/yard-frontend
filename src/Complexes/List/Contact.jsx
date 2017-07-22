@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import media from '../../media';
 
 const Contact = styled.div`
-  width: 804px;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   ${media.sm`
-    width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    width: 804px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;    
   `};
 `;
 
@@ -19,13 +19,13 @@ const Title = styled.h2`
   margin-top: 0;
   margin-bottom: .5rem;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1.55;
   color: #3e4247;
 
   ${media.sm`
-    font-size:20px;
+    font-size: 24px;
   `};
 `;
 
@@ -54,9 +54,12 @@ const ContactButton = styled.button`
 `;
 
 const Wrapper = styled.div`
+  margin-left: 1rem;
+  margin-right: 1rem;
+
   ${media.sm`
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;      
   `};
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import media from '../../media';
 
 const Name = styled.h1`
   margin-top: 1.563rem;
@@ -11,6 +12,10 @@ const Name = styled.h1`
   font-weight: bold;
   line-height: 36px;
   color: #3e4247;
+
+  ${media.sm`
+    margin-top: 1rem;
+  `};
 `;
 
 const Location = styled.p`
@@ -24,6 +29,7 @@ const Location = styled.p`
 `;
 
 const Favorite = styled.button`
+  display: none;
   padding: 7px 15px;
   margin-top: 24px;
   align-self: flex-start;
@@ -36,19 +42,40 @@ const Favorite = styled.button`
   font-weight: 300;
   line-height: 10px;
   color: #00779a;
+
+  ${media.sm`
+    display: block;
+  `};
 `;
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: initial;
+  align-items: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  ${media.sm`
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: space-between;
+  `};
+`;
+
+const Title = styled.div``;
 
 export default props =>
   (<Grid>
-    <Row between="md">
-      <Col>
+    <Wrapper>
+      <Title>
         <Name>
           ЖК «{props.name}»
         </Name>
         <Location>
           {props.location}
         </Location>
-      </Col>
+      </Title>
       <Favorite>В избранное</Favorite>
-    </Row>
+    </Wrapper>
   </Grid>);

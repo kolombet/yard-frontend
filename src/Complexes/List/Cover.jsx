@@ -4,22 +4,22 @@ import { getImageUrl } from '../../util';
 import media from '../../media';
 
 const Wrapper = styled.div`
-  width: 491px;
-  height: 350px;
+  width: 100%;
+  height: auto;
 
   ${media.sm`
-    width: 100%;
-    height: auto;
+    width: 491px;
+    height: 350px;    
   `};
 `;
 
 const Image = styled.img`
-  width: 491px;
-  height: 350px;
+  width: 100%;
+  height: auto;
 
   ${media.sm`
-    width: 100%;
-    height: auto;
+    width: 491px;
+    height: 350px;
   `};
 `;
 
