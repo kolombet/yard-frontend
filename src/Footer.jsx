@@ -68,6 +68,7 @@ const Line = styled.hr`
 
   ${media.sm`
       margin-top: 3rem;
+      width: 100%;
   `};
 `;
 
@@ -79,11 +80,17 @@ const Description = styled.p`
   font-weight: 300;
   line-height: 1.125rem;
   color: #a9afb6;
+
+  ${media.sm`
+    margin-bottom: 3rem;
+  `};
 `;
 
 const Wrapper = styled.div`
-  margin-left: 1rem;
-  margin-right: 1rem;
+  ${media.sm`
+    margin-left: 1rem;
+    margin-right: 1rem;
+  `};
 `;
 
 export default () =>

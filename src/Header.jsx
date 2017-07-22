@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 import compassLogo from './img/compass-logo.svg';
+import media from './media';
 
 const LogoLink = styled(Link)`
 `;
@@ -12,6 +13,13 @@ const LogoImage = styled.img`
   height: 24px;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+
+  ${media.sm`
+    width: 119px;
+    height: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  `};
 `;
 
 const Navigation = styled(Link)`
@@ -31,6 +39,10 @@ const Navigation = styled(Link)`
 const Navigations = styled.nav`
   display: block;
   padding-top: 1.4375rem;
+
+  ${media.sm`
+      display: none;
+  `};
 `;
 
 const HeaderContainer = styled.div`
@@ -43,18 +55,27 @@ const Header = styled.header`
   border-bottom: solid 1px #eaebf0;
 `;
 
+const Wrapper = styled.div`
+  ${media.sm`
+    margin-left: 1rem;
+    margin-right: 1rem;
+  `};
+`;
+
 export default () =>
   (<Header>
-    <Grid>
-      <HeaderContainer>
-        <LogoLink to="/complexes/list">
-          <LogoImage src={compassLogo} alt="compass logo" />
-        </LogoLink>
-        <Navigations>
-          <Navigation to="/">Купить</Navigation>
-          <Navigation to="/">Снять</Navigation>
-          <Navigation to="/">Наши агенты</Navigation>
-        </Navigations>
-      </HeaderContainer>
-    </Grid>
+    <Wrapper>
+      <Grid>
+        <HeaderContainer>
+          <LogoLink to="/complexes/list">
+            <LogoImage src={compassLogo} alt="compass logo" />
+          </LogoLink>
+          <Navigations>
+            <Navigation to="/">Купить</Navigation>
+            <Navigation to="/">Снять</Navigation>
+            <Navigation to="/">Наши агенты</Navigation>
+          </Navigations>
+        </HeaderContainer>
+      </Grid>
+    </Wrapper>
   </Header>);
