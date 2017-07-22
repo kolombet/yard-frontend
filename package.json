@@ -20,8 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint --ext js --ext jsx src/",
-    "prepush": "eslint && flow",
+    "lint": "eslint --ext js --ext jsx src/",
+    "prepush": "yarn lint && yarn flow",
     "flow": "flow",
     "flow-typed": "flow-typed"
   },
