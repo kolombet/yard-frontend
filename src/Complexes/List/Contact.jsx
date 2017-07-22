@@ -63,7 +63,7 @@ const Wrapper = styled.div`
 export default () =>
   (<Wrapper>
     <Grid>
-      <Row center="xs md">
+      <Row center="xs">
         <Contact>
           <Title>Discover Our New Developments</Title>
           <Description>

@@ -45,8 +45,6 @@ const Footer = styled.footer`
   margin-top: 6rem;
   padding-top: 2rem;
   background-color: #111111;
-  display: flex;
-  align-items: center;
 `;
 
 const Title = styled.h4`
@@ -87,6 +85,9 @@ const Description = styled.p`
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+
   ${media.sm`
     margin-left: 1rem;
     margin-right: 1rem;
