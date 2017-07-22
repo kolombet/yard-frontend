@@ -1,5 +1,3 @@
-/* @flow */
-
 import { css } from 'styled-components';
 
 const media = {
