@@ -8,12 +8,14 @@ import GuideNavigation from './GuideNavigation';
 import media from '../../media';
 
 const Guide = styled.section`
-  padding-bottom: 3rem;
+  overflow-x: hidden;
+  padding-bottom: 0rem;
   margin-bottom: 0;
   background-color: #3e4247;
   color: white;
 
   ${media.sm`
+    
     padding-bottom: 9.563rem;
     margin-bottom: 13.69rem;
   `};
@@ -32,8 +34,12 @@ const Wrapper = styled.div`
 const Info = styled.div`
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   ${media.sm`
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 11.25rem;
     margin-bottom: 11.25rem;
   `};
@@ -70,11 +76,14 @@ const Title = styled.h2`
 `;
 
 const GuideLink = styled(Link)`
-  margin-bottom: 11.31rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 25px;
   color: #00779a;
+
+  ${media.sm`
+    margin-bottom: 11.31rem;
+  `};
 `;
 
 const AreaImage = styled.img`
@@ -91,17 +100,37 @@ const AreaImage = styled.img`
 `;
 
 const Map = styled.img`
-  position: absolute;
-  width: 583px;
-  height: 306px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+
+  ${media.sm`
+    margin-top: 0rem;
+    position: absolute;
+    width: 583px;
+    height: 306px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  `};
 `;
 
 const Navigation = styled.div`
-  position: absolute;
-  width: 36.5rem;
   background-color: #ffffff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+
+  ${media.sm`
+    position: absolute;
+    width: 36.5rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  `};
+`;
+
+const MarginFix = styled.div`
+  margin-left: 0;
+  margin-right: 0;
+
+  ${media.sm`
+    margin-left: 0;
+    margin-right: 0;
+  `};
 `;
 
 const publicURL: string = process.env.PUBLIC_URL || '';
@@ -109,32 +138,32 @@ const publicURL: string = process.env.PUBLIC_URL || '';
 export default () =>
   (<Guide>
     <Grid>
-      <Wrapper>
-        <Row>
-          <Col xs={12} sm={6}>
-            <Info>
-              <Summary>Якиманка</Summary>
-              <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
-              <GuideLink to="/">Гид по Якиманке →</GuideLink>
-            </Info>
-          </Col>
-          <Col xs={12} sm={6} first="xs" last="sm">
-            <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
-          </Col>
-        </Row>
-      </Wrapper>
+      <Row>
+        <Col xs={12} sm={6}>
+          <Info>
+            <Summary>Якиманка</Summary>
+            <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
+            <GuideLink to="/">Гид по Якиманке →</GuideLink>
+          </Info>
+        </Col>
+        <Col xs={12} sm={6} first="xs" last="sm">
+          <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
+        </Col>
+      </Row>
+    </Grid>
 
-      {/* <Row>
-        <Col md={6}>
+    <Grid>
+      <Row>
+        <Col xs={12} sm={6}>
           <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
         </Col>
-        <Col md={6}>
+        <Col xs={12} sm={6}>
           <Navigation>
             <GuideNavigation title="Красный Октябрь" distance="24 минуты, 6 км" />
             <GuideNavigation title="World class" distance="2 минуты, 300 м" />
             <GuideNavigation title="Третьяковская галерея" distance="14 минут, 4 км" />
           </Navigation>
         </Col>
-      </Row> */}
+      </Row>
     </Grid>
   </Guide>);

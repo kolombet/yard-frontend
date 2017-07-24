@@ -44,9 +44,13 @@ const TextLast = styled(Text)`
 `;
 
 const Footer = styled.footer`
-  margin-top: 6rem;
-  padding-top: 2rem;
+  margin-top: 0;
   background-color: #111111;
+  padding-top: 2rem;
+
+  ${media.sm`
+    margin-top: 6rem;
+  `};
 `;
 
 const Title = styled.h4`

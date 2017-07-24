@@ -12,7 +12,7 @@ const LogoLink = styled(Link)`
 
 const LogoImage = styled.img`
   width: 119px;
-  height: 1rem;
+  height: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -71,7 +71,7 @@ export default () =>
     <Wrapper>
       <Grid>
         <HeaderContainer>
-          <LogoLink to="/complexes/list">
+          <LogoLink to="/complexes/">
             <LogoImage src={compassLogo} alt="compass logo" />
           </LogoLink>
           <Navigations>
