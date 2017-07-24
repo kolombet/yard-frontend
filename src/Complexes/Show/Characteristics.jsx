@@ -68,7 +68,6 @@ const Characteristics = styled.section`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
   overflow-x: scroll;
 
   ${media.sm`
@@ -77,11 +76,9 @@ const Wrapper = styled.div`
 `;
 
 const WrapperInner = styled.div`
-  margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 76rem;
-  box-sizing: border-box;
 
   ${media.sm`
     padding-left: 0;
