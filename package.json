@@ -23,7 +23,8 @@
     "lint": "eslint --ext js --ext jsx src/",
     "prepush": "yarn lint && yarn flow",
     "flow": "flow",
-    "flow-typed": "flow-typed"
+    "flow-typed": "flow-typed",
+    "deploy": "yarn build && now build --public --name yard-frontend && now alias"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
