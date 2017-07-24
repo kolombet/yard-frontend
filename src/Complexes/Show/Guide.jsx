@@ -83,7 +83,7 @@ export default () =>
           <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
         </Col>
       </Row>
-      {/* <Row>
+      <Row>
         <Col md={6}>
           <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
         </Col>
@@ -94,6 +94,6 @@ export default () =>
             <GuideNavigation title="Третьяковская галерея" distance="14 минут, 4 км" />
           </Navigation>
         </Col>
-      </Row> */}
+      </Row>
     </Grid>
   </Guide>);

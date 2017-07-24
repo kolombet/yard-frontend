@@ -66,11 +66,11 @@ class Index extends React.Component {
           <Title name={name} location={`${subLocalityName}, ${street}, ${house}`} />
           {images && <Gallery images={images} />}
           <Features offersCount={units} architect={architect} developer={developer} />
-          {/* {complex.details && <Characteristics complex={complex} />} */}
+          {complex.details && <Characteristics complex={complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
-          {/* <Offers offers={offers} name={name} /> */}
+          <Offers offers={offers} name={name} />
           <Guide />
         </div>
       </BodyClassName>
