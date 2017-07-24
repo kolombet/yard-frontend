@@ -19,22 +19,29 @@ const Guide = styled.section`
   `};
 `;
 
-const Info = styled.div`
-  margin-top: 0;
-  margin-bottom: 0;
+const Wrapper = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
 
   ${media.sm`
-    margin-top: 11.25rem;
-    margin-bottom: 11.25rem;
     margin-left: 0;
     margin-right: 0;
   `};
 `;
 
+const Info = styled.div`
+  margin-top: 0;
+  margin-bottom: 0;
+
+  ${media.sm`
+    margin-top: 11.25rem;
+    margin-bottom: 11.25rem;
+  `};
+`;
+
 const Summary = styled.h3`
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   font-family: Philosopher, sans-serif;
   font-size: 20px;
   line-height: 22px;
@@ -48,7 +55,7 @@ const Summary = styled.h3`
 `;
 
 const Title = styled.h2`
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   font-family: Philosopher, sans-serif;
   font-weight: 700;
@@ -102,18 +109,21 @@ const publicURL: string = process.env.PUBLIC_URL || '';
 export default () =>
   (<Guide>
     <Grid>
-      <Row>
-        <Col xs={12} sm={6}>
-          <Info>
-            <Summary>Якиманка</Summary>
-            <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
-            <GuideLink to="/">Гид по Якиманке →</GuideLink>
-          </Info>
-        </Col>
-        <Col xs={12} sm={6} first="xs" last="sm">
-          <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
-        </Col>
-      </Row>
+      <Wrapper>
+        <Row>
+          <Col xs={12} sm={6}>
+            <Info>
+              <Summary>Якиманка</Summary>
+              <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
+              <GuideLink to="/">Гид по Якиманке →</GuideLink>
+            </Info>
+          </Col>
+          <Col xs={12} sm={6} first="xs" last="sm">
+            <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
+          </Col>
+        </Row>
+      </Wrapper>
+
       {/* <Row>
         <Col md={6}>
           <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
