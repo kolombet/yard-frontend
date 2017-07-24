@@ -9,7 +9,7 @@ const Name = styled.h1`
   margin-top: 1.563rem;
   margin-bottom: .5rem;
   font-family: 'Philosopher', sans-serif;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 700;
   font-weight: bold;
   line-height: 36px;
@@ -17,6 +17,7 @@ const Name = styled.h1`
 
   ${media.sm`
     margin-top: 1rem;
+    font-size: 32px;
   `};
 `;
 
@@ -32,36 +33,35 @@ const Location = styled.p`
 
 const Favorite = styled.button`
   display: none;
-  padding: 7px 15px;
-  margin-top: 24px;
-  align-self: flex-start;
-  border-radius: 2px;
-  border: solid 1px #e0e0e1;
-  background-color: transparent;
-
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 10px;
-  font-weight: 300;
-  line-height: 10px;
-  color: #00779a;
 
   ${media.sm`
+    padding: 7px 15px;
+    margin-top: 24px;
+    align-self: flex-start;
+    border-radius: 2px;
+    border: solid 1px #e0e0e1;
+    background-color: transparent;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 10px;
+    color: #00779a;
     display: block;
   `};
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: initial;
-  align-items: flex-start;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: block;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   ${media.sm`
-    padding-left: 0;
-    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   `};
 `;
 
@@ -75,14 +75,17 @@ type Props = {
 export default (props: Props) =>
   (<Grid>
     <Wrapper>
-      <Title>
-        <Name>
-          ЖК «{props.name}»
-        </Name>
-        <Location>
-          {props.location}
-        </Location>
-      </Title>
+      <Header name={props.name} location={props.location} />
       <Favorite>В избранное</Favorite>
     </Wrapper>
   </Grid>);
+
+const Header = (props: Props) =>
+  (<Title>
+    <Name>
+      ЖК «{props.name}»
+    </Name>
+    <Location>
+      {props.location}
+    </Location>
+  </Title>);

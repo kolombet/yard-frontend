@@ -46,7 +46,7 @@ const GuideLink = styled(Link)`
 `;
 
 const AreaImage = styled.img`
-  width: 583px;
+  width: 100%;
   height: 560px;
   margin-top: 3.875rem;
   margin-bottom: 3.938rem;
@@ -72,18 +72,18 @@ export default () =>
   (<Guide>
     <Grid>
       <Row>
-        <Col md={6}>
+        <Col xs={12} md={6}>
           <Info>
             <Summary>Якиманка</Summary>
             <Title>Исторический центр Москвы в двух километрах от Кремля</Title>
             <GuideLink to="/">Гид по Якиманке →</GuideLink>
           </Info>
         </Col>
-        <Col md={6}>
+        <Col xs={12} md={6}>
           <AreaImage src={`${publicURL}/guide/1/area_image.jpg`} alt="area image" />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col md={6}>
           <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
         </Col>
@@ -94,6 +94,6 @@ export default () =>
             <GuideNavigation title="Третьяковская галерея" distance="14 минут, 4 км" />
           </Navigation>
         </Col>
-      </Row>
+      </Row> */}
     </Grid>
   </Guide>);
