@@ -70,8 +70,8 @@ class Index extends React.Component {
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
-          <Offers offers={offers} name={name} />
-          <Guide />
+          {/* <Offers offers={offers} name={name} /> */}
+          {/* <Guide /> */}
         </div>
       </BodyClassName>
     );

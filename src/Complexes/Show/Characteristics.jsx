@@ -17,6 +17,8 @@ import {
 import type { Complex as ComplexType } from '../types';
 
 const Title = styled.h2`
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-top: 2rem;
   margin-bottom: 1.125rem;
   font-family: Philosopher, sans-serif;
@@ -24,6 +26,11 @@ const Title = styled.h2`
   font-weight: 700;
   line-height: 27px;
   color: #3e4247;
+
+  ${media.sm`
+    padding-left: 0;
+    padding-right: 0;
+  `};
 `;
 
 const List = styled.dl`
@@ -53,11 +60,32 @@ const Value = styled.dd`
 `;
 
 const Characteristics = styled.section`
+  margin-bottom: 1rem;
+
+  ${media.sm`
+    margin-bottom: 3rem;
+  `};
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
   overflow-x: scroll;
-  margin-bottom: 3rem;
 
   ${media.sm`
     overflow-x: initial;
+  `};
+`;
+
+const WrapperInner = styled.div`
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 76rem;
+  box-sizing: border-box;
+
+  ${media.sm`
+    padding-left: 0;
+    padding-right: 0;
   `};
 `;
 
@@ -85,74 +113,78 @@ export default ({ complex }: Props = {}) => {
     <Characteristics>
       <Grid>
         <Title>Характеристики</Title>
-        <Row>
-          <Col md={4}>
-            <List>
-              <Key>Количество квартир:</Key>
-              <Value>
-                {propertiesCount}
-              </Value>
-              <Key>Цены:</Key>
-              {price.from.rub === price.to.rub
-                ? <Value>
-                  {formatMillion(price.to.rub)} млн
+        <Wrapper>
+          <WrapperInner>
+            <Row>
+              <Col xs={4}>
+                <List>
+                  <Key>Количество квартир:</Key>
+                  <Value>
+                    {propertiesCount}
                   </Value>
-                : <Value>
-                    От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
-                  </Value>}
+                  <Key>Цены:</Key>
+                  {price.from.rub === price.to.rub
+                    ? <Value>
+                      {formatMillion(price.to.rub)} млн
+                      </Value>
+                    : <Value>
+                        От {formatMillion(price.from.rub)} до {formatMillion(price.to.rub)} млн
+                      </Value>}
 
-              <Key>Площадь:</Key>
-              <Value>
-                От {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м²
-              </Value>
-              <Key>Ремонт:</Key>
-              <Value>
-                {renovateKinds[renovate]}
-              </Value>
-            </List>
-          </Col>
-          <Col md={4}>
-            <List>
-              <Key>Конструкция корпусов:</Key>
-              <Value>
-                {constructionKinds[constructionKind]}
-              </Value>
-              <Key>Высота потолков:</Key>
-              <Value>
-                От {+ceilHeight.from.toFixed(2)} до {+ceilHeight.to.toFixed(2)} м
-              </Value>
-              <Key>Обслуживание:</Key>
-              <Value>
-                {maintenanceCosts} руб / м² / месяц
-              </Value>
-              <Key>Мебель:</Key>
-              <Value>
-                {furnitureKinds[furniture] || ''}
-              </Value>
-            </List>
-          </Col>
-          <Col md={4}>
-            <List>
-              <Key>Безопасность:</Key>
-              <Value>
-                {securityKinds[security] || ''}
-              </Value>
-              <Key>Состояние:</Key>
-              <Value>
-                {conditions[condition] || ''}
-              </Value>
-              <Key>Начало строительства</Key>
-              <Value>
-                {quarters[startQuarter]} квартал {startYear} года
-              </Value>
+                  <Key>Площадь:</Key>
+                  <Value>
+                    От {Math.round(totalArea.from)} до {Math.round(totalArea.to)} м²
+                  </Value>
+                  <Key>Ремонт:</Key>
+                  <Value>
+                    {renovateKinds[renovate]}
+                  </Value>
+                </List>
+              </Col>
+              <Col xs={4}>
+                <List>
+                  <Key>Конструкция корпусов:</Key>
+                  <Value>
+                    {constructionKinds[constructionKind]}
+                  </Value>
+                  <Key>Высота потолков:</Key>
+                  <Value>
+                    От {+ceilHeight.from.toFixed(2)} до {+ceilHeight.to.toFixed(2)} м
+                  </Value>
+                  <Key>Обслуживание:</Key>
+                  <Value>
+                    {maintenanceCosts} руб / м² / месяц
+                  </Value>
+                  <Key>Мебель:</Key>
+                  <Value>
+                    {furnitureKinds[furniture] || ''}
+                  </Value>
+                </List>
+              </Col>
+              <Col xs={4}>
+                <List>
+                  <Key>Безопасность:</Key>
+                  <Value>
+                    {securityKinds[security] || ''}
+                  </Value>
+                  <Key>Состояние:</Key>
+                  <Value>
+                    {conditions[condition] || ''}
+                  </Value>
+                  <Key>Начало строительства</Key>
+                  <Value>
+                    {quarters[startQuarter]} квартал {startYear} года
+                  </Value>
 
-              <Key>Конец строительства</Key>
-              <Value>
-                {quarters[commissioningQuarter]} квартал {commissioningYear} года
-              </Value>
-            </List>
-          </Col>
-        </Row>
+                  <Key>Конец строительства</Key>
+                  <Value>
+                    {quarters[commissioningQuarter]} квартал {commissioningYear} года
+                  </Value>
+                </List>
+              </Col>
+            </Row>
+          </WrapperInner>
+        </Wrapper>
       </Grid>
     </Characteristics>
   );
