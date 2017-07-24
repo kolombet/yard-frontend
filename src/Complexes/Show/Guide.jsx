@@ -21,16 +21,6 @@ const Guide = styled.section`
   `};
 `;
 
-const Wrapper = styled.div`
-  margin-left: 1rem;
-  margin-right: 1rem;
-
-  ${media.sm`
-    margin-left: 0;
-    margin-right: 0;
-  `};
-`;
-
 const Info = styled.div`
   margin-top: 0;
   margin-bottom: 0;
@@ -120,16 +110,6 @@ const Navigation = styled.div`
     position: absolute;
     width: 36.5rem;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-  `};
-`;
-
-const MarginFix = styled.div`
-  margin-left: 0;
-  margin-right: 0;
-
-  ${media.sm`
-    margin-left: 0;
-    margin-right: 0;
   `};
 `;
 

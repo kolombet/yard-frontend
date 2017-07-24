@@ -9,7 +9,7 @@ const Name = styled.h1`
   margin-top: 1.563rem;
   margin-bottom: .5rem;
   font-family: 'Philosopher', sans-serif;
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 700;
   font-weight: bold;
   line-height: 36px;

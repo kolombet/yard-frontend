@@ -22,12 +22,14 @@ const Title = styled.h2`
   margin-top: 2rem;
   margin-bottom: 1.125rem;
   font-family: Philosopher, sans-serif;
-  font-size: 24px;
   font-weight: 700;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 28px;
   color: #3e4247;
 
   ${media.sm`
+    font-size: 24px;
+    line-height: 27px;
     padding-left: 0;
     padding-right: 0;
   `};

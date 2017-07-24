@@ -22,9 +22,9 @@ const Title = styled.h2`
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-family: Philosopher, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 28px;
   font-weight: 700;
-  line-height: 27px;
   color: #3e4247;
   text-align: center;
 
@@ -33,10 +33,10 @@ const Title = styled.h2`
     padding-right: 0;
     margin-top: 0;
     margin-bottom: 1.5rem;
+    font-size: 24px;
+    line-height: 27px;
   `};
 `;
-
-const TitleWrapper = styled.div``;
 
 const Wrapper = styled.div`
   overflow-x: scroll;

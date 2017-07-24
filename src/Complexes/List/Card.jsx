@@ -60,13 +60,14 @@ const Name = styled.h3`
   margin-bottom: 1rem;
   margin: 0;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
   text-align: left;
   line-height: 1.4;
   color: #000000;
 
   ${media.sm`
+    font-size: 40px;
     margin-top: 0;
     margin-bottom: 0;
   `};

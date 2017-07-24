@@ -18,6 +18,8 @@ const Contact = styled.div`
 `;
 
 const Title = styled.h2`
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-top: 0;
   margin-bottom: .5rem;
   font-family: 'Fira Sans', sans-serif;
@@ -27,6 +29,8 @@ const Title = styled.h2`
   color: #3e4247;
 
   ${media.sm`
+    margin-left: 0;
+    margin-right: 0;
     font-size: 24px;
   `};
 `;

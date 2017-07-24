@@ -12,12 +12,14 @@ const Title = styled.div`
   margin: 0;
   padding-bottom: 1em;
   font-family: 'Philosopher', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 28px;
   font-weight: 700;
-  line-height: 27px;
   color: #3e4247;
 
   ${media.sm`
+    font-size: 24px;
+    line-height: 27px;
     padding-bottom: 0;
   `};
 `;
