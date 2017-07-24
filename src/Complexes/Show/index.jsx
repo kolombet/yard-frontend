@@ -71,7 +71,7 @@ class Index extends React.Component {
             <Description title="Описание" fullDescription={fullDescription} />}
           {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
           <Offers offers={offers} name={name} />
-          {/* <Guide /> */}
+          <Guide />
         </div>
       </BodyClassName>
     );
