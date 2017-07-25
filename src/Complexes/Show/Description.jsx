@@ -42,15 +42,40 @@ const Wrapper = styled.div`
 `;
 
 const Line = styled.hr`
-  display: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: none;
+  border-bottom: solid 1px #e0e0e1;
+  display: block;
+`;
 
-  ${media.sm`
-    margin-top: 0;
-    margin-bottom: 0;
-    border-top: none;
-    border-bottom: solid 1px #e0e0e1;
-    display:block;
-  `};
+const TextWrapper = styled.div`position: relative;`;
+
+const Gradient = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 128px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0.3));
+`;
+
+const ReadButton = styled.button`
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  bottom: 3px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 2px;
+  background-color: #00779a;
+  cursor: pointer;
+  margin: 0, auto;
+
+  font-family: "Fira Sans", sans-serif;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 300;
+  color: white;
 `;
 
 type Props = {
@@ -69,9 +94,13 @@ export default (props: Props) =>
             </Title>
           </Col>
           <Col xs={12} md={10}>
-            <Text>
-              {props.fullDescription}
-            </Text>
+            <TextWrapper>
+              <Text>
+                {props.fullDescription}
+              </Text>
+              <Gradient />
+              <ReadButton>Прочитать описание</ReadButton>
+            </TextWrapper>
           </Col>
         </Row>
       </Description>
