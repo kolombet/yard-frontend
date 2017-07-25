@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import media from '../../media';
 
-const Description = styled.section`margin-bottom: 1.5rem;`;
+const Container = styled.section`margin-bottom: 1.5rem;`;
 
 const Title = styled.div`
   margin: 0;
@@ -24,6 +24,16 @@ const Title = styled.div`
 `;
 
 const Text = styled.div`
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #3e4247;
+`;
+
+const TextCut = styled.div`
+  overflow-y: hidden;
+  height: 350px;
   margin: 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
@@ -83,27 +93,55 @@ type Props = {
   fullDescription: string,
 };
 
-export default (props: Props) =>
-  (<Grid>
-    <Wrapper>
-      <Description>
-        <Row>
-          <Col xs={12} md={2}>
-            <Title>
-              {props.title}
-            </Title>
-          </Col>
-          <Col xs={12} md={10}>
-            <TextWrapper>
-              <Text>
-                {props.fullDescription}
-              </Text>
-              <Gradient />
-              <ReadButton>Прочитать описание</ReadButton>
-            </TextWrapper>
-          </Col>
-        </Row>
-      </Description>
-      <Line />
-    </Wrapper>
-  </Grid>);
+type State = {
+  isExtended: boolean,
+};
+
+class Description extends React.Component {
+  constructor(props: Props) {
+    super(props);
+  }
+
+  state = { isExtended: false };
+
+  state: State;
+
+  render() {
+    const { isExtended = false } = this.state;
+
+    return (
+      <Grid>
+        <Wrapper>
+          <Container>
+            <Row>
+              <Col xs={12} md={2}>
+                <Title>
+                  {this.props.title}
+                </Title>
+              </Col>
+              <Col xs={12} md={10}>
+                {isExtended &&
+                  <Text>
+                    {this.props.fullDescription}
+                  </Text>}
+                {!isExtended &&
+                  <TextWrapper>
+                    <TextCut>
+                      {this.props.fullDescription}
+                    </TextCut>
+                    <Gradient />
+                    <ReadButton onClick={() => this.setState({ isExtended: true })}>
+                      Прочитать описание
+                    </ReadButton>
+                  </TextWrapper>}
+              </Col>
+            </Row>
+          </Container>
+          <Line />
+        </Wrapper>
+      </Grid>
+    );
+  }
+}
+
+export default Description;
