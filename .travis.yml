@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - "node"
 script:
-  - yarn lint
+  - yarn flow-typed install
+  - yarn prepush
 deploy:
   provider: script
   skip_cleanup: true

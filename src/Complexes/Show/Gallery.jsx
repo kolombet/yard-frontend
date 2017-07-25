@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import pluralize from 'pluralize-ru';
 import { getImageUrl } from '../../util';
+import media from '../../media';
 import type { Image as ImageType } from '../types';
 
 const Gallery = styled.section``;
@@ -22,6 +23,7 @@ const Image = styled.img`height: 400px;`;
 const Expand = styled.button`
   position: absolute;
   bottom: 1rem;
+  left: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 2px;
@@ -32,6 +34,10 @@ const Expand = styled.button`
   font-weight: 300;
   line-height: 10px;
   color: white;
+
+  ${media.sm`
+    left: 0rem;
+  `};
 `;
 
 type Props = { images: Array<ImageType> };

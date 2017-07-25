@@ -4,10 +4,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row } from 'react-flexbox-grid';
 import compassDevelopmentLogo from '../../img/compass-development-logo.svg';
+import media from '../../media';
 
 const Banner = styled.section`
-  display: block;
+  display: none;
   background-color: #161616;
+  ${media.sm`
+    display: block;
+  `};
 `;
 
 const Image = styled.img`

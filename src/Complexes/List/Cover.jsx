@@ -3,16 +3,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getImageUrl } from '../../util';
+import media from '../../media';
 import type { Image as ImageType } from '../types';
 
 const Wrapper = styled.div`
-  width: 491px;
-  height: 350px;
+  width: 100%;
+  height: auto;
+
+  ${media.sm`
+    width: 491px;
+    height: 350px;    
+  `};
 `;
 
 const Image = styled.img`
-  width: 491px;
-  height: 350px;
+  width: 100%;
+  height: auto;
+
+  ${media.sm`
+    width: 491px;
+    height: 350px;
+  `};
 `;
 
 export default (props: ImageType) => {

@@ -4,11 +4,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import type { Offer as OfferType } from '../types';
+import media from '../../media';
 
 const Offer = styled.div`
+  width: 326px;
   padding: 1.5rem 2rem;
   margin-bottom: 4rem;
   background-color: #ffffff;
+
+  ${media.sm`
+    width: 326px;
+  `};
 `;
 
 const Title = styled.h3`
@@ -76,7 +82,7 @@ type Props = {
 export default ({ offer }: Props = {}) => {
   const { rooms, area, price } = offer;
   return (
-    <Col md={4}>
+    <Col xs={4}>
       <Offer>
         <Title>
           {rooms}-комнатные квартиры
@@ -89,7 +95,7 @@ export default ({ offer }: Props = {}) => {
         <PriceValue>
           от {price.min} до {price.max} млн руб
         </PriceValue>
-        <Row center="md">
+        <Row center="xs">
           <OpenOffer>Посмотреть предложения</OpenOffer>
         </Row>
       </Offer>

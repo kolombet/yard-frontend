@@ -2,11 +2,21 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row } from 'react-flexbox-grid';
 import Amenity from './Amenity';
 import type { Amenity as AmenityType } from '../types';
+import media from '../../media';
 
-const Wrapper = styled.section`margin-bottom: 3rem;`;
+const Wrapper = styled.section`
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  ${media.sm`
+    padding-left: 0;
+    padding-right: 0;
+  `};
+`;
 
 const Title = styled.h2`
   margin-top: 2rem;
@@ -23,11 +33,7 @@ type Props = { amenities: Array<AmenityType> };
 export default (props: Props) =>
   (<Grid>
     <Wrapper>
-      <Row>
-        <Col md={2}>
-          <Title>Инфраструктура</Title>
-        </Col>
-      </Row>
+      <Title>Инфраструктура</Title>
       <Row>
         {props.amenities.map(amenity => <Amenity key={amenity.id} name={amenity.name} />)}
       </Row>
