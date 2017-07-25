@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row } from 'react-flexbox-grid';
 import Amenity from './Amenity';
 import type { Amenity as AmenityType } from '../types';
 import media from '../../media';

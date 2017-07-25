@@ -98,13 +98,10 @@ type State = {
 };
 
 class Description extends React.Component {
-  constructor(props: Props) {
-    super(props);
-  }
-
   state = { isExtended: false };
 
   state: State;
+  props: Props;
 
   render() {
     const { isExtended = false } = this.state;
