@@ -12,7 +12,7 @@ import Offers from './Offers';
 import Guide from './Guide';
 import Characteristics from './Characteristics';
 import { get } from '../../api';
-import type { Complex as ComplexType, Offer as OfferType } from '../types';
+import type { Complex as ComplexType, Offer as OfferType, Amenity as AmenityType } from '../types';
 
 type Props = {
   match: {
@@ -21,6 +21,27 @@ type Props = {
     },
   },
 };
+
+const offers: Array<OfferType> = [
+  { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+  { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+  { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
+];
+
+const amenitiesDummy: Array<AmenityType> = [
+  { id: shortid.generate(), name: 'Бассейн' },
+  { id: shortid.generate(), name: 'Школа' },
+  { id: shortid.generate(), name: 'Частная школа' },
+  { id: shortid.generate(), name: 'Пруд' },
+  { id: shortid.generate(), name: 'Детский сад' },
+  { id: shortid.generate(), name: 'Парк' },
+  { id: shortid.generate(), name: 'Школа' },
+  { id: shortid.generate(), name: 'Частная школа' },
+  { id: shortid.generate(), name: 'Пруд' },
+  { id: shortid.generate(), name: 'Школа' },
+  { id: shortid.generate(), name: 'Частная школа' },
+  { id: shortid.generate(), name: 'Пруд' },
+];
 
 class Index extends React.Component {
   state = { complex: {} };
@@ -54,12 +75,6 @@ class Index extends React.Component {
     const { architect = 'test', developer = 'test' } = details;
     const { street, house, subLocalityName } = location;
 
-    const offers: Array<OfferType> = [
-      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
-      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
-      { id: shortid.generate(), rooms: 5, area: { min: 20, max: 50 }, price: { min: 5, max: 10 } },
-    ];
-
     return (
       <BodyClassName className="complexe">
         <div>
@@ -69,7 +84,7 @@ class Index extends React.Component {
           {complex.details && <Characteristics complex={complex} />}
           {fullDescription.length > 0 &&
             <Description title="Описание" fullDescription={fullDescription} />}
-          {amenities && amenities.length > 0 && <Amenities amenities={amenities} />}
+          {amenitiesDummy && amenitiesDummy.length > 0 && <Amenities amenities={amenitiesDummy} />}
           <Offers offers={offers} name={name} />
           <Guide />
         </div>

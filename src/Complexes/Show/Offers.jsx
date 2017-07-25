@@ -26,7 +26,7 @@ const Title = styled.h2`
   line-height: 28px;
   font-weight: 700;
   color: #3e4247;
-  text-align: center;
+  text-align: left;
 
   ${media.sm`
     padding-left: 0;
@@ -35,11 +35,13 @@ const Title = styled.h2`
     margin-bottom: 1.5rem;
     font-size: 24px;
     line-height: 27px;
+    text-align: center;
   `};
 `;
 
 const Wrapper = styled.div`
   overflow-x: scroll;
+
   ${media.sm`
     overflow-x: inherit;
   `};
@@ -49,6 +51,7 @@ const WrapperInner = styled.div`
   width: 76rem;
   margin-left: 1rem;
   margin-right: 1rem;
+
   ${media.sm`
     margin-left: 0rem;
     margin-right: 0rem;

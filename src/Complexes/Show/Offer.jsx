@@ -7,7 +7,7 @@ import type { Offer as OfferType } from '../types';
 import media from '../../media';
 
 const Offer = styled.div`
-  width: 236px;
+  width: 326px;
   padding: 1.5rem 2rem;
   margin-bottom: 4rem;
   background-color: #ffffff;

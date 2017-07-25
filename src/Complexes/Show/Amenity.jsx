@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default (props: Props) =>
-  (<Col md={2}>
+  (<Col xs={6} md={2}>
     <Label>
       {props.name}
     </Label>

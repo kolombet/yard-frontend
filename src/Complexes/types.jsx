@@ -31,7 +31,7 @@ type Location = {
 };
 
 type Amenity = {
-  id: number,
+  id: string,
   name: string,
 };
 
@@ -95,4 +95,9 @@ type Complex = {
   units: number,
 };
 
-export type { Complex, Image, Amenity, Offer };
+type Position = {
+  lat: number,
+  long: number,
+};
+
+export type { Complex, Image, Amenity, Offer, Position };

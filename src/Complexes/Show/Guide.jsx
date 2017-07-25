@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import GuideNavigation from './GuideNavigation';
 import media from '../../media';
+import MapBox from './MapBox';
 
 const Guide = styled.section`
   overflow-x: hidden;
@@ -15,7 +16,6 @@ const Guide = styled.section`
   color: white;
 
   ${media.sm`
-    
     padding-bottom: 9.563rem;
     margin-bottom: 13.69rem;
   `};
@@ -70,6 +70,7 @@ const GuideLink = styled(Link)`
   font-size: 16px;
   line-height: 25px;
   color: #00779a;
+  text-decoration: none;
 
   ${media.sm`
     margin-bottom: 11.31rem;
@@ -86,20 +87,6 @@ const AreaImage = styled.img`
     margin-top: 3.875rem;
     margin-bottom: 3.938rem;
     height: 560px;
-  `};
-`;
-
-const Map = styled.img`
-  margin-top: 3rem;
-  width: 100%;
-  height: auto;
-
-  ${media.sm`
-    margin-top: 0rem;
-    position: absolute;
-    width: 583px;
-    height: 306px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   `};
 `;
 
@@ -135,7 +122,7 @@ export default () =>
     <Grid>
       <Row>
         <Col xs={12} sm={6}>
-          <Map src={`${publicURL}/guide/1/map.png`} alt="map" />
+          <MapBox lat={-122.65} long={45.52} />
         </Col>
         <Col xs={12} sm={6}>
           <Navigation>

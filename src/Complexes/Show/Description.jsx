@@ -3,7 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import HorizontalLine from '../../Components/HorizontalLine';
 import media from '../../media';
 
 const Description = styled.section`margin-bottom: 1.5rem;`;
@@ -42,6 +41,18 @@ const Wrapper = styled.div`
   `};
 `;
 
+const Line = styled.hr`
+  display: none;
+
+  ${media.sm`
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: none;
+    border-bottom: solid 1px #e0e0e1;
+    display:block;
+  `};
+`;
+
 type Props = {
   title: string,
   fullDescription: string,
@@ -64,6 +75,6 @@ export default (props: Props) =>
           </Col>
         </Row>
       </Description>
-      <HorizontalLine />
+      <Line />
     </Wrapper>
   </Grid>);
